@@ -523,6 +523,12 @@ html.rv-on .rv.in{opacity:1; transform:none}
 .pc-dots{display:flex; gap:6px; margin-left:auto}
 .pc-dots button{width:22px; height:6px; padding:0; border:0; border-radius:99px; background:#D3DBC9; cursor:pointer}
 .pc-dots button[aria-pressed="true"]{background:var(--leaf)}
+
+/* ---- client logos ---- */
+.client.logo{padding:0 8px}
+.client.logo img{display:block; height:38px; width:auto; max-width:160px; object-fit:contain; mix-blend-mode:multiply; filter:grayscale(1) contrast(1.1); opacity:.7; transition:filter .3s, opacity .3s}
+.client.logo:hover img{filter:none; opacity:1}
+.client.logo img.tall{height:52px}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -695,8 +701,8 @@ html.rv-on .rv.in{opacity:1; transform:none}
     <h2 id="h-trust">Companies that work with us</h2>
   </div>
   <div class="marquee">
-    <ul class="track"><li class="client">Almus</li><li class="client">Bidfood</li><li class="client">ENDORFY</li><li class="client">Salt</li><li class="client">Venezia</li><li class="client alg">Allegro <i>partner</i></li></ul>
-    <ul class="track" aria-hidden="true"><li class="client">Almus</li><li class="client">Bidfood</li><li class="client">ENDORFY</li><li class="client">Salt</li><li class="client">Venezia</li><li class="client alg">Allegro <i>partner</i></li></ul>
+    <ul class="track"><li class="client logo"><img src="img/clients/almus.png" alt="Almus" width="449" height="96" loading="lazy"></li><li class="client logo"><img src="img/clients/bidfood.png" alt="Bidfood" width="261" height="96" loading="lazy"></li><li class="client logo"><img src="img/clients/endorfy.png" alt="Endorfy" width="601" height="96" loading="lazy"></li><li class="client logo"><img src="img/clients/salt.png" alt="Salt" width="278" height="96" loading="lazy"></li><li class="client logo"><img src="img/clients/venezia.png" alt="Venezia" width="379" height="96" loading="lazy"></li><li class="client logo"><img src="img/clients/ski24.png" alt="ski24.pl" width="626" height="96" loading="lazy"></li><li class="client logo"><img src="img/clients/dekoracjadomu.png" alt="Dekoracja Domu" width="360" height="96" loading="lazy"></li><li class="client logo"><img src="img/clients/gymglamour.png" alt="Gym Glamour" width="641" height="96" loading="lazy"></li><li class="client logo"><img src="img/clients/nagaba.png" alt="Nagaba" width="439" height="96" loading="lazy"></li><li class="client logo"><img class="tall" src="img/clients/jbb.png" alt="JBB Bałdyga" width="101" height="96" loading="lazy"></li><li class="client alg">Allegro <i>partner</i></li></ul>
+    <ul class="track" aria-hidden="true"><li class="client logo"><img src="img/clients/almus.png" alt="" width="449" height="96" loading="lazy"></li><li class="client logo"><img src="img/clients/bidfood.png" alt="" width="261" height="96" loading="lazy"></li><li class="client logo"><img src="img/clients/endorfy.png" alt="" width="601" height="96" loading="lazy"></li><li class="client logo"><img src="img/clients/salt.png" alt="" width="278" height="96" loading="lazy"></li><li class="client logo"><img src="img/clients/venezia.png" alt="" width="379" height="96" loading="lazy"></li><li class="client logo"><img src="img/clients/ski24.png" alt="" width="626" height="96" loading="lazy"></li><li class="client logo"><img src="img/clients/dekoracjadomu.png" alt="" width="360" height="96" loading="lazy"></li><li class="client logo"><img src="img/clients/gymglamour.png" alt="" width="641" height="96" loading="lazy"></li><li class="client logo"><img src="img/clients/nagaba.png" alt="" width="439" height="96" loading="lazy"></li><li class="client logo"><img class="tall" src="img/clients/jbb.png" alt="" width="101" height="96" loading="lazy"></li><li class="client alg">Allegro <i>partner</i></li></ul>
   </div>
 </section>
 
