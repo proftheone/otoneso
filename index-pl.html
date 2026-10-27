@@ -1273,4 +1273,33 @@ document.querySelectorAll('#video .vid-play').forEach(function(b){
     f.innerHTML=''; f.appendChild(i);
   });
 });
+
+/* video section: newest channel videos from videos.json (updated daily by GitHub Actions) */
+(function () {
+  var grid = document.querySelector('#video .vid-grid'); if (!grid || !window.fetch) return;
+  var pl = (document.documentElement.lang || '').indexOf('pl') === 0 || /Kanał/.test(grid.textContent);
+  fetch('videos.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (list) {
+    if (!list || !list.length) return;
+    var esc = function (s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; };
+    var fmt = function (d) { try { return new Date(d + 'T12:00:00Z').toLocaleDateString(pl ? 'pl-PL' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) { return d; } };
+    var src = pl ? 'Kanał Otoneso' : 'Otoneso channel · in Polish', play = pl ? 'Odtwórz film' : 'Play video';
+    grid.querySelectorAll('li.vid').forEach(function (li) { li.remove(); });
+    var more = grid.querySelector('.vid-more');
+    list.slice(0, 5).forEach(function (v) {
+      var li = document.createElement('li'); li.className = 'vid';
+      li.innerHTML = '<div class="vid-frame"><img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">' +
+        '<button class="vid-play" type="button" data-id="' + v.id + '" aria-label="' + play + ': ' + esc(v.title) + '"><span></span></button></div>' +
+        '<div class="vid-body"><h3><a href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener">' + esc(v.title) + '</a></h3>' +
+        '<div class="vid-src">' + src + ' · ' + fmt(v.published) + '</div></div>';
+      grid.insertBefore(li, more);
+      li.querySelector('.vid-play').addEventListener('click', function () {
+        var b = this, f = b.parentNode, i = document.createElement('iframe');
+        i.src = 'https://www.youtube-nocookie.com/embed/' + v.id + '?autoplay=1&rel=0';
+        i.title = b.getAttribute('aria-label');
+        i.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        i.allowFullscreen = true; f.innerHTML = ''; f.appendChild(i);
+      });
+    });
+  }).catch(function () {});
+})();
 </script>
