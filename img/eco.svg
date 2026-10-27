@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none" stroke="#C4C7C2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+<style>
+.ring{transform-origin:300px 300px;animation:spin 60s linear infinite}
+.leaf{transform-origin:150px 470px;animation:sway 9s ease-in-out infinite}
+.leaf path{stroke:#B5C99A;stroke-width:1.4}
+.d{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 14s ease-in-out infinite}
+.d2{stroke-dasharray:160;stroke-dashoffset:160;animation:draw2 14s ease-in-out 1.2s infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+@keyframes draw{0%{stroke-dashoffset:900}35%,80%{stroke-dashoffset:0}100%{stroke-dashoffset:900}}
+@keyframes draw2{0%{stroke-dashoffset:160}35%,80%{stroke-dashoffset:0}100%{stroke-dashoffset:160}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;stroke-dashoffset:0!important}}
+</style>
+<g class="ring"><path d="M300 12 A288 288 0 0 1 549.4 156"/><path d="M549.4 444 A288 288 0 0 1 300 588"/><path d="M50.6 444 A288 288 0 0 1 50.6 156"/><path d="M536 136 l13.4 20 l-23.6 3.2"/><path d="M322 592 l-22 -4 l14.6 -17.8"/><path d="M40 178 l10.6 -22 l14 19.4"/></g>
+<circle cx="300" cy="300" r="248" stroke-dasharray="2 9"/>
+<g class="leaf"><path class="d" d="M168 446 C150 300 250 168 452 140 C460 330 340 452 168 446 Z"/><path class="d" d="M128 492 L168 446 C250 360 340 260 452 140"/><path class="d2" d="M214 396 C206 360 212 330 222 304"/><path class="d2" d="M214 396 C250 404 286 400 318 388"/><path class="d2" d="M268 334 C262 296 270 262 284 236"/><path class="d2" d="M268 334 C306 340 342 332 372 318"/><path class="d2" d="M326 270 C324 238 334 210 348 190"/><path class="d2" d="M326 270 C360 272 390 262 414 246"/></g>
+</svg>
