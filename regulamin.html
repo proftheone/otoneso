@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Regulamin – Otoneso</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Zasady korzystania z serwisów Otoneso i Panelu Partnera, świadczonych przez VIAREGIA.ONLINE Sp. z o.o.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px)} img{max-width:100%}
+.menu a[aria-current="page"]{color:var(--green)}
+
+.sub-hero{position:relative; z-index:1; padding-block:clamp(48px,6vw,88px) clamp(28px,4vw,48px)}
+.sub-hero h1{font-size:clamp(36px,5vw,64px); margin:16px 0 18px; max-width:18ch}
+.sub-hero .lead{color:var(--muted); font-size:clamp(17px,1.5vw,20px); max-width:60ch; margin:0}
+.crumbs{font-size:13.5px; color:var(--dim); display:flex; gap:8px; align-items:center; margin-bottom:22px}
+.crumbs a{color:var(--muted); text-decoration:none} .crumbs a:hover{color:var(--green)}
+/* legal */
+.legal{display:grid; grid-template-columns:minmax(0,240px) minmax(0,760px); gap:clamp(28px,5vw,72px); padding-bottom:clamp(48px,6vw,88px)}
+.toc{position:sticky; top:96px; align-self:start; display:grid; gap:4px; font-size:14px}
+.toc b{font:700 12px var(--f-body); letter-spacing:.14em; text-transform:uppercase; color:var(--olive); margin-bottom:8px}
+.toc a{color:var(--muted); text-decoration:none; padding:5px 0 5px 12px; border-left:2px solid var(--line)}
+.toc a:hover{color:var(--green); border-left-color:var(--leaf)}
+.doc{min-width:0}
+.doc .note{display:flex; gap:12px; align-items:flex-start; background:#F1F8E6; box-shadow:inset 0 0 0 1px #D3E8B3; border-radius:16px; padding:16px 18px; font-size:15px; color:var(--ink); margin-bottom:32px}
+.doc .note svg{width:20px; height:20px; flex:none; color:var(--green); margin-top:2px}
+.doc .note a{color:var(--green); font-weight:600}
+.doc section{padding-block:22px; border-top:1px solid var(--line); scroll-margin-top:96px}
+.doc h2{font-size:clamp(22px,2vw,28px); letter-spacing:-.025em; margin:0 0 12px}
+.doc h2 span{color:var(--green); margin-right:8px}
+.doc p{margin:0 0 12px; color:var(--muted)}
+.doc ul{margin:0 0 12px; padding-left:20px; color:var(--muted); display:grid; gap:6px}
+.doc li::marker{color:var(--leaf)}
+.meta-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px}
+.meta-row span{font:600 13px var(--f-body); padding:6px 12px; border-radius:999px; background:var(--surface); box-shadow:var(--ring)}
+@media (max-width:860px){.legal{grid-template-columns:1fr} .toc{position:static}}
+/* about */
+.big-photo{margin:0 0 clamp(48px,6vw,88px); border-radius:28px; overflow:hidden; box-shadow:var(--ring), var(--lift); aspect-ratio:21/9; max-width:100%}
+.big-photo img{width:100%; height:100%; object-fit:cover; object-position:50% 35%; display:block}
+.split{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:clamp(28px,5vw,80px); align-items:start}
+.split h2{font-size:clamp(30px,3.6vw,48px); margin-top:14px}
+.split p{color:var(--muted); margin:0 0 14px; font-size:17px}
+.quote-big{font-family:var(--f-display); font-weight:800; font-size:clamp(24px,2.4vw,32px); letter-spacing:-.03em; line-height:1.2; margin:22px 0 0; padding-left:20px; border-left:5px solid var(--leaf)}
+.vals{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
+.vals article{background:var(--surface); border-radius:20px; box-shadow:var(--ring); padding:24px; display:flex; flex-direction:column; gap:10px}
+.vals .pain-ico{margin:0}
+.vals b{font-family:var(--f-display); font-size:20px; font-weight:800; letter-spacing:-.025em}
+.vals p{margin:0; color:var(--muted); font-size:15px}
+.people{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
+.person{background:var(--surface); border-radius:20px; box-shadow:var(--ring); padding:22px; display:flex; align-items:center; gap:14px}
+.person i{width:52px; height:52px; flex:none; border-radius:50%; display:grid; place-items:center; font:700 17px var(--f-body); font-style:normal; color:#fff; background:var(--teal)}
+.person:nth-child(2) i{background:var(--olive)} .person:nth-child(3) i{background:var(--green)} .person:nth-child(4) i{background:var(--leaf); color:var(--on-leaf)}
+.person b{display:block; font-family:var(--f-display); font-weight:800; font-size:17px; letter-spacing:-.02em; line-height:1.25}
+.person span{font-size:14px; color:var(--muted)}
+.cta-box{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:24px; background:var(--teal); color:#F7F8F4; border-radius:28px; padding:clamp(28px,4vw,52px); box-shadow:var(--lift)}
+.cta-box h2{font-size:clamp(28px,3.4vw,44px); max-width:22ch}
+.cta-box h2 em{color:var(--leaf)}
+.cta-box p{color:#C5D1CA; margin:10px 0 0; max-width:52ch}
+@media (max-width:1000px){.vals,.people{grid-template-columns:repeat(2,minmax(0,1fr))} .split{grid-template-columns:1fr}}
+@media (max-width:560px){.vals,.people{grid-template-columns:1fr} .big-photo{aspect-ratio:4/3}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arr" viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="next" viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="chk" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="currentColor" opacity=".16"/><path d="m6 10.2 2.6 2.6L14 7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+<header class="nav">
+  <div class="bar">
+    <a class="logo" href="./" aria-label="Otoneso – strona główna"><img src="img/otoneso-logo.png" alt="otoneso" width="437" height="105"></a>
+    <nav class="menu" aria-label="Główna">
+      <a class="live" href="https://eprpilot.com/" target="_blank" rel="noopener"><span class="ldot"></span>EPRpilot</a>
+      <a href="./#streams">Produkty</a>
+      <a href="./#countries">Kraje</a>
+      <a href="./#process">Jak działamy</a>
+      <div class="dd"><a href="./#services" aria-haspopup="true">Usługi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a><div class="dd-menu"><div><a href="./#services">Wszystkie usługi<small>EPR, BDO, KOBiZE, EUDR, GPSR</small></a><a href="wdrozenie-ppwr.html">Wdrożenie PPWR<small>Audyt, plan i dokumentacja opakowań</small></a></div></div></div>
+      <a href="o-nas.html">O nas</a>
+      <a href="partnerzy.html">Partnerzy</a>
+      <a href="./#faq">FAQ</a>
+      <a class="lang" href="https://claude.ai/artifact/NSNK3Ar94LKPHBbnnwqPFF" target="_blank" rel="noopener" aria-label="English version">EN</a>
+      <a class="btn" href="./#contact">Darmowa wycena <svg><use href="#arr"/></svg></a>
+    </nav>
+  </div>
+</header>
+<main>
+<div class="page-glow" aria-hidden="true"></div>
+<section class="sub-hero"><div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Otoneso</a><span>/</span><span>Regulamin</span></nav>
+  <span class="eyebrow">Dokumenty</span>
+  <h1>Regulamin</h1>
+  <p class="lead">Zasady korzystania z serwisów Otoneso i Panelu Partnera, świadczonych przez VIAREGIA.ONLINE Sp. z o.o.</p>
+  <div class="meta-row"><span>VIAREGIA.ONLINE Sp. z o.o.</span><span>Prawo polskie</span></div>
+</div></section>
+<div class="wrap legal">
+  <nav class="toc" aria-label="Spis treści"><b>Spis treści</b><a href="#s1">Postanowienia ogólne</a><a href="#s2">Definicje</a><a href="#s3">Wymagania techniczne i bezpieczeństwo</a><a href="#s4">Rodzaje usług</a><a href="#s5">Panel Partnera</a><a href="#s6">Własność intelektualna</a><a href="#s7">Odpowiedzialność wobec przedsiębiorców</a><a href="#s8">Reklamacje</a><a href="#s9">Postanowienia końcowe</a></nav>
+  <article class="doc">
+    <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/></svg><span>Ta strona streszcza strukturę regulaminu Otoneso. Wiążący tekst jest opublikowany na <a href="https://otoneso.pl/regulamin/" target="_blank" rel="noopener">otoneso.pl/regulamin</a>. Przed publikacją zastąp to streszczenie pełną, oficjalną treścią.</span></div>
+    <section id="s1"><h2><span>§ 1</span>Postanowienia ogólne</h2><p>Regulamin dotyczy serwisów otoneso.pl, otoneso.com, ppwr.otoneso.pl i partners.otoneso.pl.</p><p>Usługodawcą jest VIAREGIA.ONLINE Sp. z o.o., ul. Złota 7 lok. 28, 00-019 Warszawa, działająca pod marką Otoneso.</p><p>Treści publikowane w serwisach mają charakter informacyjny i edukacyjny. Nie stanowią porady prawnej, podatkowej ani wiążącej opinii środowiskowej.</p></section>
+<section id="s2"><h2><span>§ 2</span>Definicje</h2><p>Regulamin definiuje m.in.: Serwis, Użytkownika, Klienta, Panel Partnera (Konto), Usługi Elektroniczne oraz przedsiębiorcę na prawach konsumenta.</p></section>
+<section id="s3"><h2><span>§ 3</span>Wymagania techniczne i bezpieczeństwo</h2><p>Do korzystania z serwisów potrzebne są: dostęp do internetu, aktualna przeglądarka z włączoną obsługą cookies i JavaScript oraz konto e-mail.</p><p>Połączenia są szyfrowane protokołem HTTPS. Użytkownik odpowiada za stosowanie silnych haseł i ochronę danych logowania.</p></section>
+<section id="s4"><h2><span>§ 4</span>Rodzaje usług</h2><ul><li>Bezpłatne treści informacyjne w serwisach.</li><li>Formularze kontaktowe i wyceny. Wysłanie formularza samo w sobie nie zawiera umowy.</li><li>Dostęp SaaS do Panelu Partnera dla zweryfikowanych klientów.</li></ul></section>
+<section id="s5"><h2><span>§ 5</span>Panel Partnera</h2><p>Dostęp do Panelu Partnera jest przyznawany po autoryzacji lub na podstawie umowy ramowej. Posiadacz konta odpowiada za działania wykonane z jego loginu.</p><p>Usługodawca może zawiesić konto w przypadku nadużyć lub podania nieprawdziwych danych.</p></section>
+<section id="s6"><h2><span>§ 6</span>Własność intelektualna</h2><p>Prawa do treści serwisów i oprogramowania należą do usługodawcy. Klient otrzymuje ograniczoną, niezbywalną licencję do użytku wewnętrznego.</p></section>
+<section id="s7"><h2><span>§ 7</span>Odpowiedzialność wobec przedsiębiorców</h2><p>Odpowiedzialność usługodawcy wobec klientów biznesowych (B2B) jest ograniczona, z wyłączeniem szkód pośrednich i do wysokości powiązanej z uiszczonymi opłatami.</p><p>Ograniczenie nie dotyczy konsumentów ani przedsiębiorców na prawach konsumenta.</p></section>
+<section id="s8"><h2><span>§ 8</span>Reklamacje</h2><p>Reklamacje można składać e-mailem na adres info@otoneso.pl. Prosimy o podanie danych identyfikacyjnych i opisu problemu.</p><p>Reklamacje rozpatrujemy w ciągu 14 dni roboczych.</p></section>
+<section id="s9"><h2><span>§ 9</span>Postanowienia końcowe</h2><p>Zastosowanie ma prawo polskie. Spory z klientami biznesowymi rozstrzyga sąd właściwy dla Warszawy.</p><p>Usługodawca może zmienić regulamin, publikując zmiany co najmniej 7 dni wcześniej. Posiadacze kont w Panelu Partnera są dodatkowo informowani e-mailem i mogą wypowiedzieć umowę.</p></section>
+
+  </article>
+</div>
+</main>
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="./"><img src="img/otoneso-logo.png" alt="otoneso" width="437" height="105"></a>
+      <p>Europejska obsługa EPR: rejestracja, sprawozdawczość i Autoryzowany Przedstawiciel w 29 krajach.</p>
+      <a class="btn" href="./#contact">Darmowa wycena <svg><use href="#arr"/></svg></a>
+    </div>
+    <nav class="foot-col" aria-label="Usługi">
+      <h4>Usługi</h4>
+      <a href="wdrozenie-ppwr.html">Opakowania i PPWR</a>
+      <a href="./#streams">WEEE</a>
+      <a href="./#streams">Baterie</a>
+      <a href="./#services">Autoryzowany Przedstawiciel</a>
+      <a href="./#services">BDO · KOBiZE · EUDR</a>
+    </nav>
+    <nav class="foot-col" aria-label="Firma">
+      <h4>Otoneso</h4>
+      <a href="./#countries">Kraje</a>
+      <a href="o-nas.html">O nas</a>
+      <a href="partnerzy.html">Partnerzy</a>
+      <a href="./#faq">FAQ</a>
+      <a href="regulamin.html">Regulamin</a>
+      <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+      <a href="https://eprpilot.com/" target="_blank" rel="noopener">eprpilot.com</a>
+      <a href="https://claude.ai/artifact/NSNK3Ar94LKPHBbnnwqPFF" target="_blank" rel="noopener">English version</a>
+    </nav>
+    <address class="foot-col">
+      <h4>Kontakt</h4>
+      <b>VIAREGIA.ONLINE Sp. z o.o.</b>
+      <span>ul. Złota 7 lok. 28<br>00-019 Warszawa</span>
+      <span>info@otoneso.pl</span>
+      <span>+48 459 596 793</span>
+    </address>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Otoneso. Marka VIAREGIA.ONLINE Sp. z o.o.</span>
+    <span class="legal-links"><a href="regulamin.html">Regulamin</a> · <a href="polityka-prywatnosci.html">Polityka prywatności</a></span>
+  </div>
+</footer>
+</body>
+</html>

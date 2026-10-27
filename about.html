@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>About us – Otoneso</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="We are a small team of EPR practitioners with backgrounds in e-commerce, environmental law and compliance. We know the registers, the deadlines and the pitfalls, because we deal with them every day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px)} img{max-width:100%}
+.menu a[aria-current="page"]{color:var(--green)}
+
+.sub-hero{position:relative; z-index:1; padding-block:clamp(48px,6vw,88px) clamp(28px,4vw,48px)}
+.sub-hero h1{font-size:clamp(36px,5vw,64px); margin:16px 0 18px; max-width:18ch}
+.sub-hero .lead{color:var(--muted); font-size:clamp(17px,1.5vw,20px); max-width:60ch; margin:0}
+.crumbs{font-size:13.5px; color:var(--dim); display:flex; gap:8px; align-items:center; margin-bottom:22px}
+.crumbs a{color:var(--muted); text-decoration:none} .crumbs a:hover{color:var(--green)}
+/* legal */
+.legal{display:grid; grid-template-columns:minmax(0,240px) minmax(0,760px); gap:clamp(28px,5vw,72px); padding-bottom:clamp(48px,6vw,88px)}
+.toc{position:sticky; top:96px; align-self:start; display:grid; gap:4px; font-size:14px}
+.toc b{font:700 12px var(--f-body); letter-spacing:.14em; text-transform:uppercase; color:var(--olive); margin-bottom:8px}
+.toc a{color:var(--muted); text-decoration:none; padding:5px 0 5px 12px; border-left:2px solid var(--line)}
+.toc a:hover{color:var(--green); border-left-color:var(--leaf)}
+.doc{min-width:0}
+.doc .note{display:flex; gap:12px; align-items:flex-start; background:#F1F8E6; box-shadow:inset 0 0 0 1px #D3E8B3; border-radius:16px; padding:16px 18px; font-size:15px; color:var(--ink); margin-bottom:32px}
+.doc .note svg{width:20px; height:20px; flex:none; color:var(--green); margin-top:2px}
+.doc .note a{color:var(--green); font-weight:600}
+.doc section{padding-block:22px; border-top:1px solid var(--line); scroll-margin-top:96px}
+.doc h2{font-size:clamp(22px,2vw,28px); letter-spacing:-.025em; margin:0 0 12px}
+.doc h2 span{color:var(--green); margin-right:8px}
+.doc p{margin:0 0 12px; color:var(--muted)}
+.doc ul{margin:0 0 12px; padding-left:20px; color:var(--muted); display:grid; gap:6px}
+.doc li::marker{color:var(--leaf)}
+.meta-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px}
+.meta-row span{font:600 13px var(--f-body); padding:6px 12px; border-radius:999px; background:var(--surface); box-shadow:var(--ring)}
+@media (max-width:860px){.legal{grid-template-columns:1fr} .toc{position:static}}
+/* about */
+.big-photo{margin:0 0 clamp(48px,6vw,88px); border-radius:28px; overflow:hidden; box-shadow:var(--ring), var(--lift); aspect-ratio:21/9; max-width:100%}
+.big-photo img{width:100%; height:100%; object-fit:cover; object-position:50% 35%; display:block}
+.split{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:clamp(28px,5vw,80px); align-items:start}
+.split h2{font-size:clamp(30px,3.6vw,48px); margin-top:14px}
+.split p{color:var(--muted); margin:0 0 14px; font-size:17px}
+.quote-big{font-family:var(--f-display); font-weight:800; font-size:clamp(24px,2.4vw,32px); letter-spacing:-.03em; line-height:1.2; margin:22px 0 0; padding-left:20px; border-left:5px solid var(--leaf)}
+.vals{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
+.vals article{background:var(--surface); border-radius:20px; box-shadow:var(--ring); padding:24px; display:flex; flex-direction:column; gap:10px}
+.vals .pain-ico{margin:0}
+.vals b{font-family:var(--f-display); font-size:20px; font-weight:800; letter-spacing:-.025em}
+.vals p{margin:0; color:var(--muted); font-size:15px}
+.people{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
+.person{background:var(--surface); border-radius:20px; box-shadow:var(--ring); padding:22px; display:flex; align-items:center; gap:14px}
+.person i{width:52px; height:52px; flex:none; border-radius:50%; display:grid; place-items:center; font:700 17px var(--f-body); font-style:normal; color:#fff; background:var(--teal)}
+.person:nth-child(2) i{background:var(--olive)} .person:nth-child(3) i{background:var(--green)} .person:nth-child(4) i{background:var(--leaf); color:var(--on-leaf)}
+.person b{display:block; font-family:var(--f-display); font-weight:800; font-size:17px; letter-spacing:-.02em; line-height:1.25}
+.person span{font-size:14px; color:var(--muted)}
+.cta-box{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:24px; background:var(--teal); color:#F7F8F4; border-radius:28px; padding:clamp(28px,4vw,52px); box-shadow:var(--lift)}
+.cta-box h2{font-size:clamp(28px,3.4vw,44px); max-width:22ch}
+.cta-box h2 em{color:var(--leaf)}
+.cta-box p{color:#C5D1CA; margin:10px 0 0; max-width:52ch}
+@media (max-width:1000px){.vals,.people{grid-template-columns:repeat(2,minmax(0,1fr))} .split{grid-template-columns:1fr}}
+@media (max-width:560px){.vals,.people{grid-template-columns:1fr} .big-photo{aspect-ratio:4/3}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arr" viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="next" viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="chk" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="currentColor" opacity=".16"/><path d="m6 10.2 2.6 2.6L14 7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+<header class="nav">
+  <div class="bar">
+    <a class="logo" href="./" aria-label="Otoneso – home"><img src="img/otoneso-logo.png" alt="otoneso" width="437" height="105"></a>
+    <nav class="menu" aria-label="Main">
+      <a class="live" href="https://eprpilot.com/" target="_blank" rel="noopener"><span class="ldot"></span>EPRpilot</a>
+      <a href="./#streams">Products</a>
+      <a href="./#countries">Countries</a>
+      <a href="./#process">How it works</a>
+      <div class="dd"><a href="./#services" aria-haspopup="true">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a><div class="dd-menu"><div><a href="./#services">All services<small>EPR, BDO, KOBiZE, EUDR, GPSR</small></a><a href="ppwr-implementation.html">PPWR implementation<small>Packaging audit, plan and documentation</small></a></div></div></div>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="partners.html">Partners</a>
+      <a href="./#faq">FAQ</a>
+      <a class="lang" href="https://claude.ai/artifact/E5NXv38WSqemYN6z31qxe8" target="_blank" rel="noopener" aria-label="Polska wersja">PL</a>
+      <a class="btn" href="./#contact">Free quote <svg><use href="#arr"/></svg></a>
+    </nav>
+  </div>
+</header>
+<main>
+<div class="page-glow" aria-hidden="true"></div>
+<section class="sub-hero"><div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Otoneso</a><span>/</span><span>About us</span></nav>
+  <span class="eyebrow">About Otoneso</span>
+  <h1>The people behind <em>Otoneso</em></h1>
+  <p class="lead">We are a small team of EPR practitioners with backgrounds in e-commerce, environmental law and compliance. We know the registers, the deadlines and the pitfalls, because we deal with them every day.</p>
+</div></section>
+<div class="wrap"><figure class="big-photo"><img src="img/team.jpg" alt="The Otoneso team in green hoodies taking a group selfie on a lawn" width="800" height="798"></figure></div>
+<section class="sec" style="padding-top:0"><div class="wrap split">
+  <div><span class="eyebrow">Our mission</span><h2>EU environmental obligations, turned into a process that <em>just works</em></h2><p class="quote-big">Compliance shouldn’t be a spreadsheet.</p></div>
+  <div><p>Every EU country runs its own EPR system, with its own registers, forms, fees and deadlines. For a company selling across Europe, that quickly becomes a full-time job nobody signed up for.</p><p>Our goal is to make these obligations clear, orderly and reliable. We take over registration, reporting and settlements for packaging, WEEE, batteries and single-use plastics, so our clients can focus on selling.</p><p>We combine hands-on service with EPRpilot, our own platform for tracking obligations across markets, including the new PPWR requirements.</p></div>
+</div></section>
+<section class="stats" aria-label="Otoneso in numbers"><div class="wrap"><div class="grid"><div class="stat"><span class="eyebrow">Clients</span><b>1k+</b><p>companies trust us with their EPR and BDO</p></div><div class="stat"><span class="eyebrow">Markets</span><b>29</b><p>27 EU countries, the UK and Turkey</p></div><div class="stat"><span class="eyebrow">Streams</span><b>4</b><p>packaging, WEEE, batteries and single-use plastics</p></div><div class="stat"><span class="eyebrow">Analysis</span><b>0 €</b><p>for the first review of your obligations</p></div></div></div></section>
+<section class="sec"><div class="wrap">
+  <div class="head"><div><span class="eyebrow">Why Otoneso</span><h2>What you get when you <em>work with us</em></h2></div></div>
+  <div class="vals"><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><b>Legal compliance</b><p>Registrations and reports that follow each country’s current rules, checked by people who do this every day.</p></article><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span><b>Individual approach</b><p>We start from your products, channels and markets, not from a template.</p></article><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M17 7H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6"/></svg></span><b>Lower costs</b><p>Correct material categories and quantities mean you pay the fees you owe and nothing more.</p></article><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m9 14-2 7 5-3 5 3-2-7"/></svg></span><b>Trusted partner</b><p>More than a thousand companies already hand their EPR and BDO to us.</p></article></div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="head"><div><span class="eyebrow">Team</span><h2>Who you’ll <em>work with</em></h2></div><p>A dedicated contact person backed by specialists in EPR, BDO and PPWR.</p></div>
+  <div class="people"><div class="person"><i>MG</i><div><b>Mateusz Grzywnowicz</b><span>CEO</span></div></div><div class="person"><i>MD</i><div><b>Michał Dyrszka</b><span>COO</span></div></div><div class="person"><i>BS</i><div><b>Bartosz Siomra-Janicki</b><span>Project Manager</span></div></div><div class="person"><i>MN</i><div><b>Marcin Nowak</b><span>Sales</span></div></div></div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap what">
+  <div><span class="eyebrow">Meet us</span><h2>See you at the <em>next fair</em></h2><p>We regularly meet clients at e-commerce and industry events. Stop by our stand to talk about EPR, PPWR and EPRpilot in person.</p><p>Can’t wait for the next event? Book a free consultation and we’ll go through your obligations online.</p></div>
+  <figure class="what-photo"><img src="img/booth.jpg" alt="The Otoneso team at a trade fair stand, smiling, one person giving a thumbs up" width="1400" height="933" loading="lazy"><figcaption><i></i>Otoneso at a trade fair</figcaption></figure>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap"><div class="cta-box">
+  <div><h2>Let’s sort out your <em>EPR</em></h2><p>Tell us what you sell and where. We’ll come back with your obligations and a quote within one business day.</p></div>
+  <a class="btn" href="./#contact">Get a free quote <svg><use href="#next"/></svg></a>
+</div></div></section>
+</main>
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="./"><img src="img/otoneso-logo.png" alt="otoneso" width="437" height="105"></a>
+      <p>European EPR compliance: registration, reporting and Authorized Representative services in 29 countries.</p>
+      <a class="btn" href="./#contact">Free quote <svg><use href="#arr"/></svg></a>
+    </div>
+    <nav class="foot-col" aria-label="Services">
+      <h4>Services</h4>
+      <a href="ppwr-implementation.html">Packaging &amp; PPWR</a>
+      <a href="./#streams">WEEE</a>
+      <a href="./#streams">Batteries</a>
+      <a href="./#services">Authorized Representative</a>
+      <a href="./#services">BDO · KOBiZE · EUDR</a>
+    </nav>
+    <nav class="foot-col" aria-label="Company">
+      <h4>Otoneso</h4>
+      <a href="./#countries">Countries</a>
+      <a href="about.html">About us</a>
+      <a href="partners.html">Partners</a>
+      <a href="./#faq">FAQ</a>
+      <a href="terms-of-service.html">Terms of service</a>
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="https://eprpilot.com/" target="_blank" rel="noopener">eprpilot.com</a>
+      <a href="https://otoneso.pl/" target="_blank" rel="noopener">otoneso.pl (Polski)</a>
+    </nav>
+    <address class="foot-col">
+      <h4>Contact</h4>
+      <b>VIAREGIA.ONLINE Sp. z o.o.</b>
+      <span>ul. Złota 7 lok. 28<br>00-019 Warsaw, Poland</span>
+      <span>info@otoneso.pl</span>
+      <span>+48 459 596 793</span>
+    </address>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Otoneso. A brand of VIAREGIA.ONLINE Sp. z o.o.</span>
+    <span class="legal-links"><a href="terms-of-service.html">Terms of service</a> · <a href="privacy-policy.html">Privacy policy</a></span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1026 @@
+<title>Otoneso PL</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Otoneso – rejestracja EPR, sprawozdawczość i usługa Autoryzowanego Przedstawiciela w 27 krajach UE, Wielkiej Brytanii i Turcji. Opakowania, WEEE, baterie i PPWR dla producentów i sprzedawców e-commerce.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap">
+<style>
+/* Layout: floating pill nav → centred hero with demo player → product streams → stats → clients → countries → process → EPRpilot → audiences → FAQ → contact card → footer.
+   Brand look from the otoneso presentation: paper-white ground, deep green-black ink, leaf green accent, short green bar as section motif. */
+:root{
+  --bg:#F7F8F4; --surface:#FFFFFF; --surface-2:#EEF2E8; --sage:#E6EBE0; --ink:#13201A; --muted:#55615A; --dim:#7A857E; --line:#DDE3D6;
+  --green:#598F24; --leaf:#7FBD28; --leaf-hover:#72AC22; --olive:#546D31; --on-leaf:#13201A; --warn:#9A6B2A; --teal:#1F4A43;
+  --ring:0 0 0 1px rgba(19,32,26,.07), 0 1px 2px rgba(19,32,26,.04);
+  --lift:0 30px 60px -36px rgba(19,32,26,.28);
+  --f-display:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --f-body:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+  --f-mono:"Inter","Segoe UI",system-ui,sans-serif;
+  --gut:max(16px, env(safe-area-inset-left, 0px));
+  --gut-r:max(16px, env(safe-area-inset-right, 0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{transition:none!important; animation:none!important}}
+body{background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:16.5px; line-height:1.6; margin:0; position:relative; overflow-x:clip}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:40; background:var(--bg)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--green); outline-offset:3px}
+.wrap{max-width:1240px; margin:0 auto; padding-left:var(--gut); padding-right:var(--gut-r)}
+h1,h2,h3{font-family:var(--f-display); font-weight:800; letter-spacing:-.035em; line-height:1.06; text-wrap:balance; margin:0}
+h1 em,h2 em,h3 em{font-style:normal; color:var(--green)}
+.eyebrow{display:inline-flex; align-items:center; gap:8px; font:700 12.5px var(--f-body); letter-spacing:.14em; text-transform:uppercase; color:var(--olive)}
+.eyebrow::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--leaf); flex:none}
+.gbar{display:block; width:66px; height:7px; border-radius:99px; background:var(--leaf)}
+.page-glow{position:absolute; left:50%; top:-320px; transform:translateX(-50%); width:min(1100px,100%); height:900px; background:radial-gradient(closest-side, rgba(127,189,40,.18), rgba(127,189,40,.05) 55%, transparent 75%); pointer-events:none; z-index:0}
+
+.btn{display:inline-flex; align-items:center; gap:10px; border-radius:999px; padding:13px 22px; font:700 15px var(--f-body); text-decoration:none; border:0; cursor:pointer; background:var(--leaf); color:var(--on-leaf); box-shadow:inset 0 1px 0 rgba(255,255,255,.35), inset 0 -2px 0 rgba(19,32,26,.12), 0 14px 28px -16px rgba(89,143,36,.8)}
+.btn:hover{background:var(--leaf-hover)}
+.btn svg{width:14px; height:14px}
+.btn-ghost{background:transparent; color:var(--ink); box-shadow:inset 0 0 0 1px rgba(19,32,26,.18)}
+.btn-ghost:hover{background:transparent; box-shadow:inset 0 0 0 1.5px var(--green); color:var(--green)}
+.ldot{width:7px; height:7px; border-radius:50%; background:var(--leaf); animation:blink 1.6s infinite; flex:none}
+@keyframes blink{50%{opacity:.35}}
+@keyframes rise{from{transform:translateY(14px); opacity:0}to{transform:none; opacity:1}}
+.mk-img{display:block; width:auto}
+
+/* ---------- Nav ---------- */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:30; padding:12px var(--gut-r) 0 var(--gut)}
+.nav .bar{max-width:1180px; margin:0 auto; padding:8px 8px 8px 20px; display:flex; align-items:center; gap:22px; border-radius:999px; background:rgba(255,255,255,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); box-shadow:var(--ring), 0 10px 30px -20px rgba(19,32,26,.3)}
+.logo{display:flex; align-items:center; text-decoration:none; flex:none}
+.logo img{height:30px; width:auto; display:block}
+.menu{flex:1; display:flex; align-items:center; justify-content:flex-end; gap:20px; font-size:14px; font-weight:500}
+.menu a{text-decoration:none; color:var(--muted)}
+.menu a:hover{color:var(--ink)}
+.menu .live{display:inline-flex; align-items:center; gap:7px; color:var(--ink)}
+.menu .btn{color:var(--on-leaf); padding:10px 18px; font-size:14px; box-shadow:none}
+.lang{font:600 12px var(--f-body); color:var(--dim)!important; border-radius:999px; padding:4px 9px; box-shadow:inset 0 0 0 1px var(--line)}
+@media (max-width:1020px){.menu a:not(.btn):not(.live):not(.lang){display:none}}
+@media (max-width:540px){.menu .live{display:none} .nav .bar{padding-left:16px} .logo img{height:26px}}
+
+/* ---------- Hero + player ---------- */
+.hero{position:relative; z-index:1; max-width:1180px; margin:0 auto; padding:56px var(--gut-r) 24px var(--gut); display:flex; flex-direction:column; align-items:center; gap:26px; text-align:center}
+.hero .eyebrow{padding:7px 14px; border-radius:999px; background:var(--surface); box-shadow:var(--ring)}
+.hero .eyebrow::before{display:none}
+.hero h1{font-size:clamp(36px,4.8vw,64px); max-width:940px}
+.hero .lead{margin:-6px 0 0; max-width:660px; color:var(--muted); font-size:clamp(15px,1.3vw,17.5px)}
+.player{width:100%; max-width:980px; border-radius:26px; padding:10px; background:var(--surface); box-shadow:var(--ring), var(--lift); text-align:left}
+.screen{position:relative; border-radius:18px; overflow:hidden; aspect-ratio:16/9; background:var(--sage); background-image:linear-gradient(rgba(19,32,26,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(19,32,26,.045) 1px, transparent 1px); background-size:40px 40px}
+.scr-logo{position:absolute; top:14px; left:20px}
+.scr-logo img{height:20px; width:auto; display:block}
+.scr-chap{position:absolute; top:16px; right:20px; font:600 12px var(--f-body); letter-spacing:.12em; text-transform:uppercase; color:var(--olive)}
+.scene{position:absolute; inset:52px 6% 76px; display:none; gap:6%; align-items:center; justify-content:center}
+.scene.on{display:flex; animation:rise .5s ease}
+.say{flex:0 1 40%; display:flex; flex-direction:column; gap:10px}
+.say span{font:700 12px var(--f-body); letter-spacing:.12em; color:var(--olive)}
+.say div{font-family:var(--f-display); font-size:clamp(17px,2.5vw,33px); font-weight:800; letter-spacing:-.035em; line-height:1.1}
+.say b{color:var(--green)}
+.mock{flex:0 1 46%; display:flex; flex-direction:column; gap:8px; font-size:clamp(10px,1.25vw,14px); min-width:0}
+.row{display:flex; justify-content:space-between; align-items:center; gap:10px; background:var(--surface); border-radius:12px; padding:9px 12px; box-shadow:var(--ring)}
+.row small{color:var(--dim); font-size:.86em}
+.ok{color:var(--green); font-weight:600} .wait{color:var(--warn); font-weight:600} .q{color:var(--muted)}
+.row.hl{background:#F1F8E6; box-shadow:inset 0 0 0 1.5px var(--leaf)}
+.pchips{display:flex; flex-wrap:wrap; gap:6px}
+.pchip{display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; background:var(--surface); box-shadow:var(--ring); font-weight:600; font-size:.92em}
+.pchip i{width:7px; height:7px; border-radius:50%; background:var(--leaf)} .pchip i.w{background:var(--warn)}
+.meter{height:8px; border-radius:99px; background:#D3DBC9; overflow:hidden} .meter i{display:block; height:100%; background:var(--leaf); border-radius:99px}
+.big-cta{display:inline-block; align-self:center; background:var(--leaf); color:var(--on-leaf); border-radius:999px; padding:10px 20px; font-weight:700; text-decoration:none}
+.subt{position:absolute; left:50%; bottom:52px; transform:translateX(-50%); max-width:86%; text-align:center; font-size:clamp(10.5px,1.2vw,13.5px); color:#F7F8F4; background:rgba(19,32,26,.82); border-radius:8px; padding:4px 10px}
+.ctrl{position:absolute; left:12px; right:12px; bottom:10px; display:flex; align-items:center; gap:12px}
+.pp{flex:none; width:36px; height:36px; border-radius:999px; border:0; cursor:pointer; display:grid; place-items:center; color:var(--ink); background:var(--surface); box-shadow:var(--ring)}
+.pp svg{width:14px; height:14px}
+.ctrl time{font:600 12px var(--f-body); color:var(--muted); white-space:nowrap; font-variant-numeric:tabular-nums}
+.chaps{flex:1; display:flex; gap:4px}
+.chaps button{flex:1; height:24px; border:0; padding:0; background:none; cursor:pointer; display:flex; align-items:center}
+.chaps button span{display:block; width:100%; height:4px; border-radius:2px; background:rgba(19,32,26,.14); overflow:hidden}
+.chaps button i{display:block; height:100%; width:0; background:var(--teal); border-radius:2px}
+.chaps button.cur i{background:var(--leaf)}
+.player-note{margin:-10px 0 0; font-size:13px; color:var(--dim)}
+.hero-cta{width:100%; max-width:980px; display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:space-between; text-align:left; margin-top:6px}
+.hero-cta p{margin:0}
+.hero-cta .big{font-family:var(--f-display); font-size:24px; font-weight:800; letter-spacing:-.03em; line-height:1.25}
+.hero-cta .big b{color:var(--green)}
+.hero-cta .sm{font-size:14px; color:var(--dim); max-width:440px; margin-top:6px}
+.acts{display:flex; gap:12px; flex-wrap:wrap}
+@media (max-width:720px){
+  .screen{aspect-ratio:auto; min-height:440px}
+  .scene{inset:48px 16px 92px; flex-direction:column-reverse; justify-content:center; gap:16px}
+  .say,.mock{flex:none; width:100%}
+  .say div{font-size:20px}
+  .subt{bottom:54px}
+}
+
+/* ---------- Sections common ---------- */
+section{position:relative; z-index:1}
+.sec{padding-block:clamp(56px,7vw,96px)}
+.head{display:grid; gap:24px; margin-bottom:clamp(36px,5vw,64px); max-width:1100px}
+.head h2{font-size:clamp(34px,4.2vw,58px); margin-top:14px}
+.head p{margin:0; color:var(--muted); font-size:clamp(17px,1.5vw,21px); line-height:1.5; max-width:52ch}
+.arrow-i{width:44px; height:44px; flex:none; border-radius:50%; display:grid; place-items:center; background:#EAF3DC; color:var(--green); transition:background .35s, transform .35s}
+.arrow-i svg{width:15px; height:15px}
+
+/* ---------- Product streams ---------- */
+.cards{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
+.card{display:flex; flex-direction:column; gap:14px; padding:28px 26px 26px; background:var(--surface); border-radius:18px; box-shadow:var(--ring); text-decoration:none; transition:background .35s, box-shadow .35s}
+.card .ico{width:48px; height:48px; border-radius:14px; display:grid; place-items:center; color:#fff; background:var(--teal); box-shadow:inset 0 -3px 0 rgba(0,0,0,.18)}
+.card .ico svg{width:24px; height:24px}
+.card h3{font-weight:800; font-size:23px; letter-spacing:-.03em}
+.card p{margin:0; color:var(--muted); font-size:15.5px}
+.card .foot{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:auto; padding-top:16px; border-top:1px solid var(--line)}
+.card .foot small{font:600 12px var(--f-body); letter-spacing:.04em; color:var(--olive)}
+.card:hover,.card:focus-visible{box-shadow:inset 0 0 0 1.5px var(--leaf), var(--lift)}
+.card:hover .ico{background:var(--leaf); color:var(--on-leaf)}
+.card:hover .arrow-i{background:var(--leaf); color:var(--on-leaf); transform:rotate(45deg)}
+@media (max-width:1080px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.cards{grid-template-columns:1fr}}
+
+/* ---------- Stats ---------- */
+.stats .grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); background:var(--teal); color:#F7F8F4; border-radius:26px; padding:clamp(28px,4vw,52px); box-shadow:var(--lift)}
+.stats .eyebrow{color:#B9DB85}
+.stats .eyebrow::before{background:var(--leaf)}
+.stat{display:flex; flex-direction:column; gap:10px; padding:4px clamp(16px,2.4vw,36px)}
+.stat:first-child{padding-left:0}
+.stat + .stat{border-left:1px solid rgba(247,248,244,.16)}
+.stat b{font-family:var(--f-display); font-weight:800; font-size:clamp(48px,6vw,84px); line-height:1; letter-spacing:-.045em; font-variant-numeric:tabular-nums}
+.stat p{margin:0; color:#C5D1CA; font-size:15.5px; max-width:24ch}
+@media (max-width:860px){.stats .grid{grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:36px} .stat:nth-child(3){padding-left:0; border-left:0}}
+@media (max-width:460px){.stat{padding:0} .stat + .stat{border:0} .stat b{font-size:44px}}
+
+/* ---------- Clients ---------- */
+.trust{overflow:hidden; padding-block:clamp(40px,5vw,72px)}
+.trust h2{font-size:clamp(28px,3vw,42px); margin:14px 0 36px}
+.marquee{display:flex; overflow:hidden; mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)}
+.track{display:flex; flex:none; gap:16px; padding:0 8px; margin:0; list-style:none; animation:scroll 40s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-100%)}}
+.client{flex:none; display:flex; align-items:center; justify-content:center; width:210px; height:96px; border-radius:16px; background:var(--surface); box-shadow:var(--ring); font-family:var(--f-display); font-size:22px; font-weight:800; letter-spacing:-.02em; color:var(--dim); transition:color .3s}
+.client:hover{color:var(--ink)}
+.client.alg{gap:10px; font-size:17px} .client.alg i{font:700 11px var(--f-body); font-style:normal; color:var(--on-leaf); background:var(--leaf); padding:3px 8px; border-radius:999px}
+@media (prefers-reduced-motion: reduce){.marquee{mask-image:none; -webkit-mask-image:none} .track{flex-wrap:wrap; justify-content:center} .track[aria-hidden]{display:none}}
+
+/* ---------- Countries ---------- */
+.ctry{display:grid; grid-template-columns:minmax(0,1fr); gap:clamp(24px,4vw,56px); align-items:start}
+.cgrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:10px}
+.cbtn{display:flex; align-items:center; gap:10px; padding:11px 14px; border-radius:14px; border:0; background:var(--surface); box-shadow:var(--ring); color:var(--ink); font:500 14.5px var(--f-body); text-align:left; cursor:default; transition:background .25s, box-shadow .25s}
+.cbtn i{font:700 11.5px var(--f-body); font-style:normal; color:var(--dim); width:24px; letter-spacing:.04em}
+.cbtn:hover{background:var(--surface-2)}
+.cbtn[aria-pressed="true"]{background:#F1F8E6; box-shadow:inset 0 0 0 1.5px var(--leaf)}
+.cbtn[aria-pressed="true"] i{color:var(--green)}
+.cpanel{position:sticky; top:96px; background:var(--surface); box-shadow:var(--ring), var(--lift); border-radius:24px; padding:clamp(22px,2.6vw,32px); display:flex; flex-direction:column; gap:16px}
+.cpanel .code{font:700 12.5px var(--f-body); letter-spacing:.14em; color:var(--olive)}
+.cpanel h3{font-size:clamp(30px,3vw,42px)}
+.cpanel > p{margin:0; color:var(--muted); font-size:15.5px}
+.streams{list-style:none; margin:0; padding:0; border-top:1px solid var(--line)}
+.streams li{display:flex; justify-content:space-between; gap:12px; padding:13px 0; border-bottom:1px solid var(--line); font-size:15px}
+.streams span{color:var(--muted); font-size:13.5px; text-align:right}
+.streams b{font-weight:600}
+@media (max-width:900px){.ctry{grid-template-columns:1fr} .cpanel{position:static}}
+
+/* ---------- Process ---------- */
+.steps{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:1px solid var(--line)}
+.steps div{padding:26px 26px 6px 0}
+.steps div + div{padding-left:26px; border-left:1px solid var(--line)}
+.steps i{font:700 12px var(--f-body); font-style:normal; color:var(--olive); letter-spacing:.14em; text-transform:uppercase}
+.steps b{display:block; font-family:var(--f-display); font-size:24px; font-weight:800; letter-spacing:-.03em; margin:10px 0 8px}
+.steps p{margin:0; color:var(--muted); font-size:15.5px}
+.steps .tag{display:inline-block; margin-top:14px; font:700 12px var(--f-body); color:var(--on-leaf); background:var(--leaf); border-radius:999px; padding:3px 10px}
+@media (max-width:760px){.steps{grid-template-columns:1fr} .steps div + div{padding-left:0; border-left:0; border-top:1px solid var(--line)}}
+
+/* ---------- EPRpilot ---------- */
+.pilot-top{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:clamp(24px,5vw,80px); align-items:end; margin-bottom:clamp(32px,4vw,52px)}
+.pilot-top h2{font-size:clamp(32px,3.6vw,52px); margin:14px 0 16px}
+.pilot-top p{color:var(--muted); margin:0 0 20px; max-width:52ch}
+.feat{list-style:none; margin:0 0 24px; padding:0; display:grid; gap:12px}
+.feat li{display:flex; gap:12px; align-items:flex-start; color:var(--muted)}
+.feat li b{color:var(--ink); font-weight:600}
+.feat svg{width:20px; height:20px; flex:none; margin-top:3px; color:var(--green)}
+@media (max-width:900px){.pilot-top{grid-template-columns:1fr}}
+.ap{--a-card:#FFFFFF; --a-ink:#13201A; --a-mut:#66716A; --a-line:#E1E6DA;
+  display:grid; grid-template-columns:240px minmax(0,1fr); gap:18px; padding:18px; border-radius:28px; background:var(--sage); color:var(--a-ink); box-shadow:var(--ring), var(--lift)}
+.ap-side{background:var(--teal); color:#E7EEE9; border-radius:22px; padding:20px 14px; display:flex; flex-direction:column; gap:4px; font-size:14px}
+.ap-brand{display:flex; align-items:center; gap:8px; padding:0 8px 16px; font-family:var(--f-display); font-weight:800; letter-spacing:-.03em; color:#fff}
+.ap-brand i{width:10px; height:10px; border-radius:3px; background:var(--leaf)}
+.ap-nav{padding:9px 12px; border-radius:12px; color:#B9C7C0; display:flex; justify-content:space-between; align-items:center}
+.ap-nav.on{background:rgba(255,255,255,.1); color:#fff; font-weight:600}
+.badge{font-size:11px; font-weight:700; min-width:20px; height:20px; display:inline-grid; place-items:center; border-radius:50%; background:var(--leaf); color:var(--on-leaf)}
+.ap-main{display:grid; gap:14px; align-content:start; min-width:0; padding:4px}
+.ap-hello{font-family:var(--f-display); font-size:clamp(24px,2.6vw,34px); font-weight:500; letter-spacing:-.03em; line-height:1.1}
+.ap-hello b{font-weight:800}
+.ap-date{color:var(--a-mut); font-size:14px}
+.ap-kpis{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px}
+.ap-kpis div{background:var(--a-card); border:1px solid var(--a-line); border-radius:18px; padding:14px 16px}
+.ap-kpis small{display:block; font-size:12.5px; color:var(--a-mut); font-weight:600}
+.ap-kpis b{font-family:var(--f-display); font-size:32px; font-weight:800; letter-spacing:-.02em; font-variant-numeric:tabular-nums}
+.ap-kpis span{display:block; font-size:12.5px; color:var(--a-mut)}
+.ap-card{background:var(--a-card); border:1px solid var(--a-line); border-radius:18px; padding:16px 18px; overflow-x:auto}
+.ap-card h4{margin:0 0 10px; font-family:var(--f-display); font-size:17px; font-weight:800; letter-spacing:-.01em}
+.ap-card table{width:100%; min-width:460px; border-collapse:collapse; font-size:13.5px}
+.ap-card th,.ap-card td{padding:9px 6px; text-align:left; border-top:1px solid var(--a-line)}
+.ap-card th{font-weight:600; color:var(--a-mut); font-size:12px; border-top:0}
+.st{display:inline-flex; align-items:center; gap:6px; font-weight:600; font-size:12.5px}
+.st i{width:8px; height:8px; border-radius:2px}
+.st.g i{background:var(--green)} .st.y i{background:#D9A23A} .st.n i{background:#B9C0B4}
+.ap-note{margin:14px 0 0; font-size:13px; color:var(--dim); text-align:center}
+@media (max-width:820px){.ap{grid-template-columns:1fr; padding:12px} .ap-side{display:none}}
+@media (max-width:520px){.ap-kpis{gap:8px} .ap-kpis div{padding:10px} .ap-kpis b{font-size:22px} .ap-kpis span{display:none}}
+
+/* ---------- Audiences + services ---------- */
+.aud{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-bottom:clamp(40px,5vw,64px)}
+.aud article{background:var(--surface); box-shadow:var(--ring); border-radius:20px; padding:24px; display:flex; flex-direction:column; gap:10px}
+.aud small{font:700 12px var(--f-body); letter-spacing:.12em; text-transform:uppercase; color:var(--olive)}
+.aud b{font-family:var(--f-display); font-size:21px; font-weight:800; letter-spacing:-.03em; line-height:1.2}
+.aud p{margin:0; color:var(--muted); font-size:15px}
+.aud .mk{display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; padding-top:8px}
+.aud .mk span{font:600 12px var(--f-body); padding:4px 10px; border-radius:999px; background:#EAF3DC; color:var(--olive)}
+@media (max-width:900px){.aud{grid-template-columns:1fr}}
+.svc{list-style:none; margin:0; padding:0; border-top:1px solid var(--line); display:grid; grid-template-columns:1fr 1fr; column-gap:clamp(24px,4vw,56px)}
+.svc li{display:grid; grid-template-columns:minmax(120px,200px) minmax(0,1fr); gap:20px; padding:18px 0; border-bottom:1px solid var(--line)}
+.svc b{font-family:var(--f-display); font-size:18px; font-weight:800; letter-spacing:-.02em; line-height:1.3}
+.svc span{color:var(--muted); font-size:15px}
+@media (max-width:900px){.svc{grid-template-columns:1fr}}
+@media (max-width:520px){.svc li{grid-template-columns:1fr; gap:4px}}
+
+/* ---------- FAQ ---------- */
+.faq .wrap{display:grid; grid-template-columns:minmax(0,4fr) minmax(0,7fr); gap:clamp(28px,6vw,96px)}
+.faq-head{align-self:start; position:sticky; top:96px; display:flex; flex-direction:column; align-items:flex-start; gap:14px}
+.faq-head h2{font-size:clamp(34px,4vw,56px)}
+.faq-head p{margin:0 0 8px; color:var(--muted); max-width:36ch}
+.faq-list{border-top:1px solid var(--line)}
+.qa{border-bottom:1px solid var(--line)}
+.qa summary{list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:22px 0; font-family:var(--f-display); font-size:clamp(18px,1.6vw,21px); font-weight:700; letter-spacing:-.02em; line-height:1.3}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary:hover{color:var(--green)}
+.pm{position:relative; flex:none; width:36px; height:36px; border-radius:50%; background:var(--leaf)}
+.pm::before,.pm::after{content:""; position:absolute; left:50%; top:50%; width:12px; height:1.8px; background:var(--on-leaf); translate:-50% -50%}
+.pm::after{rotate:90deg; transition:rotate .3s}
+.qa[open] .pm::after{rotate:0deg}
+.qa p{margin:0 0 24px; color:var(--muted); max-width:62ch; padding-right:56px}
+@media (max-width:860px){.faq .wrap{grid-template-columns:1fr} .faq-head{position:static} .qa p{padding-right:0}}
+
+/* ---------- Contact (deep teal card) ---------- */
+.contact .box{display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,6vw,96px); background:var(--teal); color:#F7F8F4; border-radius:28px; padding:clamp(28px,5vw,64px); box-shadow:var(--lift)}
+.contact .eyebrow{color:#B9DB85}
+.contact h2{font-size:clamp(36px,4.4vw,62px); margin:16px 0 22px}
+.contact h2 em{color:var(--leaf)}
+.contact p{color:#C5D1CA; max-width:44ch; margin:0 0 14px}
+.cdet{display:grid; gap:6px; margin-top:24px; font-size:15.5px; color:#C5D1CA}
+.cdet .sel{user-select:all; color:#fff; font-weight:600}
+form{display:grid; gap:16px}
+label{display:grid; gap:6px; font:600 12px var(--f-body); letter-spacing:.12em; text-transform:uppercase; color:#B9C7C0}
+input,select,textarea{font:inherit; font-family:var(--f-body); font-size:16px; text-transform:none; letter-spacing:0; color:#fff; background:transparent; border:0; border-bottom:1px solid rgba(247,248,244,.28); padding:10px 0; border-radius:0}
+input::placeholder{color:#8FA39A}
+select option{color:#13201A}
+input:focus,select:focus,textarea:focus{outline:none; border-bottom-color:var(--leaf)}
+textarea{min-height:96px; resize:vertical}
+.form-note{font-size:14px; color:#B9DB85; min-height:1.4em; margin:0}
+.contact :focus-visible{outline-color:var(--leaf)}
+@media (max-width:820px){.contact .box{grid-template-columns:1fr}}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--line); color:var(--dim); font-size:14.5px; margin-top:clamp(48px,6vw,80px)}
+footer a{color:var(--muted); text-decoration:none}
+footer a:hover{color:var(--green)}
+.foot-grid{display:grid; grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr)); gap:clamp(28px,4vw,56px); padding-block:clamp(56px,7vw,88px) 40px}
+.foot-brand img{height:34px; width:auto; display:block}
+.foot-brand p{margin:18px 0 24px; max-width:34ch}
+.foot-col{display:flex; flex-direction:column; gap:10px; font-style:normal; line-height:1.5}
+.foot-col h4{margin:0 0 6px; font:700 11.5px var(--f-body); letter-spacing:.14em; text-transform:uppercase; color:var(--olive)}
+.foot-col b{color:var(--ink); font-weight:600}
+.foot-bottom{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; padding-block:22px; border-top:1px solid var(--line); font-size:13px}
+@media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr} .foot-brand{grid-column:1/-1}}
+@media (max-width:520px){.foot-grid{grid-template-columns:1fr}}
+
+/* ---------- EPRpilot platform card ---------- */
+.pilot{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(28px,5vw,80px); align-items:center}
+.pilot h2{font-size:clamp(32px,3.6vw,52px); margin:14px 0 16px}
+.pilot > div > p{color:var(--muted); margin:0 0 22px; max-width:52ch}
+.pf-wrap{position:relative; padding-top:34px}
+.pf-mascot{position:absolute; top:-26px; left:-30px; width:96px; height:auto; z-index:2; filter:drop-shadow(0 10px 14px rgba(19,32,26,.18)); transform:rotate(-6deg)}
+.pf{position:relative; background:rgba(255,255,255,.75); border-radius:28px; padding:clamp(16px,2vw,24px); box-shadow:var(--ring), var(--lift)}
+.pf-top,.pf-two > div{background:var(--surface); border-radius:18px; box-shadow:var(--ring); padding:clamp(16px,2vw,22px)}
+.pf-h{display:flex; align-items:center; gap:14px; font:700 14.5px var(--f-body); letter-spacing:.06em; text-transform:uppercase}
+.pf-ico{width:44px; height:44px; flex:none; border-radius:12px; display:grid; place-items:center; background:var(--teal); color:#fff}
+.pf-ico svg{width:22px; height:22px}
+.pf-chips{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0}
+.pf-chips span{display:inline-flex; align-items:center; gap:7px; font-size:13.5px; padding:5px 12px; border-radius:999px; box-shadow:inset 0 0 0 1px var(--line)}
+.pf-chips span::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--leaf)}
+.pf-top p,.pf-two p{margin:0; color:var(--muted); font-size:15px}
+.pf-fork{display:block; width:100%; height:64px}
+.pf-fork path{fill:none; stroke:#A9C98A; stroke-width:2}
+.pf-fork circle{fill:var(--leaf)}
+.pf-two{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+.pf-two b{display:flex; align-items:center; gap:12px; font-family:var(--f-display); font-size:17px; font-weight:800; letter-spacing:-.02em; line-height:1.2; margin-bottom:10px}
+.pf-two b span{width:38px; height:38px; flex:none; border-radius:50%; display:grid; place-items:center; background:#EAF3DC; color:var(--teal)}
+.pf-two b svg{width:19px; height:19px}
+.pf-foot{margin:16px 0 2px; text-align:center; font-size:13.5px; color:var(--dim)}
+@media (max-width:900px){.pilot{grid-template-columns:1fr} .pf-mascot{left:-6px; width:90px}}
+@media (max-width:460px){.pf-two{grid-template-columns:1fr}}
+
+/* ---------- About ---------- */
+.about{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.05fr); gap:clamp(28px,6vw,96px); align-items:center}
+.about .pill{display:inline-flex; align-items:center; gap:9px; font:700 12.5px var(--f-body); letter-spacing:.14em; text-transform:uppercase; color:var(--green); background:#EAF3DC; padding:8px 16px; border-radius:999px}
+.about .pill svg{width:16px; height:16px}
+.about h2{font-size:clamp(34px,4.2vw,58px); margin:22px 0 22px}
+.about h2 i{font-style:normal; color:var(--leaf)}
+.about p{color:var(--muted); font-size:clamp(17px,1.4vw,19px); line-height:1.65; margin:0 0 30px; max-width:52ch}
+.photo-card{margin:0; background:var(--surface); border-radius:22px; overflow:hidden; box-shadow:var(--ring), var(--lift); transform:rotate(-1.8deg); transition:transform .5s ease}
+.photo-card:hover{transform:rotate(0)}
+.photo-card img{display:block; width:100%; height:auto; aspect-ratio:800/798; object-fit:cover}
+.photo-card figcaption{display:flex; align-items:center; gap:10px; padding:18px 24px; font-weight:500}
+.photo-card figcaption svg{width:18px; height:18px; color:var(--leaf)}
+@media (max-width:900px){.about{grid-template-columns:1fr} .photo-card{max-width:560px}}
+
+/* ---------- Challenges ---------- */
+.pains .head{margin-inline:auto; text-align:center; justify-items:center; max-width:900px}
+.pains .head p{max-width:62ch}
+.pain-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px}
+.pain-grid article{background:var(--surface); border-radius:22px; box-shadow:var(--ring), 0 18px 40px -28px rgba(19,32,26,.35); padding:clamp(22px,2.4vw,30px); display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px; transition:box-shadow .3s, transform .3s}
+.pain-grid article:hover{transform:translateY(-3px); box-shadow:inset 0 0 0 1.5px var(--leaf), var(--lift)}
+.pain-ico{width:56px; height:56px; border-radius:16px; display:grid; place-items:center; background:#EAF3DC; color:var(--teal); margin-bottom:6px}
+.pain-ico svg{width:28px; height:28px}
+.pain-grid h3{font-size:21px; letter-spacing:-.025em}
+.pain-grid p{margin:0; color:var(--muted); font-size:15.5px; max-width:34ch}
+@media (max-width:960px){.pain-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:580px){.pain-grid{grid-template-columns:1fr}}
+
+/* ---------- Product categories strip ---------- */
+.cats{padding-block:clamp(24px,3vw,40px) 0}
+.cat-row{display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); gap:12px; list-style:none; margin:0; padding:0}
+.cat-row li{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; min-height:116px; padding:16px 10px; text-align:center; background:rgba(255,255,255,.7); border-radius:16px; box-shadow:inset 0 0 0 1px var(--line); font-size:14.5px; font-weight:600; line-height:1.3; transition:background .25s, box-shadow .25s, transform .25s}
+.cat-row li:hover{background:var(--surface); box-shadow:inset 0 0 0 1.5px var(--leaf); transform:translateY(-2px)}
+.cat-row svg{width:28px; height:28px; color:var(--leaf)}
+@media (max-width:1080px){.cat-row{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:480px){.cat-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.cgroups{display:grid; gap:26px; min-width:0}
+.cgroup h4{margin:0 0 12px; font:700 12.5px var(--f-body); letter-spacing:.12em; text-transform:uppercase; color:var(--olive); display:flex; align-items:center; gap:10px}
+.cgroup h4 span{font:600 12px var(--f-body); letter-spacing:0; text-transform:none; color:var(--on-leaf); background:#EAF3DC; border-radius:999px; padding:2px 9px}
+.cbtn .fl{font-size:18px; line-height:1; width:24px; text-align:center; flex:none}
+.cgrid.world .cbtn{background:rgba(255,255,255,.6)}
+
+/* ---------- What is EPR ---------- */
+.what{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); gap:clamp(28px,5vw,72px); align-items:center}
+.what h2{font-size:clamp(34px,4.2vw,56px); margin:14px 0 20px}
+.what p{color:var(--muted); margin:0 0 14px; max-width:58ch}
+.what .btn{margin-top:14px} .what ul{list-style:none; margin:20px 0 28px; padding:0; display:grid; gap:10px}
+.what li{display:flex; gap:12px; align-items:center; font-weight:600}
+.what li svg{width:20px; height:20px; flex:none; color:var(--green)}
+.what-photo{position:relative; margin:0; border-radius:26px; overflow:hidden; box-shadow:var(--ring), var(--lift); aspect-ratio:4/3; max-width:100%}
+.what-photo img{width:100%; height:100%; object-fit:cover; object-position:60% 40%; display:block; transition:transform 1.2s ease}
+.what-photo:hover img{transform:scale(1.03)}
+.what-photo figcaption{position:absolute; left:16px; bottom:16px; display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:var(--ink); background:rgba(255,255,255,.88); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-radius:999px; padding:7px 14px}
+.what-photo figcaption i{width:8px; height:8px; border-radius:50%; background:var(--leaf)}
+@media (max-width:900px){.what{grid-template-columns:1fr}}
+
+/* ---------- Reviews ---------- */
+.reviews .rhead{text-align:center; display:grid; justify-items:center; gap:18px; margin-bottom:clamp(36px,5vw,56px)}
+.reviews h2{font-size:clamp(34px,4.2vw,56px)}
+.reviews h2 span{display:inline-flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:center}
+.reviews h2 .avs{display:inline-flex; gap:0}
+.avs i{width:52px; height:52px; border-radius:50%; overflow:hidden; display:grid; place-items:center; font:700 16px var(--f-body); font-style:normal; letter-spacing:0; color:#fff; border:3px solid var(--bg); margin-left:-12px}
+.avs i:first-child{margin-left:0} .avs img{width:100%; height:100%; object-fit:cover; display:block} .avs svg{width:100%; height:100%; display:block}
+.avs i:nth-child(1){background:var(--teal)} .avs i:nth-child(2){background:var(--olive)} .avs i:nth-child(3){background:var(--green)} .avs i:nth-child(4){background:var(--leaf); color:var(--on-leaf)}
+.reviews .rhead p{margin:0; color:var(--muted); max-width:62ch}
+.rgrid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px}
+.rcard{margin:0; background:var(--surface); border-radius:20px; box-shadow:inset 0 0 0 1px var(--line); padding:clamp(22px,2.4vw,32px); display:flex; flex-direction:column; gap:22px}
+.rq{width:48px; height:48px; border-radius:12px; display:grid; place-items:center; background:#EAF3DC; color:var(--leaf)}
+.rq svg{width:22px; height:22px}
+.rcard blockquote{margin:0; font-size:17px; line-height:1.65; color:var(--ink)}
+.rcard figcaption{margin-top:auto; display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:14px; color:var(--muted)}
+.stars{display:inline-flex; gap:2px; color:var(--leaf)} .stars svg{width:18px; height:18px}
+@media (max-width:900px){.rgrid{grid-template-columns:1fr}}
+.dd{position:relative; display:flex; align-items:center}
+.dd>a{display:inline-flex; align-items:center; gap:4px}
+.dd>a svg{width:12px; height:12px; transition:transform .2s}
+.dd:hover>a svg,.dd:focus-within>a svg{transform:rotate(180deg)}
+.dd-menu{position:absolute; top:100%; left:-16px; padding-top:12px; opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .18s, transform .18s, visibility .18s; z-index:50}
+.dd:hover .dd-menu,.dd:focus-within .dd-menu{opacity:1; visibility:visible; transform:none}
+.dd-menu div{min-width:290px; background:var(--surface); border-radius:16px; box-shadow:var(--ring), var(--lift); padding:8px; display:grid; gap:2px}
+.menu .dd-menu a{display:block; padding:10px 12px; border-radius:10px; color:var(--ink); font-weight:600}
+.menu .dd-menu a small{display:block; font-weight:400; font-size:12.5px; color:var(--dim); margin-top:2px}
+.menu .dd-menu a:hover{background:var(--surface-2)}
+@media (max-width:1020px){.menu .dd{display:none}}
+
+/* ---- modern layer ---- */
+.progress{position:fixed; inset:0 0 auto 0; height:3px; z-index:60; pointer-events:none}
+.progress i{display:block; height:100%; width:100%; transform-origin:0 50%; transform:scaleX(0); background:linear-gradient(90deg,var(--green),var(--leaf))}
+.nav .bar{transition:box-shadow .3s, background .3s}
+.nav.scrolled .bar{background:rgba(255,255,255,.94); box-shadow:0 0 0 1px rgba(19,32,26,.07), 0 12px 32px -14px rgba(19,32,26,.28)}
+html.rv-on .rv{opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); transition-delay:calc(var(--i,0) * 70ms)}
+html.rv-on .rv.in{opacity:1; transform:none}
+.spot{position:relative; isolation:isolate}
+.spot::after{content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; z-index:-1; opacity:0; transition:opacity .3s; background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%), rgba(127,189,40,.16), transparent 70%)}
+.spot:hover::after{opacity:1}
+.card,.pain-grid article,.rcard{transition:transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s, background .35s}
+.card:hover,.pain-grid article:hover,.rcard:hover{transform:translateY(-4px)}
+.ctools{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:22px}
+.csearch{position:relative; flex:1 1 240px; max-width:340px}
+.csearch svg{position:absolute; left:14px; top:50%; width:16px; height:16px; transform:translateY(-50%); color:var(--dim)}
+.csearch input{width:100%; font:500 15px var(--f-body); padding:12px 14px 12px 40px; border-radius:999px; border:0; background:var(--surface); box-shadow:var(--ring); color:var(--ink)}
+.csearch input:focus{outline:none; box-shadow:inset 0 0 0 1.5px var(--leaf), var(--ring)}
+.chips{display:flex; flex-wrap:wrap; gap:8px}
+.chip{font:600 13.5px var(--f-body); padding:9px 14px; border-radius:999px; border:0; cursor:pointer; background:var(--surface); color:var(--muted); box-shadow:var(--ring); transition:background .2s, color .2s, box-shadow .2s}
+.chip:hover{color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink); color:#fff; box-shadow:none}
+.ccount{margin-left:auto; font-size:13px; color:var(--dim)}
+.cbtn{transition:opacity .25s, transform .25s, background .2s}
+.cbtn.hit{box-shadow:inset 0 0 0 1.5px var(--leaf); background:#F1F8E6}
+.cempty{display:none; padding:24px; border-radius:16px; background:var(--surface); box-shadow:var(--ring); color:var(--muted)}
+/* calculator */
+.calc{display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:clamp(18px,3vw,36px); align-items:start}
+.calc-steps{display:grid; gap:18px}
+.cstep{background:var(--surface); border-radius:22px; box-shadow:var(--ring); padding:clamp(18px,2.4vw,28px)}
+.cstep h3{margin:0 0 14px; font:800 19px var(--f-display); letter-spacing:-.02em; display:flex; align-items:center; gap:10px}
+.cstep h3 b{display:grid; place-items:center; width:28px; height:28px; border-radius:50%; background:var(--sage); color:var(--olive); font:800 13px var(--f-body)}
+.opts{display:flex; flex-wrap:wrap; gap:8px}
+.opt{display:inline-flex; align-items:center; gap:8px; font:600 14px var(--f-body); padding:10px 14px; border-radius:14px; border:0; cursor:pointer; background:var(--bg); color:var(--ink); box-shadow:inset 0 0 0 1px var(--line); transition:background .2s, box-shadow .2s, transform .15s}
+.opt:hover{box-shadow:inset 0 0 0 1px var(--green)}
+.opt:active{transform:scale(.97)}
+.opt[aria-pressed="true"]{background:#F1F8E6; box-shadow:inset 0 0 0 1.5px var(--leaf)}
+.opt .fl{font-size:17px; line-height:1}
+.opt .ck{width:16px; height:16px; border-radius:5px; box-shadow:inset 0 0 0 1.5px var(--dim); display:grid; place-items:center; flex:none}
+.opt[aria-pressed="true"] .ck{background:var(--leaf); box-shadow:none}
+.opt[aria-pressed="true"] .ck::after{content:""; width:8px; height:4px; border:2px solid var(--on-leaf); border-top:0; border-right:0; transform:rotate(-45deg) translate(1px,-1px)}
+.calc-res{position:sticky; top:96px; background:var(--teal); color:#F7F8F4; border-radius:26px; padding:clamp(22px,3vw,34px); box-shadow:var(--lift); display:grid; gap:18px}
+.calc-res .eyebrow{color:#B9DB85}
+.big{display:flex; align-items:baseline; gap:12px}
+.big strong{font:800 clamp(56px,7vw,84px)/1 var(--f-display); letter-spacing:-.04em; font-variant-numeric:tabular-nums; color:#fff}
+.big span{font-size:15px; color:#CFE0D6; max-width:18ch; line-height:1.4}
+.rlist{display:grid; gap:8px; max-height:260px; overflow:auto; padding-right:4px; margin:0; list-style:none; padding-left:0}
+.rlist li{display:flex; justify-content:space-between; align-items:center; gap:10px; background:rgba(255,255,255,.07); border-radius:12px; padding:10px 12px; font-size:14px}
+.rlist li b{font-weight:600; display:flex; align-items:center; gap:8px}
+.rlist li small{display:flex; flex-wrap:wrap; gap:4px; justify-content:flex-end}
+.rlist li small i{font:600 11.5px var(--f-body); font-style:normal; background:rgba(127,189,40,.2); color:#D6EDB4; border-radius:999px; padding:3px 8px}
+.rlist li small i.ar{background:#F2C14E; color:#3A2A05}
+.rempty{color:#CFE0D6; font-size:14.5px; margin:0}
+.calc-res .note{font-size:12.5px; color:#A9C2B6; margin:0; line-height:1.5}
+.calc-res .btn[disabled]{opacity:.45; cursor:not-allowed}
+@media (max-width:900px){.calc{grid-template-columns:1fr} .calc-res{position:static}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arr" viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="next" viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="chk" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="currentColor" opacity=".16"/><path d="m6 10.2 2.6 2.6L14 7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<div class="progress" aria-hidden="true"><i></i></div>
+<header class="nav">
+  <div class="bar">
+    <a class="logo" href="#top" aria-label="Otoneso – strona główna"><img src="img/otoneso-logo.png" alt="otoneso" width="437" height="105"></a>
+    <nav class="menu" aria-label="Główna">
+      <a class="live" href="https://eprpilot.com/" target="_blank" rel="noopener"><span class="ldot"></span>EPRpilot</a>
+      <a href="#streams">Produkty</a>
+      <a href="#countries">Kraje</a>
+      <a href="#process">Jak działamy</a>
+      <div class="dd"><a href="#services" aria-haspopup="true">Usługi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a><div class="dd-menu"><div><a href="#services">Wszystkie usługi<small>EPR, BDO, KOBiZE, EUDR, GPSR</small></a><a href="wdrozenie-ppwr.html">Wdrożenie PPWR<small>Audyt, plan i dokumentacja opakowań</small></a></div></div></div>
+      <a href="o-nas.html">O nas</a>
+      <a href="partnerzy.html">Partnerzy</a>
+      <a href="#faq">FAQ</a>
+      <a class="lang" href="https://claude.ai/artifact/NSNK3Ar94LKPHBbnnwqPFF" target="_blank" rel="noopener" aria-label="English version">EN</a>
+      <a class="btn" href="#contact">Darmowa wycena <svg><use href="#arr"/></svg></a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="page-glow" aria-hidden="true"></div>
+
+<section class="hero" aria-labelledby="h-hero">
+  <span class="eyebrow"><span class="ldot"></span>Zgodność z EPR w całej Europie</span>
+  <h1 id="h-hero">Jeden partner od <em>EPR</em> w 27 krajach UE, Wielkiej Brytanii i Turcji</h1>
+  <p class="lead">Otoneso rejestruje Twoją firmę w krajowych systemach EPR, składa sprawozdania i działa jako Twój Autoryzowany Przedstawiciel. Opakowania, elektronika, baterie i plastik jednorazowy, dla producentów i sprzedawców online.</p>
+
+  <div class="player" id="demo">
+    <div class="screen">
+      <span class="scr-logo"><img src="img/otoneso-logo.png" alt=""></span>
+      <span class="scr-chap" id="pl-chap">Analiza</span>
+
+      <div class="scene on" data-sub="Mówisz nam, co i gdzie sprzedajesz. Bezpłatnie ustalamy Twoje obowiązki." data-name="Analiza"><div class="mock">
+        <div class="row"><span>Rynki</span><small>PL · DE · FR · ES</small></div>
+        <div class="row"><span>Produkty</span><small>słuchawki, kable, w kartonach</small></div>
+        <div class="row"><span>Kanały</span><small>własny sklep, Amazon, Allegro</small></div>
+        <div class="row hl"><b>Wykryte obowiązki EPR</b><b class="ok">9</b></div>
+      </div><div class="say"><span>01 · ANALIZA</span><div>Powiedz, co sprzedajesz. Wskażemy, <b>co Cię dotyczy</b>.</div></div></div>
+
+      <div class="scene" data-sub="Rejestrujemy Cię w systemie każdego kraju i przekazujemy numery, których wymagają marketplace’y." data-name="Rejestracja"><div class="mock">
+        <div class="row"><span><b>Niemcy</b> <small>opakowania · LUCID</small></span><span class="ok">✓ zarejestrowano</span></div>
+        <div class="row"><span><b>Niemcy</b> <small>WEEE</small></span><span class="ok">✓ zarejestrowano</span></div>
+        <div class="row"><span><b>Francja</b> <small>opakowania · UIN</small></span><span class="wait">w toku</span></div>
+        <div class="row hl"><span><b>Polska</b> <small>BDO</small></span><span class="ok">✓ numer nadany</span></div>
+      </div><div class="say"><span>02 · REJESTRACJA</span><div>Każdy rejestr, <b>jeden opiekun</b>.</div></div></div>
+
+      <div class="scene" data-sub="Sprawozdania miesięczne, kwartalne i roczne wysyłamy na czas, w każdym kraju." data-name="Sprawozdania"><div class="mock">
+        <div class="pchips"><span class="pchip"><i></i>DE III kw.</span><span class="pchip"><i></i>AT III kw.</span><span class="pchip"><i class="w"></i>FR 2026</span><span class="pchip"><i class="w"></i>PL BDO</span></div>
+        <div class="row"><span>Zadeklarowane opakowania</span><small>18 240 kg</small></div>
+        <div class="meter"><i style="width:72%"></i></div>
+        <div class="row hl"><span>Roczne sprawozdanie BDO</span><span class="wait">do 15 marca</span></div>
+      </div><div class="say"><span>03 · SPRAWOZDANIA</span><div>Terminy w 29 krajach. <b>Pilnujemy ich.</b></div></div></div>
+
+      <div class="scene" data-sub="EPRpilot pokazuje status każdego rynku i obowiązku w jednym panelu." data-name="EPRpilot"><div class="mock">
+        <div class="row"><span>Aktywne rynki</span><b>7</b></div>
+        <div class="row"><span>Ważne rejestracje</span><span class="ok">14 / 14</span></div>
+        <div class="row"><span>Gotowość na PPWR</span><small>3 zadania otwarte</small></div>
+        <div class="row hl"><span>Najbliższe sprawozdanie</span><span class="wait">AT · za 6 dni</span></div>
+      </div><div class="say"><span>04 · EPRPILOT</span><div>Wszystkie rynki <b>na jednym ekranie</b>.</div></div></div>
+
+      <div class="scene" data-sub="Ty sprzedajesz w całej Europie. Otoneso pilnuje Twojego EPR." data-name="Ty" style="flex-direction:column; text-align:center; gap:18px"><div class="say" style="align-items:center; flex:none; max-width:80%"><span>05 · TY</span><div style="font-size:clamp(22px,3.4vw,44px)">Ty sprzedajesz w Europie. <b>EPR bierzemy na siebie.</b></div></div><a class="big-cta" href="#contact">Bezpłatna wycena →</a></div>
+
+      <div class="subt" id="pl-sub">Mówisz nam, co i gdzie sprzedajesz. Bezpłatnie ustalamy Twoje obowiązki.</div>
+      <div class="ctrl">
+        <button type="button" class="pp" id="pl-pp" aria-label="Pauza"></button>
+        <time id="pl-time">0:00 / 0:30</time>
+        <div class="chaps" id="pl-chaps">
+          <button type="button" aria-label="Rozdział 1: Analiza"><span><i></i></span></button>
+          <button type="button" aria-label="Rozdział 2: Rejestracja"><span><i></i></span></button>
+          <button type="button" aria-label="Rozdział 3: Sprawozdania"><span><i></i></span></button>
+          <button type="button" aria-label="Rozdział 4: EPRpilot"><span><i></i></span></button>
+          <button type="button" aria-label="Rozdział 5: Ty"><span><i></i></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="player-note">Jak działamy, w 30 sekund. Kliknij pasek, żeby przejść do rozdziału. Dane w demo są przykładowe.</p>
+
+  <div class="hero-cta">
+    <div><p class="big">EPR to <b>nasza</b> działka.<br>Sprzedaż jest Twoja.</p><p class="sm">Rejestracja, sprawozdawczość i Autoryzowany Przedstawiciel, z bezpłatną analizą Twoich obowiązków na start.</p></div>
+    <div class="acts"><a class="btn" href="#contact">Bezpłatna wycena <svg><use href="#next"/></svg></a><a class="btn btn-ghost" href="#countries">Zobacz kraje</a></div>
+  </div>
+</section>
+
+<section class="cats" aria-label="Kategorie produktów objęte EPR">
+  <div class="wrap">
+    <ul class="cat-row">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg>Opakowania</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>WEEE</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="16" height="9" rx="2"/><path d="M22 11v3"/></svg>Baterie</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3c-.5 1.5-2 2.5-4 2.5S8.5 4.5 8 3z"/></svg>Tekstylia</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6v13M21 12v7M3 15h18M3 12h18M7 12V9h5v3"/></svg>Meble</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1.5 13h-9z"/><path d="M12 8 14 3h3"/><path d="M6.5 12h11"/></svg>Plastik jednorazowy</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6.5 6.5 11 11M4 9l5-5M15 20l5-5M2.5 10.5l2 2M11.5 1.5l2 2M10.5 20.5l2 2M19.5 11.5l2 2M7 11l4-4M13 17l4-4"/></svg>Artykuły sportowe</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h4v3a2 2 0 1 0 0 4v3h3a2 2 0 1 1 4 0v0h1v8h-8v-1a2 2 0 1 0-4 0v1H5v-8h1a2 2 0 1 0 0-4H5V3z"/></svg>Zabawki</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec pains" id="challenges" aria-label="Wyzwania EPR">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">Wyzwania</span><h2>Regulacje UE zmieniają się szybciej niż kiedykolwiek. <em>Pomagamy Ci za nimi nadążyć</em></h2></div>
+      <p>EPR działa w każdym kraju inaczej: osobne rejestry, metodologie, terminy i sankcje. Bez uporządkowanego systemu zgodność staje się ryzykiem, którego nie widać, dopóki nie przyjdzie kontrola.</p>
+    </div>
+    <div class="pain-grid">
+      <article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></svg></span><h3>Każdy kraj, inne zasady</h3><p>29 rynków to osobne rejestry, formularze i terminy dla opakowań, WEEE i baterii.</p></article>
+      <article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v2"/></svg></span><h3>Zablokowane oferty</h3><p>Amazon i inne marketplace’y weryfikują numery EPR. Bez numeru sprzedaż w danym kraju staje.</p></article>
+      <article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></svg></span><h3>Kary i opłaty wstecz</h3><p>Brak rejestracji lub błędne sprawozdanie może oznaczać karę i dopłatę zaległych opłat za kilka lat.</p></article>
+      <article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M12 4v16"/></svg></span><h3>Excel się nie skaluje</h3><p>Wagi, materiały i ilości w osobnym arkuszu dla każdego kraju to prosta droga do błędu w sprawozdaniu.</p></article>
+      <article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg></span><h3>PPWR zmienia zasady gry</h3><p>Od 12 sierpnia 2026 r. stosuje się PPWR. Recykling, oznakowanie i puste przestrzenie w paczkach wchodzą etapami.</p></article>
+      <article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/><path d="m17 3 4 4M21 3l-4 4"/></svg></span><h3>EPR na głowie jednej osoby</h3><p>Urlop, choroba albo odejście z firmy i nikt nie wie, co i kiedy trzeba złożyć. To nie strategia, to ryzyko.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="what-is-epr" aria-labelledby="h-what">
+  <div class="wrap what">
+    <div>
+      <span class="eyebrow">EPR w skrócie</span>
+      <h2 id="h-what">Czym właściwie jest <em>EPR</em>?</h2>
+      <p>Rozszerzona odpowiedzialność producenta (EPR) to zasada polityki środowiskowej UE. Firma, która wprowadza na rynek opakowania i niektóre produkty, odpowiada za ich zbiórkę i recykling.</p>
+      <p>W zależności od kraju i modelu sprzedaży obowiązek może dotyczyć producenta, sprzedawcy albo innego podmiotu, który jako pierwszy wprowadza towar na rynek. W praktyce oznacza to zwykle: rejestrację, zgłaszanie ilości, opłaty i spełnienie obowiązków osobno w każdym kraju.</p>
+      <a class="btn" href="#contact">Sprawdź, co Cię dotyczy <svg><use href="#next"/></svg></a>
+    </div>
+    <figure class="what-photo">
+      <img src="img/booth.jpg" alt="Zespół Otoneso na stoisku targowym, Justyna i Michał uśmiechają się, Michał pokazuje kciuk w górę" width="1400" height="933" loading="lazy">
+      <figcaption><i></i>Zespół Otoneso na targach</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="streams" aria-labelledby="h-streams">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">Strumienie produktów</span><h2 id="h-streams">Cokolwiek wprowadzasz na rynek, <em>zarejestrujemy to</em></h2></div>
+      <p>Każdy kraj UE ma osobny system EPR dla każdego strumienia produktów. Obsługujemy wszystkie cztery, które dotyczą sprzedawców online.</p>
+    </div>
+    <div class="cards">
+      <a class="card" href="wdrozenie-ppwr.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg></span><h3>Opakowania i PPWR</h3><p>Kartony wysyłkowe, opakowania produktów i wypełniacze. Rejestracja EPR, sprawozdania oraz audyt i wdrożenie PPWR.</p><div class="foot"><small>PPWR · LUCID · BDO</small><span class="arrow-i"><svg><use href="#arr"/></svg></span></div></a>
+      <a class="card" href="#contact"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="3" width="16" height="12" rx="2"/><path d="M8 21h8M12 15v6"/></svg></span><h3>Elektronika (WEEE)</h3><p>Sprzęt elektryczny i elektroniczny, od kabli i ładowarek po AGD.</p><div class="foot"><small>WEEE</small><span class="arrow-i"><svg><use href="#arr"/></svg></span></div></a>
+      <a class="card" href="#contact"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 10v4M8 12h4M10 10v4"/></svg></span><h3>Baterie</h3><p>Baterie przenośne i wbudowane w produkty. Rejestracja i raporty ilościowe na każdym rynku.</p><div class="foot"><small>Rozporządzenie bateryjne</small><span class="arrow-i"><svg><use href="#arr"/></svg></span></div></a>
+      <a class="card" href="#contact"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M7 3h10l-1.5 18h-7z"/><path d="M6 7h12"/></svg></span><h3>Plastik jednorazowy</h3><p>Kubki, sztućce, chusteczki nawilżane i inne produkty objęte dyrektywą SUP.</p><div class="foot"><small>Dyrektywa SUP</small><span class="arrow-i"><svg><use href="#arr"/></svg></span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="stats" aria-label="Otoneso w liczbach">
+  <div class="wrap">
+    <div class="grid">
+      <div class="stat"><span class="eyebrow">Klienci</span><b>1k+</b><p>firm powierza nam swoje EPR i BDO</p></div>
+      <div class="stat"><span class="eyebrow">Kraje</span><b>29</b><p>rynków: 27 krajów UE, Wielka Brytania i Turcja</p></div>
+      <div class="stat"><span class="eyebrow">Strumienie</span><b>4</b><p>opakowania, WEEE, baterie i plastik jednorazowy</p></div>
+      <div class="stat"><span class="eyebrow">Analiza</span><b>0 zł</b><p>za pierwszą analizę Twoich obowiązków EPR</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="trust" aria-labelledby="h-trust">
+  <div class="wrap">
+    <span class="eyebrow">Zaufali nam</span>
+    <h2 id="h-trust">Firmy, które z nami współpracują</h2>
+  </div>
+  <div class="marquee">
+    <ul class="track"><li class="client">Almus</li><li class="client">Bidfood</li><li class="client">ENDORFY</li><li class="client">Salt</li><li class="client">Venezia</li><li class="client alg">Allegro <i>partner</i></li></ul>
+    <ul class="track" aria-hidden="true"><li class="client">Almus</li><li class="client">Bidfood</li><li class="client">ENDORFY</li><li class="client">Salt</li><li class="client">Venezia</li><li class="client alg">Allegro <i>partner</i></li></ul>
+  </div>
+</section>
+
+<section class="sec reviews" id="reviews" aria-label="Opinie klientów">
+  <div class="wrap">
+    <div class="rhead">
+      <h2>Co mówią o nas<br><span><span class="avs" aria-hidden="true"><i><img src="img/av1.jpg" alt="" width="52" height="52" loading="lazy"></i><i><img src="img/av2.jpg" alt="" width="52" height="52" loading="lazy"></i><i><img src="img/av3.jpg" alt="" width="52" height="52" loading="lazy"></i><i><img src="img/av4.jpg" alt="" width="52" height="52" loading="lazy"></i></span>nasi klienci</span></h2>
+      <p>Wierzymy, że zdrowe relacje i uczciwa współpraca to najlepsza reklama. Zobacz, co klienci mówią o pracy z Otoneso.</p>
+    </div>
+    <div class="rgrid">
+      <figure class="rcard"><span class="rq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 6c-2 1-3 3-3 6v6h5v-5H7M18 6c-2 1-3 3-3 6v6h5v-5h-3"/></svg></span><blockquote>W ramach umowy Otoneso przejmuje obowiązki i urzędowe terminy w BDO. To ogromna ulga dla mnie jako przedsiębiorcy.</blockquote><figcaption>Marek R.<span class="stars" role="img" aria-label="5 na 5 gwiazdek"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m10 1.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m10 1.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m10 1.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m10 1.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m10 1.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg></span></figcaption></figure>
+      <figure class="rcard"><span class="rq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 6c-2 1-3 3-3 6v6h5v-5H7M18 6c-2 1-3 3-3 6v6h5v-5h-3"/></svg></span><blockquote>Wszystko załatwiłam online. Do tego nie muszę już sama liczyć opłaty produktowej ani pilnować terminów BDO.</blockquote><figcaption>Anna K.<span class="stars" role="img" aria-label="5 na 5 gwiazdek"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m10 1.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m10 1.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m10 1.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m10 1.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m10 1.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg></span></figcaption></figure>
+      <figure class="rcard"><span class="rq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 6c-2 1-3 3-3 6v6h5v-5H7M18 6c-2 1-3 3-3 6v6h5v-5h-3"/></svg></span><blockquote>Jeden partner dla wszystkich naszych rynków. Rejestracje, sprawozdania i terminy wreszcie są pod kontrolą.</blockquote><figcaption>Tomasz W.<span class="stars" role="img" aria-label="5 na 5 gwiazdek"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m10 1.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m10 1.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m10 1.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m10 1.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="m10 1.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg></span></figcaption></figure>
+    </div>
+  <p class="rv-note" style="margin:18px 0 0; font-size:12.5px; color:var(--dim)">Zdjęcia w nagłówku są poglądowe.</p>
+</div>
+</section>
+
+<section class="sec" id="countries" aria-labelledby="h-countries">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">Kraje</span><h2 id="h-countries">27 rynków UE, Wielka Brytania i Turcja. <em>Jeden</em> opiekun.</h2></div>
+      <p>Prowadzimy rejestracje i sprawozdania w każdym kraju UE, w Wielkiej Brytanii i Turcji, a także EPR poza Europą i w stanach USA. Marketplace’y takie jak Amazon coraz częściej wymagają lokalnych numerów EPR, zanim pozwolą wystawić ofertę.</p>
+    </div>
+    <div class="ctry">
+      <div class="cgroups" id="cgroups"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="calculator" aria-labelledby="h-calc">
+  <div class="wrap">
+    <div class="head"><div><span class="eyebrow">Kalkulator</span><h2 id="h-calc">Sprawdź, ile <em>rejestracji</em> potrzebujesz</h2></div><p>Zaznacz, co sprzedajesz i dokąd. Zobaczysz od razu, ile systemów EPR może Cię dotyczyć. Dokładną listę i wycenę przygotujemy bezpłatnie.</p></div>
+    <div class="calc">
+      <div class="calc-steps">
+        <div class="cstep"><h3><b>1</b>Co sprzedajesz?</h3><div class="opts" id="calc-s"><button type="button" class="opt" data-s="pack" aria-pressed="true"><span class="ck"></span>Opakowania</button><button type="button" class="opt" data-s="weee" aria-pressed="false"><span class="ck"></span>Elektronika (WEEE)</button><button type="button" class="opt" data-s="bat" aria-pressed="false"><span class="ck"></span>Baterie</button><button type="button" class="opt" data-s="sup" aria-pressed="false"><span class="ck"></span>Plastik jednorazowy</button></div></div>
+        <div class="cstep"><h3><b>2</b>Dokąd wysyłasz?</h3><div class="opts" id="calc-c"><button type="button" class="opt" data-c="PL" data-n="Polska" aria-pressed="true"><span class="fl" aria-hidden="true">🇵🇱</span>Polska</button><button type="button" class="opt" data-c="DE" data-n="Niemcy" aria-pressed="true"><span class="fl" aria-hidden="true">🇩🇪</span>Niemcy</button><button type="button" class="opt" data-c="FR" data-n="Francja" aria-pressed="false"><span class="fl" aria-hidden="true">🇫🇷</span>Francja</button><button type="button" class="opt" data-c="IT" data-n="Włochy" aria-pressed="false"><span class="fl" aria-hidden="true">🇮🇹</span>Włochy</button><button type="button" class="opt" data-c="ES" data-n="Hiszpania" aria-pressed="false"><span class="fl" aria-hidden="true">🇪🇸</span>Hiszpania</button><button type="button" class="opt" data-c="NL" data-n="Holandia" aria-pressed="false"><span class="fl" aria-hidden="true">🇳🇱</span>Holandia</button><button type="button" class="opt" data-c="AT" data-n="Austria" aria-pressed="false"><span class="fl" aria-hidden="true">🇦🇹</span>Austria</button><button type="button" class="opt" data-c="BE" data-n="Belgia" aria-pressed="false"><span class="fl" aria-hidden="true">🇧🇪</span>Belgia</button><button type="button" class="opt" data-c="CZ" data-n="Czechy" aria-pressed="false"><span class="fl" aria-hidden="true">🇨🇿</span>Czechy</button><button type="button" class="opt" data-c="SE" data-n="Szwecja" aria-pressed="false"><span class="fl" aria-hidden="true">🇸🇪</span>Szwecja</button><button type="button" class="opt" data-c="SK" data-n="Słowacja" aria-pressed="false"><span class="fl" aria-hidden="true">🇸🇰</span>Słowacja</button><button type="button" class="opt" data-c="HU" data-n="Węgry" aria-pressed="false"><span class="fl" aria-hidden="true">🇭🇺</span>Węgry</button><button type="button" class="opt" data-c="RO" data-n="Rumunia" aria-pressed="false"><span class="fl" aria-hidden="true">🇷🇴</span>Rumunia</button><button type="button" class="opt" data-c="PT" data-n="Portugalia" aria-pressed="false"><span class="fl" aria-hidden="true">🇵🇹</span>Portugalia</button><button type="button" class="opt" data-c="IE" data-n="Irlandia" aria-pressed="false"><span class="fl" aria-hidden="true">🇮🇪</span>Irlandia</button><button type="button" class="opt" data-c="DK" data-n="Dania" aria-pressed="false"><span class="fl" aria-hidden="true">🇩🇰</span>Dania</button><button type="button" class="opt" data-c="GB" data-n="Wielka Brytania" aria-pressed="false"><span class="fl" aria-hidden="true">🇬🇧</span>Wielka Brytania</button><button type="button" class="opt" data-c="TR" data-n="Turcja" aria-pressed="false"><span class="fl" aria-hidden="true">🇹🇷</span>Turcja</button></div><p style="margin:14px 0 0"><button type="button" class="chip" id="calc-all">Zaznacz wszystkie</button></p></div>
+      </div>
+      <div class="calc-res" aria-live="polite">
+        <span class="eyebrow">Twój wynik</span>
+        <div class="big"><strong id="calc-n">0</strong><span>rejestracji EPR do sprawdzenia</span></div>
+        <ul class="rlist" id="calc-list"></ul>
+        <p class="note">Wynik orientacyjny: każdy kraj ma osobny system EPR dla każdego strumienia. Czy rejestracja jest wymagana, zależy od Twojej roli i ilości.</p>
+        <a class="btn" href="#contact" id="calc-cta">Wyślij do bezpłatnej wyceny <svg><use href="#arr"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="process" aria-labelledby="h-proc">
+  <div class="wrap">
+    <span class="eyebrow">Jak działamy</span>
+    <h2 id="h-proc" style="font-size:clamp(32px,3.6vw,50px); margin:14px 0 44px; max-width:20ch">Trzy kroki od pytań do <em>zgodności</em></h2>
+    <div class="steps">
+      <div><i>Krok 1</i><b>Analiza obowiązków</b><p>Sprawdzamy, które produkty, opakowania i rynki oznaczają dla Twojej firmy obowiązki EPR i ile to będzie kosztować.</p><span class="tag">Bezpłatna konsultacja</span></div>
+      <div><i>Krok 2</i><b>Rejestracja</b><p>Rejestrujemy Cię w krajowych systemach EPR, zawieramy umowy z organizacjami odzysku i przekazujemy wszystkie numery.</p></div>
+      <div><i>Krok 3</i><b>Sprawozdawczość</b><p>Składamy sprawozdania miesięczne, kwartalne i roczne w każdym kraju i dbamy o aktualność rejestracji.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="eprpilot" aria-labelledby="h-pilot">
+  <div class="wrap pilot">
+    <div>
+      <span class="eyebrow">Platforma EPRpilot</span>
+      <h2 id="h-pilot">Jedna platforma do <em>EPR i PPWR</em></h2>
+      <p>EPRpilot zbiera Twoje dane, wylicza obowiązki, pilnuje terminów i generuje sprawozdania dla każdego kraju: opakowania, WEEE, baterie i ekopodatki.</p>
+      <ul class="feat">
+        <li><svg><use href="#chk"/></svg><span><b>27 rynków UE oraz Wielka Brytania i Turcja.</b> Każda rejestracja i sprawozdanie w jednym panelu.</span></li>
+        <li><svg><use href="#chk"/></svg><span><b>Opakowania opisujesz raz.</b> Te same dane trafiają do sprawozdań EPR i deklaracji PPWR.</span></li>
+        <li><svg><use href="#chk"/></svg><span><b>Tworzona przez ekspertów EPR.</b> Ten sam zespół, który prowadzi Twoje rejestracje.</span></li>
+      </ul>
+      <div class="acts"><a class="btn" href="https://eprpilot.com/" target="_blank" rel="noopener">Otwórz eprpilot.com <svg><use href="#arr"/></svg></a></div>
+    </div>
+    <div class="pf-wrap">
+      <img class="pf-mascot" src="img/mascot.png" alt="" width="177" height="162">
+      <div class="pf" role="img" aria-label="EPRpilot: jedna platforma do sprawozdań EPR i deklaracji PPWR">
+        <div class="pf-top">
+          <div class="pf-h"><span class="pf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg></span>Jedna platforma · EPR i PPWR</div>
+          <div class="pf-chips"><span>Materiały</span><span>Wagi</span><span>Recykling A/B/C</span></div>
+          <p>Ustawiasz raz, z jasną listą zadań i tylko potrzebnymi danymi. Gdy czegoś brakuje, EPRpilot pyta.</p>
+        </div>
+        <svg class="pf-fork" viewBox="0 0 400 64" preserveAspectRatio="none" aria-hidden="true"><path d="M200 0v26c0 8-6 10-14 11L100 52M200 26c0 8 6 10 14 11l86 15"/><circle cx="100" cy="54" r="5"/><circle cx="300" cy="54" r="5"/></svg>
+        <div class="pf-two">
+          <div><b><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span>Sprawozdania EPR</b><p>Przypisane do zasad, progów i opłat każdego kraju.</p></div>
+          <div><b><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>Deklaracja PPWR</b><p>Klasa recyklingu, dokumentacja techniczna i deklaracja zgodności.</p></div>
+        </div>
+        <p class="pf-foot">Jedno źródło danych: opisujesz opakowanie raz, oba obowiązki są załatwione.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="about" aria-labelledby="h-about">
+  <div class="wrap about">
+    <div>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Tworzone przez specjalistów EPR</span>
+      <h2 id="h-about">Ludzie, którzy tworzą Otoneso<i>.</i></h2>
+      <p>Otoneso to niewielki zespół praktyków EPR z doświadczeniem w e-commerce, prawie ochrony środowiska i compliance. Znamy rejestry, terminy i pułapki, bo mamy z nimi do czynienia na co dzień.</p>
+      <a class="btn btn-ghost" href="https://otoneso.pl/" target="_blank" rel="noopener">Więcej o nas <svg><use href="#next"/></svg></a>
+    </div>
+    <figure class="photo-card">
+      <img src="img/team.jpg" alt="Zespół Otoneso, kilkanaście osób w zielonych bluzach Otoneso, robi wspólne selfie na trawniku" width="800" height="798" loading="lazy">
+      <figcaption><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Zespół Otoneso</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="services" aria-labelledby="h-svc">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">Dla kogo jesteśmy</span><h2 id="h-svc">Dla firm, które <em>wysyłają</em> za granicę</h2></div>
+    </div>
+    <div class="aud">
+      <article><small>Sprzedawcy e-commerce</small><b>Marketplace’y i sklepy internetowe</b><p>Marketplace’y coraz częściej wymagają numerów EPR lub lokalnych rejestracji. Załatwiamy je, zanim Twoje oferty zostaną zablokowane.</p><div class="mk"><span>Amazon</span><span>eBay</span><span>Allegro</span><span>Zalando</span></div></article>
+      <article><small>Producenci</small><b>Marki wprowadzające towary na rynek UE</b><p>Produkujesz towary lub opakowania. Rejestrujemy Cię jako producenta w każdym kraju i raportujemy Twoje ilości.</p></article>
+      <article><small>Importerzy i eksporterzy</small><b>Handel do i z UE</b><p>Sprzedajesz w Europie bez lokalnej spółki? Działamy jako Twój Autoryzowany Przedstawiciel tam, gdzie wymaga tego prawo.</p></article>
+    </div>
+    <ul class="svc">
+      <li><b>Rejestracja EPR</b><span>Rejestracja i aktualizacje w krajowych systemach EPR dla opakowań, WEEE, baterii i SUP.</span></li>
+      <li><b>Sprawozdawczość EPR</b><span>Deklaracje miesięczne, kwartalne i roczne oraz audyty na każdym rynku.</span></li>
+      <li><b>Autoryzowany Przedstawiciel</b><span>Reprezentacja w Polsce i innych krajach dla firm bez lokalnego oddziału.</span></li>
+      <li><b>BDO</b><span>Wpis do rejestru BDO, roczne sprawozdania BDO i rozliczenie opłaty produktowej.</span></li>
+      <li><b>PPWR</b><span>Audyt opakowań pod kątem nowego rozporządzenia UE i plan wdrożenia. <a href="wdrozenie-ppwr.html">Więcej o PPWR</a></span></li>
+      <li><b>KOBiZE</b><span>Rejestracja i roczne raporty emisji w bazie KOBiZE.</span></li>
+      <li><b>EUDR</b><span>Weryfikacja zgodności z rozporządzeniem o wylesianiu dla drewna, papieru, kawy, kakao i innych objętych towarów.</span></li>
+      <li><b>GPSR</b><span>Wymogi bezpieczeństwa produktów i osoba odpowiedzialna dla towarów sprzedawanych w UE.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec faq" id="faq" aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="faq-head">
+      <span class="eyebrow">FAQ</span>
+      <h2 id="h-faq">Najczęstsze pytania</h2>
+      <p>Nie ma tu Twojego pytania? Napisz do nas, odpowiemy w ciągu jednego dnia roboczego.</p>
+      <a class="btn" href="#contact">Zadaj pytanie</a>
+    </div>
+    <div class="faq-list">
+      <details class="qa"><summary>Czym jest EPR i czy mnie dotyczy?<span class="pm" aria-hidden="true"></span></summary><p>Rozszerzona odpowiedzialność producenta (EPR) oznacza, że firma, która jako pierwsza wprowadza produkt lub opakowanie na rynek danego kraju, finansuje jego zbiórkę i recykling. Jeśli sprzedajesz konsumentom w innym kraju UE, zwykle jesteś tam producentem, nawet gdy wysyłasz z Polski.</p></details>
+      <details class="qa"><summary>Sprzedaję do Niemiec. Czy muszę się tam rejestrować?<span class="pm" aria-hidden="true"></span></summary><p>Najczęściej tak. Opakowania trafiające do niemieckich konsumentów wymagają rejestracji w LUCID i umowy z systemem dualnym, a elektronika rejestracji WEEE. Marketplace’y sprawdzają te numery i mogą zablokować oferty bez nich.</p></details>
+      <details class="qa"><summary>Czy potrzebuję Autoryzowanego Przedstawiciela?<span class="pm" aria-hidden="true"></span></summary><p>Niektóre kraje, m.in. Niemcy w przypadku WEEE, wymagają lokalnego Autoryzowanego Przedstawiciela, jeśli nie masz tam spółki. Świadczymy tę usługę w Polsce i na innych rynkach.</p></details>
+      <details class="qa"><summary>Co PPWR zmienia dla sprzedawców online?<span class="pm" aria-hidden="true"></span></summary><p>Rozporządzenie opakowaniowe PPWR stosuje się od 12 sierpnia 2026 r., a kolejne wymagania wchodzą etapami w następnych latach. Dla e-commerce najważniejsze są recyklingowalność, oznakowanie opakowań i limity pustej przestrzeni w paczkach.</p></details>
+      <details class="qa"><summary>Ile to kosztuje?<span class="pm" aria-hidden="true"></span></summary><p>To zależy od liczby krajów, strumieni produktów i ilości. Pierwsza analiza obowiązków jest bezpłatna, a po niej dostajesz konkretną wycenę.</p></details>
+      <details class="qa"><summary>Czy mogę zacząć od jednego kraju?<span class="pm" aria-hidden="true"></span></summary><p>Tak. Wielu klientów zaczyna od Niemiec lub Polski i dokłada rynki wraz z rozwojem. Wszystko zostaje u jednego opiekuna i w jednym koncie EPRpilot.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="h-contact">
+  <div class="wrap">
+    <div class="box">
+      <div>
+        <span class="eyebrow">Kontakt</span>
+        <h2 id="h-contact">Odbierz <em>bezpłatną</em> wycenę EPR</h2>
+        <p>Napisz, co sprzedajesz i w jakich krajach. W ciągu jednego dnia roboczego wrócimy z listą obowiązków i wyceną.</p>
+        <div class="cdet">
+          <span class="sel">info@otoneso.pl</span>
+          <span class="sel">+48 459 596 793</span>
+          <span>VIAREGIA.ONLINE Sp. z o.o. · ul. Złota 7 lok. 28, 00-019 Warszawa</span>
+        </div>
+      </div>
+      <form id="contact-form" novalidate>
+        <label for="f-name">Imię i nazwisko<input id="f-name" name="name" autocomplete="name" required></label>
+        <label for="f-mail">E-mail<input id="f-mail" name="email" type="email" autocomplete="email" required></label>
+        <label for="f-stream">Strumień produktów
+          <select id="f-stream" name="stream">
+            <option>Opakowania i PPWR</option>
+            <option>Elektronika (WEEE)</option>
+            <option>Baterie</option>
+            <option>Plastik jednorazowy</option>
+            <option>Kilka / nie wiem</option>
+          </select>
+        </label>
+        <label for="f-ctry">Kraje<input id="f-ctry" name="countries" placeholder="np. Niemcy, Francja, Hiszpania"></label>
+        <label for="f-msg">Wiadomość<textarea id="f-msg" name="message"></textarea></label>
+        <div><button class="btn" type="submit">Wyślij zapytanie</button></div>
+        <p class="form-note" id="form-note" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="#top"><img src="img/otoneso-logo.png" alt="otoneso" width="437" height="105"></a>
+      <p>Europejska obsługa EPR: rejestracja, sprawozdawczość i Autoryzowany Przedstawiciel w 29 krajach.</p>
+      <a class="btn" href="#contact">Darmowa wycena <svg><use href="#arr"/></svg></a>
+    </div>
+    <nav class="foot-col" aria-label="Usługi">
+      <h4>Usługi</h4>
+      <a href="wdrozenie-ppwr.html">Opakowania i PPWR</a>
+      <a href="#streams">WEEE</a>
+      <a href="#streams">Baterie</a>
+      <a href="#services">Autoryzowany Przedstawiciel</a>
+      <a href="#services">BDO · KOBiZE · EUDR</a>
+    </nav>
+    <nav class="foot-col" aria-label="Firma">
+      <h4>Otoneso</h4>
+      <a href="#countries">Kraje</a>
+      <a href="o-nas.html">O nas</a>
+      <a href="partnerzy.html">Partnerzy</a>
+      <a href="#faq">FAQ</a>
+      <a href="regulamin.html">Regulamin</a>
+      <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+      <a href="https://eprpilot.com/" target="_blank" rel="noopener">eprpilot.com</a>
+      <a href="https://claude.ai/artifact/NSNK3Ar94LKPHBbnnwqPFF" target="_blank" rel="noopener">English version</a>
+    </nav>
+    <address class="foot-col">
+      <h4>Kontakt</h4>
+      <b>VIAREGIA.ONLINE Sp. z o.o.</b>
+      <span>ul. Złota 7 lok. 28<br>00-019 Warszawa</span>
+      <span>info@otoneso.pl</span>
+      <span>+48 459 596 793</span>
+    </address>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Otoneso. Marka VIAREGIA.ONLINE Sp. z o.o.</span>
+    <span class="legal-links"><a href="regulamin.html">Regulamin</a> · <a href="polityka-prywatnosci.html">Polityka prywatności</a></span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var note = document.getElementById('form-note');
+  if (!this.name.value.trim() || !/\S+@\S+\.\S+/.test(this.email.value)) {
+    note.textContent = 'Podaj imię i poprawny adres e-mail.';
+    return;
+  }
+  note.textContent = 'Dziękujemy. Odpowiemy w ciągu jednego dnia roboczego.';
+  this.reset();
+});
+
+// Countries: 27 EU markets + UK and Turkey (core), plus worldwide and US state EPR
+(function () {
+  var G = [["Unia Europejska · 27 rynków", "core", [["AT", "Austria", "Austrii", "Austrię"], ["BE", "Belgia", "Belgii", "Belgię"], ["BG", "Bułgaria", "Bułgarii", "Bułgarię"], ["HR", "Chorwacja", "Chorwacji", "Chorwację"], ["CY", "Cypr", "na Cyprze", "Cypr"], ["CZ", "Czechy", "Czechach", "Czechy"], ["DK", "Dania", "Danii", "Danię"], ["EE", "Estonia", "Estonii", "Estonię"], ["FI", "Finlandia", "Finlandii", "Finlandię"], ["FR", "Francja", "Francji", "Francję"], ["DE", "Niemcy", "Niemczech", "Niemcy"], ["GR", "Grecja", "Grecji", "Grecję"], ["HU", "Węgry", "na Węgrzech", "Węgry"], ["IE", "Irlandia", "Irlandii", "Irlandię"], ["IT", "Włochy", "we Włoszech", "Włochy"], ["LV", "Łotwa", "na Łotwie", "Łotwę"], ["LT", "Litwa", "na Litwie", "Litwę"], ["LU", "Luksemburg", "Luksemburgu", "Luksemburg"], ["MT", "Malta", "na Malcie", "Maltę"], ["NL", "Holandia", "Holandii", "Holandię"], ["PL", "Polska", "Polsce", "Polskę"], ["PT", "Portugalia", "Portugalii", "Portugalię"], ["RO", "Rumunia", "Rumunii", "Rumunię"], ["SK", "Słowacja", "Słowacji", "Słowację"], ["SI", "Słowenia", "Słowenii", "Słowenię"], ["ES", "Hiszpania", "Hiszpanii", "Hiszpanię"], ["SE", "Szwecja", "Szwecji", "Szwecję"]]], ["Wielka Brytania i Turcja", "core", [["GB", "Wielka Brytania", "Wielkiej Brytanii", "Wielką Brytanię"], ["TR", "Turcja", "Turcji", "Turcję"]]], ["Pozostałe kraje z przepisami EPR", "world", [["CH", "Szwajcaria", "Szwajcarii", "Szwajcarię"], ["NO", "Norwegia", "Norwegii", "Norwegię"], ["CA", "Kanada", "Kanadzie", "Kanadę"], ["BR", "Brazylia", "Brazylii", "Brazylię"], ["IN", "Indie", "Indiach", "Indie"], ["JP", "Japonia", "Japonii", "Japonię"], ["KR", "Korea Południowa", "Korei Południowej", "Koreę Południową"], ["AU", "Australia", "Australii", "Australię"], ["ZA", "RPA", "RPA", "RPA"], ["MX", "Meksyk", "Meksyku", "Meksyk"], ["CO", "Kolumbia", "Kolumbii", "Kolumbię"], ["CL", "Chile", "Chile", "Chile"], ["SA", "Arabia Saudyjska", "Arabii Saudyjskiej", "Arabię Saudyjską"], ["AE", "ZEA", "ZEA", "ZEA"], ["SG", "Singapur", "Singapurze", "Singapur"], ["MY", "Malezja", "Malezji", "Malezję"]]], ["Stany Zjednoczone · EPR stanowe", "world", [["US", "Kalifornia", "Kalifornii", "Kalifornię"], ["US", "Kolorado", "Kolorado", "Kolorado"], ["US", "Maine", "Maine", "Maine"], ["US", "Minnesota", "Minnesocie", "Minnesotę"], ["US", "Oregon", "Oregonie", "Oregon"], ["US", "Waszyngton (stan)", "stanie Waszyngton", "stan Waszyngton"]]]];
+  var NOTE = {"DE": ["Rejestracja opakowań w LUCID z umową z systemem dualnym oraz rejestracja WEEE i baterii. Marketplace’y sprawdzają te numery.", "LUCID"], "PL": ["Wpis do BDO, roczne sprawozdanie BDO i rozliczenie opłaty produktowej, a także KOBiZE, jeśli dotyczy.", "BDO"], "FR": ["Rejestracja producenta z unikalnym identyfikatorem (UIN) dla każdego strumienia oraz roczne deklaracje.", "UIN"]};
+  var LIST = { core: [["Rejestracja", "krajowe systemy EPR"], ["Sprawozdania", "miesięczne · kwartalne · roczne"], ["Autoryzowany Przedstawiciel", "tam, gdzie wymagany"], ["Status w EPRpilot", "w cenie"]], world: [["Analiza obowiązków", "lokalne przepisy EPR"], ["Rejestracja", "w lokalnym systemie"], ["Sprawozdania", "według lokalnych terminów"], ["Opiekun", "jeden dla wszystkich rynków"]] };
+  function loc(c){ return /^(na|we|stanie) /.test(c[2]) ? (/^stanie/.test(c[2]) ? 'w ' + c[2] : c[2]) : 'w ' + c[2]; }
+  function flag(code) { return code.replace(/./g, function (ch) { return String.fromCodePoint(127397 + ch.charCodeAt(0)); }); }
+  var root = document.getElementById('cgroups'), btns = [];
+  G.forEach(function (g) {
+    var box = document.createElement('div'); box.className = 'cgroup';
+    box.innerHTML = '<h4>' + g[0] + '</h4>';
+    var grid = document.createElement('div'); grid.className = 'cgrid ' + g[1]; grid.setAttribute('role', 'list'); grid.setAttribute('aria-label', g[0]);
+    g[2].forEach(function (c) {
+      var b = document.createElement('div');
+      b.className = 'cbtn'; b.setAttribute('role', 'listitem');
+      b.innerHTML = '<span class="fl" aria-hidden="true">' + flag(c[0]) + '</span>' + c[1];
+      grid.appendChild(b); btns.push(b);
+    });
+    box.appendChild(grid); root.appendChild(box);
+  });
+})();
+
+// Hero demo player: 5 chapters, 6 s each
+(function () {
+  var root = document.getElementById('demo'); if (!root) return;
+  var sc = [].slice.call(root.querySelectorAll('.scene')), bt = [].slice.call(root.querySelectorAll('#pl-chaps button'));
+  var sub = document.getElementById('pl-sub'), chap = document.getElementById('pl-chap'), tm = document.getElementById('pl-time'), pp = document.getElementById('pl-pp');
+  var D = 6, T = D * sc.length, t = 0, cur = -1, playing = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>';
+  var PLAY = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.4-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>';
+  function f(s) { s = Math.floor(s); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); }
+  function draw() {
+    var k = Math.min(sc.length - 1, Math.floor(t / D));
+    if (k !== cur) { sc.forEach(function (e, i) { e.classList.toggle('on', i === k); }); sub.textContent = sc[k].dataset.sub; chap.textContent = sc[k].dataset.name; cur = k; }
+    bt.forEach(function (b, i) { var p = i < k ? 100 : i > k ? 0 : (t - i * D) / D * 100; b.querySelector('i').style.width = p.toFixed(1) + '%'; b.classList.toggle('cur', i === k); });
+    tm.textContent = f(t) + ' / ' + f(T);
+    pp.innerHTML = playing ? PAUSE : PLAY; pp.setAttribute('aria-label', playing ? 'Pauza' : 'Odtwórz');
+  }
+  bt.forEach(function (b, i) { b.addEventListener('click', function () { t = i * D; playing = true; draw(); }); });
+  pp.addEventListener('click', function () { playing = !playing; draw(); });
+  setInterval(function () { if (!playing) return; t += .25; if (t >= T) t = 0; draw(); }, 250);
+  draw();
+})();
+
+// ---- modern layer: progress, nav, reveal, spotlight, counters, country filter, calculator
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var bar = document.querySelector('.progress i'), nav = document.querySelector('.nav');
+  function onScroll() {
+    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+    if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? h.scrollTop / max : 0) + ')';
+    if (nav) nav.classList.toggle('scrolled', h.scrollTop > 24);
+  }
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  if (!reduce && 'IntersectionObserver' in window) {
+    var sel = '.head, .sec h2, .cats .wrap > *, .pain-grid article, .card, .stat, .rcard, .steps > div, .cgroup, .qa, .what-photo, .cstep, .calc-res, .pilot > *, .services li, .contact .box, .trust .wrap';
+    var els = [].slice.call(document.querySelectorAll(sel)).filter(function (e) { return !e.closest('.hero') && !e.parentElement.closest('.rv'); });
+    document.documentElement.classList.add('rv-on');
+    els.forEach(function (e) {
+      var sib = [].slice.call(e.parentElement.children).filter(function (x) { return els.indexOf(x) > -1; });
+      e.style.setProperty('--i', Math.min(sib.indexOf(e), 6)); e.classList.add('rv');
+    });
+    var io = new IntersectionObserver(function (es) { es.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function (e) { io.observe(e); });
+
+    var stats = [].slice.call(document.querySelectorAll('.stat b'));
+    var so = new IntersectionObserver(function (es) {
+      es.forEach(function (x) {
+        if (!x.isIntersecting) return; so.unobserve(x.target);
+        var el = x.target, fin = el.textContent, m = fin.match(/^(\d+)(k?)(.*)$/); if (!m) return;
+        var to = +m[1] * (m[2] ? 1000 : 1), t0 = performance.now();
+        (function step(now) {
+          var p = Math.min(1, (now - t0) / 1400), v = Math.round(to * (1 - Math.pow(1 - p, 3)));
+          el.textContent = p < 1 ? (v >= 1000 ? (v / 1000).toFixed(1).replace('.0', '') + 'k' : v) + m[3] : fin;
+          if (p < 1) requestAnimationFrame(step);
+        })(t0);
+      });
+    }, { threshold: .6 });
+    stats.forEach(function (s) { so.observe(s); });
+  }
+
+  [].slice.call(document.querySelectorAll('.card, .pain-grid article, .rcard, .cstep')).forEach(function (c) {
+    c.classList.add('spot');
+    c.addEventListener('pointermove', function (e) { var r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
+  });
+
+  // Country search + filter
+  var T = {"search": "Szukaj kraju…", "chips": ["Wszystkie", "UE", "UK i Turcja", "Świat", "USA"], "shown": "Pokazano {n} z {t}", "none": "Nie znaleziono kraju. Napisz do nas, sprawdzimy przepisy.", "srch_label": "Szukaj kraju", "filt": "Filtruj kraje"};
+  var root = document.getElementById('cgroups');
+  if (root) {
+    var tools = document.createElement('div'); tools.className = 'ctools';
+    tools.innerHTML = '<label class="csearch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="csq" placeholder="' + T.search + '" aria-label="' + T.srch_label + '"></label>' +
+      '<div class="chips" role="group" aria-label="' + T.filt + '">' + T.chips.map(function (c, i) { return '<button type="button" class="chip" data-g="' + (i - 1) + '" aria-pressed="' + (i ? 'false' : 'true') + '">' + c + '</button>'; }).join('') + '</div>' +
+      '<span class="ccount" id="ccount" aria-live="polite"></span>';
+    root.parentNode.insertBefore(tools, root);
+    var empty = document.createElement('p'); empty.className = 'cempty'; empty.textContent = T.none; root.appendChild(empty);
+    var groups = [].slice.call(root.querySelectorAll('.cgroup')), total = root.querySelectorAll('.cbtn').length, g = -1;
+    function norm(s) { return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ł/g, 'l'); }
+    function apply() {
+      var q = norm(document.getElementById('csq').value.trim()), n = 0;
+      groups.forEach(function (box, gi) {
+        var vis = 0, show = g < 0 || g === gi;
+        [].slice.call(box.querySelectorAll('.cbtn')).forEach(function (b) {
+          var ok = show && (!q || norm(b.textContent).indexOf(q) > -1);
+          b.style.display = ok ? '' : 'none'; b.classList.toggle('hit', !!q && ok); if (ok) vis++;
+        });
+        box.style.display = vis ? '' : 'none'; n += vis;
+      });
+      empty.style.display = n ? 'none' : 'block';
+      document.getElementById('ccount').textContent = T.shown.replace('{n}', n).replace('{t}', total);
+    }
+    tools.addEventListener('click', function (e) {
+      var c = e.target.closest('.chip'); if (!c) return;
+      g = +c.dataset.g; [].slice.call(tools.querySelectorAll('.chip')).forEach(function (x) { x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); }); apply();
+    });
+    document.getElementById('csq').addEventListener('input', apply); apply();
+  }
+
+  // Calculator
+  var C = {"short": {"pack": "Opakowania", "weee": "WEEE", "bat": "Baterie", "sup": "SUP"}, "ar": "Autoryzowany Przedstawiciel", "empty": "Zaznacz co najmniej jeden strumień i jeden kraj.", "msg": "Chcę wycenę EPR. Strumienie: {s}. Kraje: {c}."};
+  var cs = document.getElementById('calc-s'), cc = document.getElementById('calc-c');
+  if (cs && cc) {
+    var nEl = document.getElementById('calc-n'), list = document.getElementById('calc-list'), cta = document.getElementById('calc-cta'), shown = 0;
+    function on(box) { return [].slice.call(box.querySelectorAll('.opt[aria-pressed="true"]')); }
+    function count(to) {
+      var from = shown, t0 = performance.now(); shown = to;
+      if (reduce) { nEl.textContent = to; return; }
+      (function st(now) { var p = Math.min(1, (now - t0) / 450); nEl.textContent = Math.round(from + (to - from) * p); if (p < 1) requestAnimationFrame(st); })(t0);
+    }
+    function calc() {
+      var s = on(cs), c = on(cc);
+      count(s.length * c.length);
+      if (!s.length || !c.length) { list.innerHTML = '<li class="rempty" style="background:none;padding:0">' + C.empty + '</li>'; cta.setAttribute('aria-disabled', 'true'); return; }
+      cta.removeAttribute('aria-disabled');
+      list.innerHTML = c.map(function (b) {
+        var tags = s.map(function (x) { return '<i>' + C.short[x.dataset.s] + '</i>'; }).join('');
+        if (b.dataset.c === 'DE' && s.some(function (x) { return x.dataset.s === 'weee'; })) tags += '<i class="ar">' + C.ar + '</i>';
+        return '<li><b>' + b.querySelector('.fl').textContent + ' ' + b.dataset.n + '</b><small>' + tags + '</small></li>';
+      }).join('');
+    }
+    [cs, cc].forEach(function (box) { box.addEventListener('click', function (e) { var b = e.target.closest('.opt'); if (!b) return; b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); calc(); }); });
+    document.getElementById('calc-all').addEventListener('click', function () {
+      var all = on(cc).length === cc.querySelectorAll('.opt').length;
+      [].slice.call(cc.querySelectorAll('.opt')).forEach(function (b) { b.setAttribute('aria-pressed', all ? 'false' : 'true'); }); calc();
+    });
+    cta.addEventListener('click', function () {
+      var s = on(cs), c = on(cc); if (!s.length || !c.length) return;
+      var ta = document.querySelector('#contact-form textarea');
+      if (ta) ta.value = C.msg.replace('{s}', s.map(function (x) { return x.textContent.trim(); }).join(', ')).replace('{c}', c.map(function (x) { return x.dataset.n; }).join(', '));
+      var sel = document.getElementById('f-stream'); if (sel && s.length > 1) sel.selectedIndex = sel.options.length - 1; else if (sel) sel.selectedIndex = ['pack', 'weee', 'bat', 'sup'].indexOf(s[0].dataset.s);
+      setTimeout(function () { var n = document.getElementById('f-name'); if (n) n.focus({ preventScroll: true }); }, 600);
+    });
+    calc();
+  }
+})();
+</script>
