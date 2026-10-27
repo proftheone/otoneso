@@ -12,8 +12,8 @@
 /* Layout: floating pill nav → centred hero with demo player → product streams → stats → clients → countries → process → EPRpilot → audiences → FAQ → contact card → footer.
    Brand look from the otoneso presentation: paper-white ground, deep green-black ink, leaf green accent, short green bar as section motif. */
 :root{
-  --bg:#EFEFEF; --surface:#FFFFFF; --surface-2:#EEF2E8; --sage:#E6EBE0; --ink:#13201A; --muted:#55615A; --dim:#7A857E; --line:#DDE3D6;
-  --green:#96C43C; --leaf:#96C43C; --leaf-hover:#86B232; --olive:#546D31; --on-leaf:#13201A; --warn:#9A6B2A; --teal:#1F4A43;
+  --bg:#EFEFEF; --surface:#FFFFFF; --surface-2:#EEF2E8; --sage:#E6EBE0; --ink:#1A1A1A; --muted:#55615A; --dim:#7A857E; --line:#DDE3D6;
+  --green:#96C43C; --leaf:#96C43C; --leaf-hover:#86B232; --olive:#546D31; --on-leaf:#1A1A1A; --warn:#9A6B2A; --teal:#1F4A43;
   --ring:0 0 0 1px rgba(19,32,26,.07), 0 1px 2px rgba(19,32,26,.04);
   --lift:0 30px 60px -36px rgba(19,32,26,.28);
   --f-display:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,sans-serif;
@@ -199,7 +199,7 @@ section{position:relative; z-index:1}
 .feat li b{color:var(--ink); font-weight:600}
 .feat svg{width:20px; height:20px; flex:none; margin-top:3px; color:var(--green)}
 @media (max-width:900px){.pilot-top{grid-template-columns:1fr}}
-.ap{--a-card:#FFFFFF; --a-ink:#13201A; --a-mut:#66716A; --a-line:#E1E6DA;
+.ap{--a-card:#FFFFFF; --a-ink:#1A1A1A; --a-mut:#66716A; --a-line:#E1E6DA;
   display:grid; grid-template-columns:240px minmax(0,1fr); gap:18px; padding:18px; border-radius:28px; background:var(--sage); color:var(--a-ink); box-shadow:var(--ring), var(--lift)}
 .ap-side{background:var(--teal); color:#E7EEE9; border-radius:22px; padding:20px 14px; display:flex; flex-direction:column; gap:4px; font-size:14px}
 .ap-brand{display:flex; align-items:center; gap:8px; padding:0 8px 16px; font-family:var(--f-display); font-weight:800; letter-spacing:-.03em; color:#fff}
@@ -273,7 +273,7 @@ form{display:grid; gap:16px}
 label{display:grid; gap:6px; font:600 12px var(--f-body); letter-spacing:.12em; text-transform:uppercase; color:#B9C7C0}
 input,select,textarea{font:inherit; font-family:var(--f-body); font-size:16px; text-transform:none; letter-spacing:0; color:#fff; background:transparent; border:0; border-bottom:1px solid rgba(247,248,244,.28); padding:10px 0; border-radius:0}
 input::placeholder{color:#8FA39A}
-select option{color:#13201A}
+select option{color:#1A1A1A}
 input:focus,select:focus,textarea:focus{outline:none; border-bottom-color:var(--leaf)}
 textarea{min-height:96px; resize:vertical}
 .form-note{font-size:14px; color:#B9DB85; min-height:1.4em; margin:0}
@@ -635,7 +635,7 @@ html.rv-on .rv.in{opacity:1; transform:none}
 .hp-tl{position:absolute; z-index:2; top:0; left:0; width:clamp(78px,10%,112px); aspect-ratio:1; background:var(--bg); border-bottom-right-radius:30px; display:grid; place-items:center}
 .hp-tl::before,.hp-tl::after{content:""; position:absolute; width:30px; height:30px; background:radial-gradient(circle at 100% 100%, transparent 29.5px, var(--bg) 30px)}
 .hp-tl::before{top:0; left:100%} .hp-tl::after{top:100%; left:0}
-.hp-badge{width:58%; aspect-ratio:1; border-radius:50%; background:#13201A; display:grid; place-items:center; box-shadow:0 0 0 4px var(--surface)}
+.hp-badge{width:58%; aspect-ratio:1; border-radius:50%; background:#1A1A1A; display:grid; place-items:center; box-shadow:0 0 0 4px var(--surface)}
 .hp-badge svg{width:46%; height:46%}
 .hp-br{position:absolute; z-index:2; right:0; bottom:0; background:var(--bg); border-top-left-radius:30px; padding:clamp(16px,2.2vw,30px) clamp(18px,2.4vw,34px) 4px; text-align:left; min-width:min(42%,330px)}
 .hp-br::before,.hp-br::after{content:""; position:absolute; width:30px; height:30px; background:radial-gradient(circle at 0 0, transparent 29.5px, var(--bg) 30px)}
