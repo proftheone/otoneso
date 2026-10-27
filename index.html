@@ -626,50 +626,48 @@ html.rv-on .rv.in{opacity:1; transform:none}
   .seg-badges span{font-size:13.5px; padding:10px 12px}
 }
 
-/* ===== split hero with animated visual ===== */
-.hx{position:relative; z-index:1; max-width:1320px; margin:0 auto; padding:16px var(--gut-r) 0 var(--gut)}
-.hx-stage{position:relative; height:clamp(600px,48vw,660px)}
-.hx-vis{position:absolute; inset:0; clip-path:url(#hxclip); -webkit-clip-path:url(#hxclip); background:#13301a}
-.hx-vis canvas{position:absolute; inset:0; width:100%; height:100%; display:block}
-.hx-txt{position:relative; z-index:2; width:min(41%,540px); padding-top:clamp(150px,13vw,172px)}
-.hx-crumb{display:flex; align-items:center; gap:10px; font-size:13px; font-weight:600; color:var(--dim); margin-bottom:clamp(22px,3vw,40px)}
-.hx-crumb svg{width:16px; height:16px}
-.hx-crumb i{font-style:normal; opacity:.6}
-.hx h1{font-size:clamp(38px,4.3vw,62px); line-height:1.06; letter-spacing:-.032em; margin:0}
-.hx h1 .fade{color:#B3BCAA}
-.hx .lead{margin:clamp(18px,2.2vw,28px) 0 0; color:var(--muted); font-size:clamp(15px,1.2vw,17px); line-height:1.65}
-.hx-acts{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px}
-.hx-acts .btn:not(.btn-ghost){background:var(--leaf); color:var(--on-leaf); box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 10px 24px -12px rgba(89,143,36,.7)}
-.hx-acts .btn:not(.btn-ghost):hover{background:var(--leaf-hover)}
-.hx-scroll{display:inline-flex; align-items:center; gap:22px; margin-top:28px; font-size:14px; font-weight:600; color:var(--muted); text-decoration:none}
-.hx-scroll:hover{color:var(--ink)}
-.hx-chev{display:grid; gap:0; color:var(--dim)}
-.hx-chev svg{width:14px; height:9px; animation:hxchev 1.8s infinite}
-.hx-chev svg:nth-child(2){animation-delay:.2s} .hx-chev svg:nth-child(3){animation-delay:.4s}
-@keyframes hxchev{0%,100%{opacity:.25} 40%{opacity:1}}
-.hx-pill{position:absolute; z-index:2; display:inline-flex; align-items:center; gap:12px; padding:11px 18px 11px 14px; border-radius:999px; background:rgba(16,34,18,.5); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); box-shadow:inset 0 0 0 1px rgba(255,255,255,.14); color:#fff; font:600 clamp(14px,1.15vw,17px) var(--f-display); white-space:nowrap; animation:hxfloat 7s ease-in-out infinite}
-.hx-pill::before{content:""; width:12px; height:12px; border-radius:50%; background:#fff; box-shadow:0 0 0 4px rgba(255,255,255,.18)}
-.hx-pill.p1{left:62%; top:47%} .hx-pill.p2{left:75%; top:60%; animation-delay:-2.3s} .hx-pill.p3{left:67%; top:74%; animation-delay:-4.6s}
-@keyframes hxfloat{0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)}}
-.hx-card{position:absolute; z-index:2; top:0; right:0; width:21.5%; min-width:250px; display:flex; gap:16px; align-items:center; padding:14px; border-radius:24px; background:#F1F7E6; color:var(--ink); text-decoration:none; transition:transform .25s, box-shadow .25s}
-.hx-card:hover{transform:translateY(-2px); box-shadow:var(--lift)}
-.hx-card img{width:76px; height:96px; object-fit:cover; border-radius:14px; flex:none}
-.hx-card b{display:inline-block; padding:5px 13px; border-radius:999px; background:#CFE6A8; font-size:12.5px; font-weight:700; color:#2E4A12}
-.hx-card span{display:block; margin-top:10px; font-size:14px; font-weight:600; line-height:1.45}
-.hx-card .go{position:absolute; top:14px; right:14px; width:38px; height:38px; border-radius:50%; box-shadow:inset 0 0 0 1.5px var(--ink); display:grid; place-items:center}
-.hx-card .go svg{width:14px; height:14px}
-.hx-card > div{padding-right:44px}
-.hero.after-hx{padding-top:clamp(40px,5vw,72px)}
-@media (max-width:1000px){
-  .hx-stage{height:auto; display:flex; flex-direction:column}
-  .hx-vis{position:relative; inset:auto; order:-1; height:clamp(300px,62vw,440px); clip-path:none; -webkit-clip-path:none; border-radius:24px; overflow:hidden}
-  .hx-txt{width:auto; padding-top:24px}
-  .hx-pill{font-size:13px; padding:8px 14px 8px 11px; gap:9px}
-  .hx-pill::before{width:9px; height:9px}
-  .hx-pill.p1{left:8%; top:auto; bottom:30%} .hx-pill.p2{left:auto; right:6%; top:auto; bottom:17%} .hx-pill.p3{left:10%; top:auto; bottom:6%}
-  .hx-card{position:relative; order:2; width:auto; min-width:0; margin-top:28px}
+
+/* ===== centred hero with tile row ===== */
+.h3{position:relative; z-index:1; margin:14px max(12px,var(--gut-r)) 0 max(12px,var(--gut)); border-radius:28px; background:#0C1C12; color:#fff; overflow:hidden; padding-top:clamp(64px,8vw,112px); isolation:isolate}
+.h3::before{content:""; position:absolute; inset:-30% -10% auto; height:70%; background:radial-gradient(50% 60% at 50% 40%, rgba(150,196,60,.18), transparent 70%); z-index:-1; pointer-events:none}
+.h3-head{max-width:1120px; margin:0 auto; padding:0 20px; text-align:center}
+.h3 h1{font-family:var(--f-display); font-weight:700; font-size:clamp(32px,4.5vw,66px); line-height:1.1; letter-spacing:-.03em; margin:0; color:#fff}
+.h3 h1 span{display:block; color:#96C43C}
+.h3 .lead{max-width:640px; margin:22px auto 0; color:rgba(255,255,255,.78); font-size:clamp(15px,1.25vw,17.5px); line-height:1.65}
+.h3-acts{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:32px}
+.h3-acts .btn-ghost{color:#fff; box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35); background:transparent}
+.h3-acts .btn-ghost:hover{box-shadow:inset 0 0 0 1.5px #fff}
+.h3-tiles{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(12px,1.6vw,24px); padding:0 clamp(12px,1.6vw,24px); margin-top:clamp(56px,7vw,110px); height:clamp(400px,40vw,600px); overflow:hidden; -webkit-mask-image:linear-gradient(#000 78%,transparent); mask-image:linear-gradient(#000 78%,transparent)}
+.h3-col{display:flex; flex-direction:column; gap:clamp(12px,1.6vw,24px); will-change:transform; animation:h3up 1s cubic-bezier(.2,.7,.2,1) both}
+.h3-col:nth-child(1){margin-top:48px; animation-delay:.05s} .h3-col:nth-child(2){margin-top:96px; animation-delay:.15s} .h3-col:nth-child(3){animation-delay:.25s} .h3-col:nth-child(4){margin-top:144px; animation-delay:.35s}
+@keyframes h3up{from{opacity:0; translate:0 60px}}
+.h3-t{position:relative; border-radius:6px; overflow:hidden; aspect-ratio:4/5; flex:none}
+.h3-t h3{position:relative; z-index:1; margin:0; padding:22px 24px 0; font:600 clamp(17px,1.5vw,22px)/1.2 var(--f-display); letter-spacing:-.02em}
+.h3-t p{position:relative; z-index:1; margin:6px 0 0; padding:0 24px; font-size:13.5px; opacity:.75}
+.h3-photo img{width:100%; height:100%; object-fit:cover; display:block}
+.h3-photo figcaption{position:absolute; left:12px; bottom:12px; padding:7px 12px; border-radius:999px; background:rgba(12,28,18,.6); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); font-size:12.5px; font-weight:600; white-space:nowrap; max-width:calc(100% - 24px); overflow:hidden; text-overflow:ellipsis}
+.h3-photo figcaption small{opacity:.7; font-weight:500; margin-left:6px; font-size:12px}
+.h3-leaf{background:#96C43C; color:#0C1C12}
+.h3-light{background:#F4F6F0; color:#0C1C12}
+.h3-short{aspect-ratio:4/3}
+.h3-stripes::after{content:""; position:absolute; inset:auto 0 0; height:42%; background:repeating-linear-gradient(-28deg,#0C1C12 0 14px,transparent 14px 44px); background-size:200% 100%; -webkit-mask-image:linear-gradient(transparent,#000 40%); mask-image:linear-gradient(transparent,#000 40%); animation:h3stripe 6s linear infinite}
+@keyframes h3stripe{to{background-position:-200px 0}}
+.h3-dots{position:absolute; inset:0}
+.h3-dots i{position:absolute; aspect-ratio:1; border-radius:50%; background:rgba(12,28,18,.32); transform:translate(-50%,-50%); animation:h3dot 2.8s ease-in-out infinite}
+.h3-dots i.dk{background:#0C1C12}
+@keyframes h3dot{0%,100%{scale:.55; opacity:.6} 50%{scale:1; opacity:1}}
+.h3-orbit{position:absolute; left:0; right:0; bottom:-6%; width:100%}
+.h3-chart{position:absolute; left:6%; right:6%; bottom:0; width:88%}
+.h3-chart g{transform-box:fill-box; transform-origin:50% 100%; animation:h3bar 3.6s ease-in-out infinite alternate}
+@keyframes h3bar{from{scale:1 .82} to{scale:1 1.06}}
+@media (max-width:760px){
+  .h3-tiles{grid-template-columns:repeat(2,minmax(0,1fr)); height:380px}
+  .h3-col:nth-child(3),.h3-col:nth-child(4){display:none}
+  .h3-col:nth-child(1){margin-top:0} .h3-col:nth-child(2){margin-top:44px}
+  .h3-photo figcaption small{display:none} .h3-photo figcaption{font-size:11.5px; left:8px; bottom:8px}
+  .h3-t h3{padding:16px 16px 0} .h3-t p{padding:0 16px; font-size:12.5px}
 }
-@media (prefers-reduced-motion: reduce){.hx-pill,.hx-chev svg{animation:none}}
+@media (prefers-reduced-motion: reduce){.h3-col,.h3-dots i,.h3-chart g,.h3-stripes::after{animation:none}}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -699,16 +697,26 @@ html.rv-on .rv.in{opacity:1; transform:none}
 <main id="top">
 <div class="page-glow" aria-hidden="true"></div>
 
-<section class="hx" aria-labelledby="h-hero"><svg width="0" height="0" style="position:absolute" aria-hidden="true"><clipPath id="hxclip" clipPathUnits="objectBoundingBox"><path d="M0 .05Q0 0 .025 0H.735Q.758 0 .763 .035L.79 .3Q.795 .345 .83 .335L.975 .29Q1 .283 1 .33V.955Q1 1 .975 1H.565Q.545 1 .538 .97L.43 .17Q.42 .125 .385 .132L.025 .225Q0 .232 0 .2Z"/></clipPath></svg>
-  <div class="hx-stage">
-    <div class="hx-vis" aria-hidden="true"><canvas></canvas><span class="hx-pill p1">Packaging</span><span class="hx-pill p2">Electronics (WEEE)</span><span class="hx-pill p3">Batteries</span></div>
-    <a class="hx-card" href="#what-is-epr"><img src="img/seg-shop.jpg" alt=""><div><b>Guide</b><span>What is EPR and who does it apply to?</span></div><i class="go"><svg><use href="#next"/></svg></i></a>
-    <div class="hx-txt">
-      <nav class="hx-crumb" aria-label="breadcrumb"><a href="index.html" aria-label="Home" style="color:inherit; display:flex"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 7 8 2.5 13.5 7v6.5h-11z"/></svg></a><i>›</i><span>EPR in Europe</span></nav>
-      <h1 id="h-hero">Your EPR partner <span class="fade">in 29 European countries</span></h1>
-      <p class="lead">We register your company in national EPR systems, file the reports and act as your Authorized Representative. Packaging, electronics, batteries and single-use plastics, for producers and online sellers. You sell, we keep you compliant.</p>
-      <div class="hx-acts"><a class="btn" href="#contact">Free quote <svg><use href="#next"/></svg></a><a class="btn btn-ghost" href="#countries">See countries</a></div>
-      <a class="hx-scroll" href="#demo"><span class="hx-chev"><svg viewBox="0 0 14 9" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m1 1.5 6 6 6-6"/></svg><svg viewBox="0 0 14 9" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m1 1.5 6 6 6-6"/></svg><svg viewBox="0 0 14 9" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m1 1.5 6 6 6-6"/></svg></span>See how we work</a>
+<section class="h3" aria-labelledby="h-hero">
+  <div class="h3-head">
+    <h1 id="h-hero">EPR in Europe is changing.<span>Time for one partner.</span></h1>
+    <p class="lead">We register, report and act as your Authorized Representative in 29 European countries: packaging, electronics, batteries and single-use plastics. For producers and online sellers.</p>
+    <div class="h3-acts"><a class="btn" href="#contact">Free quote <svg><use href="#next"/></svg></a><a class="btn btn-ghost" href="#demo">See how we work</a></div>
+  </div>
+  <div class="h3-tiles" aria-hidden="true">
+    <div class="h3-col">
+      <figure class="h3-t h3-photo" style="margin:0"><img src="img/team-mg.jpg" alt="" loading="eager"><figcaption>Mateusz Grzywnowicz<small>CEO</small></figcaption></figure>
+      <div class="h3-t h3-leaf h3-short h3-stripes"><h3>4 EPR streams</h3><p>Packaging · WEEE · Batteries · SUP</p></div>
+    </div>
+    <div class="h3-col">
+      <div class="h3-t h3-leaf"><h3>29 countries</h3><p>EU, United Kingdom and Turkey</p><div class="h3-dots"><i class="dk" style="left:28.5%;top:103.1%;width:3.0%;animation-delay:-1.60s"></i><i class="" style="left:37.0%;top:92.0%;width:2.7%;animation-delay:-1.51s"></i><i class="" style="left:50.0%;top:87.8%;width:2.7%;animation-delay:-1.41s"></i><i class="dk" style="left:63.0%;top:92.0%;width:3.1%;animation-delay:-1.43s"></i><i class="" style="left:71.5%;top:103.1%;width:3.1%;animation-delay:-1.44s"></i><i class="" style="left:14.9%;top:97.4%;width:4.4%;animation-delay:-1.33s"></i><i class="" style="left:23.0%;top:84.3%;width:4.8%;animation-delay:-1.34s"></i><i class="" style="left:35.4%;top:75.5%;width:4.2%;animation-delay:-1.14s"></i><i class="dk" style="left:50.0%;top:72.4%;width:4.3%;animation-delay:-1.14s"></i><i class="dk" style="left:64.6%;top:75.5%;width:5.1%;animation-delay:-1.22s"></i><i class="" style="left:77.0%;top:84.3%;width:4.9%;animation-delay:-1.21s"></i><i class="dk" style="left:85.1%;top:97.4%;width:4.2%;animation-delay:-1.11s"></i><i class="" style="left:-0.8%;top:90.9%;width:6.4%;animation-delay:-0.79s"></i><i class="" style="left:7.4%;top:76.2%;width:6.3%;animation-delay:-0.79s"></i><i class="" style="left:19.3%;top:64.7%;width:6.6%;animation-delay:-0.77s"></i><i class="" style="left:33.9%;top:57.3%;width:6.3%;animation-delay:-0.96s"></i><i class="dk" style="left:50.0%;top:54.8%;width:6.5%;animation-delay:-0.99s"></i><i class="" style="left:66.1%;top:57.3%;width:5.7%;animation-delay:-0.93s"></i><i class="" style="left:80.7%;top:64.7%;width:5.8%;animation-delay:-0.71s"></i><i class="" style="left:92.6%;top:76.2%;width:6.4%;animation-delay:-0.87s"></i><i class="" style="left:100.8%;top:90.9%;width:6.7%;animation-delay:-0.91s"></i><i class="" style="left:1.7%;top:53.9%;width:7.8%;animation-delay:-0.49s"></i><i class="" style="left:16.2%;top:43.6%;width:8.1%;animation-delay:-0.49s"></i><i class="dk" style="left:32.6%;top:37.2%;width:7.9%;animation-delay:-0.56s"></i><i class="" style="left:50.0%;top:35.0%;width:7.9%;animation-delay:-0.60s"></i><i class="" style="left:67.4%;top:37.2%;width:7.4%;animation-delay:-0.55s"></i><i class="" style="left:83.8%;top:43.6%;width:7.1%;animation-delay:-0.40s"></i><i class="dk" style="left:98.3%;top:53.9%;width:7.2%;animation-delay:-0.58s"></i><i class="dk" style="left:-3.1%;top:30.1%;width:8.8%;animation-delay:-0.12s"></i><i class="dk" style="left:103.1%;top:30.1%;width:9.6%;animation-delay:-0.13s"></i></div></div>
+    </div>
+    <div class="h3-col">
+      <figure class="h3-t h3-photo" style="margin:0"><img src="img/team-md.jpg" alt="" loading="eager"><figcaption>Michał Dyrszka<small>COO</small></figcaption></figure>
+      <div class="h3-t h3-leaf h3-short"><h3>EPRpilot</h3><p>Every market on one screen</p><svg class="h3-orbit" viewBox="0 0 300 160" fill="none" aria-hidden="true"><path id="h3arc" d="M20 150 C 60 30, 240 30, 280 150" stroke="#0C1C12" stroke-width="1.6" stroke-dasharray="3 6"/><path d="M70 150 C 100 80, 200 80, 230 150" stroke="#0C1C12" stroke-opacity=".35" stroke-width="1.4" stroke-dasharray="2 6"/><circle r="7" fill="#0C1C12"><animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;1;0" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"><mpath href="#h3arc"/></animateMotion></circle><circle cx="150" cy="150" r="5" fill="#fff"/></svg></div>
+    </div>
+    <div class="h3-col">
+      <div class="h3-t h3-light"><h3>1000+ clients</h3><p>Registrations and reports every month</p><svg class="h3-chart" viewBox="0 0 300 250" aria-hidden="true"><g style="animation-delay:0.0s"><line x1="40" y1="250" x2="40" y2="150" stroke="#0C1C12" stroke-width="2.5"/><circle cx="40" cy="150" r="7" fill="#0C1C12"/></g><g style="animation-delay:-0.7s"><line x1="85" y1="250" x2="85" y2="70" stroke="#0C1C12" stroke-width="2.5"/><circle cx="85" cy="70" r="7" fill="#0C1C12"/></g><g style="animation-delay:-1.4s"><line x1="130" y1="250" x2="130" y2="120" stroke="#0C1C12" stroke-width="2.5"/><circle cx="130" cy="120" r="7" fill="#0C1C12"/></g><g class="hl" style="animation-delay:-2.1s"><line x1="175" y1="250" x2="175" y2="40" stroke="#96C43C" stroke-width="2" stroke-dasharray="3 5"/><circle cx="175" cy="40" r="7" fill="#96C43C"/></g><g style="animation-delay:-2.8s"><line x1="220" y1="250" x2="220" y2="95" stroke="#0C1C12" stroke-width="2.5"/><circle cx="220" cy="95" r="7" fill="#0C1C12"/></g><g style="animation-delay:-3.5s"><line x1="265" y1="250" x2="265" y2="140" stroke="#0C1C12" stroke-width="2.5"/><circle cx="265" cy="140" r="7" fill="#0C1C12"/></g></svg></div>
     </div>
   </div>
 </section>
@@ -1473,93 +1481,9 @@ document.querySelectorAll('#video .vid-play').forEach(function(b){
 
 <script>
 (function () {
-  var vis = document.querySelector('.hx-vis'); if (!vis) return;
-  var cv = vis.querySelector('canvas'), cx = cv.getContext('2d');
-  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var W, H, dpr, back, front, drops = [], motes = [], leaves = [], falls, t0 = performance.now(), run = true, raf;
-  function rnd(a, b) { return a + Math.random() * (b - a); }
-  function leafTex(w, h, n, cols, alpha, clumps) {
-    var c = document.createElement('canvas'); c.width = w; c.height = h; var g = c.getContext('2d');
-    var cs = []; for (var i = 0; i < clumps; i++) cs.push([rnd(0, w), rnd(0, h), rnd(40, 160) * dpr]);
-    for (i = 0; i < n; i++) {
-      var k = cs[i % cs.length], a = rnd(0, 6.283), r = Math.pow(Math.random(), .6) * k[2];
-      var x = k[0] + Math.cos(a) * r, y = k[1] + Math.sin(a) * r * 1.3, s = rnd(3, 11) * dpr;
-      g.save(); g.translate(x, y); g.rotate(rnd(0, 6.283));
-      g.globalAlpha = alpha * rnd(.55, 1); g.fillStyle = cols[(Math.random() * cols.length) | 0];
-      g.beginPath(); g.ellipse(0, 0, s, s * .48, 0, 0, 6.283); g.fill(); g.restore();
-    }
-    return c;
-  }
-  function build() {
-    var r = vis.getBoundingClientRect(); dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-    W = cv.width = Math.max(1, Math.round(r.width * dpr)); H = cv.height = Math.max(1, Math.round(r.height * dpr));
-    var tw = Math.round(W * 1.12), th = Math.round(H * 1.1), area = tw * th / (dpr * dpr);
-    back = leafTex(tw, th, area / 30, ['#1E4019', '#24501D', '#2D5E22', '#17361A', '#33692A'], .9, 90);
-    front = leafTex(tw, th, area / 90, ['#5E9A2E', '#96C43C', '#9CCB45', '#4C8526', '#B5D96A'], .85, 40);
-    falls = W > 700 * dpr ? [.6, .71, .83] : [.3, .55, .78];
-    drops = []; for (var i = 0; i < 260; i++) drops.push(newDrop(true));
-    motes = []; for (i = 0; i < 40; i++) motes.push([rnd(0, W), rnd(0, H), rnd(1, 2.6) * dpr, rnd(0, 6.283), rnd(.2, .6)]);
-    leaves = []; for (i = 0; i < 9; i++) leaves.push(newLeaf(true));
-  }
-  function newDrop(any) {
-    var f = falls[(Math.random() * falls.length) | 0];
-    return { x: (f + rnd(-.025, .025)) * W, y: any ? rnd(-H, H) : rnd(-H * .3, 0), v: rnd(5, 10) * dpr, l: rnd(14, 46) * dpr, a: rnd(.15, .55), w: rnd(.8, 2) * dpr };
-  }
-  function newLeaf(any) {
-    return { x: rnd(.35, 1) * W, y: any ? rnd(0, H) : -20 * dpr, s: rnd(5, 9) * dpr, r: rnd(0, 6.283), vr: rnd(-.03, .03), vy: rnd(.4, .9) * dpr, ph: rnd(0, 6.283), c: ['#9CCB45', '#96C43C', '#C9E27A', '#F2B04B'][(Math.random() * 4) | 0] };
-  }
-  function frame(now) {
-    var t = (now - t0) / 1000;
-    cx.globalAlpha = 1; cx.globalCompositeOperation = 'source-over';
-    var bg = cx.createLinearGradient(0, 0, 0, H); bg.addColorStop(0, '#0E2611'); bg.addColorStop(1, '#183A17');
-    cx.fillStyle = bg; cx.fillRect(0, 0, W, H);
-    var ox = (back.width - W) / 2, oy = (back.height - H) / 2;
-    cx.drawImage(back, -ox + Math.sin(t * .11) * ox * .8, -oy + Math.cos(t * .09) * oy * .6);
-    // waterfalls: soft glowing columns + falling streaks
-    falls.forEach(function (f, i) {
-      var x = f * W, w = (34 + i * 8) * dpr, g = cx.createLinearGradient(x - w, 0, x + w, 0), a = .16 + .05 * Math.sin(t * 1.3 + i);
-      g.addColorStop(0, 'rgba(220,240,230,0)'); g.addColorStop(.5, 'rgba(220,240,230,' + a + ')'); g.addColorStop(1, 'rgba(220,240,230,0)');
-      cx.fillStyle = g; cx.fillRect(x - w, 0, w * 2, H);
-    });
-    cx.lineCap = 'round';
-    drops.forEach(function (d, i) {
-      d.y += d.v * (still ? 0 : 1); if (d.y > H + d.l) drops[i] = d = newDrop(false);
-      cx.strokeStyle = 'rgba(240,250,245,' + d.a + ')'; cx.lineWidth = d.w;
-      cx.beginPath(); cx.moveTo(d.x, d.y); cx.lineTo(d.x, d.y + d.l); cx.stroke();
-    });
-    // mist at the bottom
-    var m = cx.createLinearGradient(0, H * .7, 0, H); m.addColorStop(0, 'rgba(225,240,228,0)'); m.addColorStop(1, 'rgba(225,240,228,' + (.2 + .05 * Math.sin(t * .7)) + ')');
-    cx.fillStyle = m; cx.fillRect(0, H * .7, W, H * .3);
-    // foreground foliage sways
-    cx.drawImage(front, -ox + Math.sin(t * .35) * ox * .5, -oy + Math.sin(t * .27 + 1) * oy * .4);
-    // sun rays
-    cx.globalCompositeOperation = 'lighter';
-    for (var k = 0; k < 3; k++) {
-      var rx = W * (.45 + k * .2) + Math.sin(t * .15 + k) * 40 * dpr, ra = .05 + .04 * Math.sin(t * .5 + k * 2);
-      cx.save(); cx.translate(rx, -20 * dpr); cx.rotate(.32);
-      var rg = cx.createLinearGradient(-60 * dpr, 0, 60 * dpr, 0);
-      rg.addColorStop(0, 'rgba(255,240,180,0)'); rg.addColorStop(.5, 'rgba(255,240,180,' + ra + ')'); rg.addColorStop(1, 'rgba(255,240,180,0)');
-      cx.fillStyle = rg; cx.fillRect(-60 * dpr, 0, 120 * dpr, H * 1.4); cx.restore();
-    }
-    motes.forEach(function (p) {
-      var x = p[0] + Math.sin(t * p[4] + p[3]) * 30 * dpr, y = (p[1] - t * 8 * dpr * p[4]) % H; if (y < 0) y += H;
-      cx.globalAlpha = .35 + .35 * Math.sin(t * 2 + p[3]); cx.fillStyle = '#F3FFD0';
-      cx.beginPath(); cx.arc(x, y, p[2], 0, 6.283); cx.fill();
-    });
-    cx.globalAlpha = 1; cx.globalCompositeOperation = 'source-over';
-    leaves.forEach(function (l, i) {
-      if (!still) { l.y += l.vy; l.r += l.vr; } if (l.y > H + 20 * dpr) leaves[i] = l = newLeaf(false);
-      cx.save(); cx.translate(l.x + Math.sin(t * .8 + l.ph) * 26 * dpr, l.y); cx.rotate(l.r + Math.sin(t + l.ph) * .4);
-      cx.fillStyle = l.c; cx.beginPath(); cx.ellipse(0, 0, l.s, l.s * .45, 0, 0, 6.283); cx.fill(); cx.restore();
-    });
-    var v = cx.createRadialGradient(W * .6, H * .5, Math.min(W, H) * .3, W * .6, H * .5, Math.max(W, H) * .8);
-    v.addColorStop(0, 'rgba(5,20,8,0)'); v.addColorStop(1, 'rgba(5,20,8,.45)'); cx.fillStyle = v; cx.fillRect(0, 0, W, H);
-    if (run && !still) raf = requestAnimationFrame(frame);
-  }
-  function start() { cancelAnimationFrame(raf); raf = requestAnimationFrame(frame); }
-  build(); start();
-  var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { build(); start(); }, 150); });
-  if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { run = e[0].isIntersecting; if (run) start(); }).observe(vis);
-  document.addEventListener('visibilitychange', function () { run = !document.hidden; if (run) start(); });
+  var cols = document.querySelectorAll('.h3-col'); if (!cols.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var sp = [-.05, .06, -.09, .1], tick = false;
+  function upd() { var y = Math.min(window.scrollY, 900); cols.forEach(function (c, i) { c.style.transform = 'translateY(' + (y * sp[i]).toFixed(1) + 'px)'; }); tick = false; }
+  window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
 })();
 </script>
