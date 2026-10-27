@@ -16,3 +16,5 @@ Uwagi przed publikacją:
 
 Repo zawiera `render.yaml` (Blueprint dla statycznej strony). Wdrożenie jednym kliknięciem:
 https://render.com/deploy?repo=https://github.com/proftheone/otoneso
+
+Jeśli usługa w Render jest typu Docker (Web Service), używa `Dockerfile`: nginx serwuje pliki na porcie z `$PORT` (domyślnie 10000), a adresy bez `.html` też działają, np. `/about`, `/partners`.

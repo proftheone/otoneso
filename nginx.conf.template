@@ -1,0 +1,17 @@
+server {
+    listen ${PORT};
+    server_name _;
+    root /usr/share/nginx/html;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ $uri.html =404;
+    }
+
+    location /img/ {
+        expires 7d;
+        add_header Cache-Control "public";
+    }
+
+    add_header X-Content-Type-Options nosniff;
+}
