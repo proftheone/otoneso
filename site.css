@@ -394,3 +394,22 @@ footer a:hover{color:var(--green)}
 .menu .dd-menu a small{display:block; font-weight:400; font-size:12.5px; color:var(--dim); margin-top:2px}
 .menu .dd-menu a:hover{background:var(--surface-2)}
 @media (max-width:1020px){.menu .dd{display:none}}
+
+/* ---- orange accents ---- */
+:root{--orange:#F28C28; --orange-hover:#E27A12; --on-orange:#1B1206; --orange-soft:#FDEBD8}
+.btn:not(.btn-ghost){background:var(--orange); color:var(--on-orange); box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 10px 24px -12px rgba(226,122,18,.75)}
+.btn:not(.btn-ghost):hover{background:var(--orange-hover)}
+.menu .btn{color:var(--on-orange)}
+.big-cta{background:var(--orange); color:var(--on-orange)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--orange); color:var(--orange-hover)}
+.stars{color:var(--orange)}
+.steps .tag{background:var(--orange); color:var(--on-orange)}
+.pm{background:var(--orange)} .pm::before,.pm::after{background:var(--on-orange)}
+.badge{background:var(--orange); color:var(--on-orange)}
+.progress i{background:linear-gradient(90deg,var(--leaf),var(--orange))}
+.card:hover .arrow-i{background:var(--orange); color:var(--on-orange)}
+.rq{background:var(--orange-soft); color:var(--orange)}
+.contact h2 em,.reach h2 em{color:var(--orange)}
+.client.alg i{background:var(--orange); color:var(--on-orange)}
+.cstep h3 b{background:var(--orange-soft); color:var(--orange-hover)}
+.chip[aria-pressed="true"]{background:var(--ink)}

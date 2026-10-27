@@ -10,4 +10,4 @@ Statyczna strona otoneso.com (PL i EN), bez procesu budowania.
 Uwagi przed publikacją:
 - Regulamin i polityka prywatności to streszczenia – trzeba je zastąpić oficjalnym tekstem.
 - Formularze nie wysyłają danych; trzeba je podpiąć pod backend lub usługę formularzy.
-- Przełącznik języka w menu wskazuje na podglądy claude.ai – po publikacji zmień na `index.html` / `index-pl.html`.
+- Przełącznik PL/EN prowadzi do odpowiednika danej strony w drugim języku.
