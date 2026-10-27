@@ -11,3 +11,8 @@ Uwagi przed publikacją:
 - Regulamin i polityka prywatności to streszczenia – trzeba je zastąpić oficjalnym tekstem.
 - Formularze nie wysyłają danych; trzeba je podpiąć pod backend lub usługę formularzy.
 - Przełącznik PL/EN prowadzi do odpowiednika danej strony w drugim języku.
+
+## Render
+
+Repo zawiera `render.yaml` (Blueprint dla statycznej strony). Wdrożenie jednym kliknięciem:
+https://render.com/deploy?repo=https://github.com/proftheone/otoneso
