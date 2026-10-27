@@ -576,6 +576,55 @@ html.rv-on .rv.in{opacity:1; transform:none}
 .dd-menu a.dd-live{display:flex; flex-wrap:wrap; align-items:center; gap:0 8px}
 .dd-menu a.dd-live small{flex-basis:100%}
 .dd-menu a.dd-live .ext{font-size:12px; color:var(--dim)}
+
+/* channel tile: light variant */
+.vid-more{background:var(--surface); color:var(--ink); box-shadow:var(--ring)}
+.vid-more::after{background:radial-gradient(circle,rgba(127,189,40,.22),transparent 70%)}
+.vid-more h3{color:var(--ink)}
+.vid-more p{color:var(--muted)}
+
+/* ===== segment switcher (replaces calculator) ===== */
+.seg-head{text-align:center; max-width:760px; margin:0 auto 30px}
+.seg-head h2{font-size:clamp(32px,3.8vw,52px); margin:14px 0 14px}
+.seg-head p{color:var(--muted); margin:0}
+.seg-tabs{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:0 auto 44px; max-width:1000px}
+.seg-tabs button{font:600 14.5px var(--f-body); color:var(--ink); background:var(--surface); border:0; box-shadow:inset 0 0 0 1.5px var(--line); padding:12px 22px; border-radius:999px; cursor:pointer; transition:box-shadow .2s, background .2s, color .2s}
+.seg-tabs button:hover{box-shadow:inset 0 0 0 1.5px var(--leaf)}
+.seg-tabs button[aria-selected="true"]{box-shadow:inset 0 0 0 2px var(--leaf); background:#F1F8E6; color:var(--green)}
+.seg-tabs button:focus-visible{outline:3px solid var(--leaf); outline-offset:2px}
+.seg-panel{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(28px,5vw,72px); align-items:center}
+.seg-panel[hidden]{display:none}
+.seg-panel.in .seg-copy,.seg-panel.in .seg-visual{animation:segIn .45s ease both}
+.seg-panel.in .seg-visual{animation-delay:.06s}
+@keyframes segIn{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
+.seg-copy .seg-kicker{font:700 15px var(--f-body); color:var(--green); margin:0 0 18px}
+.seg-copy h3{font:800 22px/1.25 var(--f-display); letter-spacing:-.02em; margin:0 0 8px}
+.seg-copy p{color:var(--muted); margin:0 0 26px; font-size:16.5px; line-height:1.65; max-width:56ch}
+.seg-links{display:flex; flex-direction:column; gap:10px; margin-top:8px}
+.seg-links a{display:inline-flex; align-items:center; gap:10px; font-weight:600; text-decoration:none}
+.seg-links a:first-child{color:var(--green); font-size:17px}
+.seg-links a:last-child{color:var(--muted)}
+.seg-links a:hover{text-decoration:underline}
+.seg-links svg{width:18px; height:18px; flex:none}
+.seg-visual{position:relative; max-width:440px; justify-self:end; width:100%}
+.seg-photo{position:relative; border-radius:24px; overflow:hidden; background:#E8ECE4; aspect-ratio:4/5}
+.seg-photo::before{content:""; position:absolute; inset:-20% -40% auto auto; width:90%; height:70%; background:#F3F5EF; transform:rotate(35deg); border-radius:40px}
+.seg-photo img{position:relative; display:block; width:100%; height:100%; object-fit:cover}
+.seg-badges{position:absolute; left:-56px; top:44px; display:grid; gap:14px; width:min(260px,62%)}
+.seg-badges span{display:flex; align-items:center; gap:12px; background:var(--surface); border-radius:16px; padding:13px 16px; box-shadow:0 14px 30px -14px rgba(19,32,26,.35), var(--ring); font:600 14.5px/1.35 var(--f-body)}
+.seg-badges svg{width:22px; height:22px; flex:none; color:var(--leaf)}
+@media (max-width:900px){
+  .seg-panel{grid-template-columns:1fr}
+  .seg-visual{justify-self:center; order:-1}
+  .seg-badges{left:-12px}
+}
+@media (max-width:560px){
+  .seg-tabs{flex-wrap:nowrap; overflow-x:auto; justify-content:flex-start; margin-left:calc(var(--gut) * -1); margin-right:calc(var(--gut-r) * -1); padding:2px var(--gut) 6px; scrollbar-width:none}
+  .seg-tabs::-webkit-scrollbar{display:none}
+  .seg-tabs button{flex:none}
+  .seg-badges{left:12px; top:auto; bottom:16px; width:auto; right:12px}
+  .seg-badges span{font-size:13.5px; padding:10px 12px}
+}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -779,21 +828,63 @@ html.rv-on .rv.in{opacity:1; transform:none}
   </div>
 </section>
 
-<section class="sec" id="calculator" aria-labelledby="h-calc">
+<section class="sec" id="segments" aria-labelledby="h-seg">
   <div class="wrap">
-    <div class="head"><div><span class="eyebrow">Kalkulator</span><h2 id="h-calc">Sprawdź, ile <em>rejestracji</em> potrzebujesz</h2></div><p>Zaznacz, co sprzedajesz i dokąd. Zobaczysz od razu, ile systemów EPR może Cię dotyczyć. Dokładną listę i wycenę przygotujemy bezpłatnie.</p></div>
-    <div class="calc">
-      <div class="calc-steps">
-        <div class="cstep"><h3><b>1</b>Co sprzedajesz?</h3><div class="opts" id="calc-s"><button type="button" class="opt" data-s="pack" aria-pressed="true"><span class="ck"></span>Opakowania</button><button type="button" class="opt" data-s="weee" aria-pressed="false"><span class="ck"></span>Elektronika (WEEE)</button><button type="button" class="opt" data-s="bat" aria-pressed="false"><span class="ck"></span>Baterie</button><button type="button" class="opt" data-s="sup" aria-pressed="false"><span class="ck"></span>Plastik jednorazowy</button></div></div>
-        <div class="cstep"><h3><b>2</b>Dokąd wysyłasz?</h3><div class="opts" id="calc-c"><button type="button" class="opt" data-c="PL" data-n="Polska" aria-pressed="true"><span class="fl" aria-hidden="true">🇵🇱</span>Polska</button><button type="button" class="opt" data-c="DE" data-n="Niemcy" aria-pressed="true"><span class="fl" aria-hidden="true">🇩🇪</span>Niemcy</button><button type="button" class="opt" data-c="FR" data-n="Francja" aria-pressed="false"><span class="fl" aria-hidden="true">🇫🇷</span>Francja</button><button type="button" class="opt" data-c="IT" data-n="Włochy" aria-pressed="false"><span class="fl" aria-hidden="true">🇮🇹</span>Włochy</button><button type="button" class="opt" data-c="ES" data-n="Hiszpania" aria-pressed="false"><span class="fl" aria-hidden="true">🇪🇸</span>Hiszpania</button><button type="button" class="opt" data-c="NL" data-n="Holandia" aria-pressed="false"><span class="fl" aria-hidden="true">🇳🇱</span>Holandia</button><button type="button" class="opt" data-c="AT" data-n="Austria" aria-pressed="false"><span class="fl" aria-hidden="true">🇦🇹</span>Austria</button><button type="button" class="opt" data-c="BE" data-n="Belgia" aria-pressed="false"><span class="fl" aria-hidden="true">🇧🇪</span>Belgia</button><button type="button" class="opt" data-c="CZ" data-n="Czechy" aria-pressed="false"><span class="fl" aria-hidden="true">🇨🇿</span>Czechy</button><button type="button" class="opt" data-c="SE" data-n="Szwecja" aria-pressed="false"><span class="fl" aria-hidden="true">🇸🇪</span>Szwecja</button><button type="button" class="opt" data-c="SK" data-n="Słowacja" aria-pressed="false"><span class="fl" aria-hidden="true">🇸🇰</span>Słowacja</button><button type="button" class="opt" data-c="HU" data-n="Węgry" aria-pressed="false"><span class="fl" aria-hidden="true">🇭🇺</span>Węgry</button><button type="button" class="opt" data-c="RO" data-n="Rumunia" aria-pressed="false"><span class="fl" aria-hidden="true">🇷🇴</span>Rumunia</button><button type="button" class="opt" data-c="PT" data-n="Portugalia" aria-pressed="false"><span class="fl" aria-hidden="true">🇵🇹</span>Portugalia</button><button type="button" class="opt" data-c="IE" data-n="Irlandia" aria-pressed="false"><span class="fl" aria-hidden="true">🇮🇪</span>Irlandia</button><button type="button" class="opt" data-c="DK" data-n="Dania" aria-pressed="false"><span class="fl" aria-hidden="true">🇩🇰</span>Dania</button><button type="button" class="opt" data-c="GB" data-n="Wielka Brytania" aria-pressed="false"><span class="fl" aria-hidden="true">🇬🇧</span>Wielka Brytania</button><button type="button" class="opt" data-c="TR" data-n="Turcja" aria-pressed="false"><span class="fl" aria-hidden="true">🇹🇷</span>Turcja</button></div><p style="margin:14px 0 0"><button type="button" class="chip" id="calc-all">Zaznacz wszystkie</button></p></div>
+    <div class="seg-head"><span class="eyebrow">Dla kogo</span><h2 id="h-seg">Które rozwiązanie pasuje do <em>Twojej firmy</em>?</h2><p>Obowiązki EPR w Europie mocno zależą od wielkości firmy i branży. Wybierz profil najbliższy Twojemu i zobacz, z czym zwykle mierzą się podobne firmy i jak im pomagamy.</p></div>
+    <div class="seg-tabs" role="tablist" aria-label="Wybierz typ firmy"><button type="button" role="tab" id="segt-shop" aria-controls="segp-shop" aria-selected="true" tabindex="0">Sklep internetowy</button><button type="button" role="tab" id="segt-market" aria-controls="segp-market" aria-selected="false" tabindex="-1">Sprzedawca marketplace</button><button type="button" role="tab" id="segt-fashion" aria-controls="segp-fashion" aria-selected="false" tabindex="-1">Marka modowa</button><button type="button" role="tab" id="segt-electro" aria-controls="segp-electro" aria-selected="false" tabindex="-1">Elektronika i baterie</button><button type="button" role="tab" id="segt-import" aria-controls="segp-import" aria-selected="false" tabindex="-1">Importer</button><button type="button" role="tab" id="segt-enterprise" aria-controls="segp-enterprise" aria-selected="false" tabindex="-1">Producent i duża firma</button></div>
+    <div class="seg-panel in" role="tabpanel" id="segp-shop" aria-labelledby="segt-shop">
+      <div class="seg-copy">
+        <p class="seg-kicker">EPR dla małych sklepów internetowych</p>
+        <h3>Wyzwanie:</h3><p>Wysyłasz paczki do klientów w kilku krajach UE i każdy z nich wymaga osobnej rejestracji opakowań. Przepisy są w różnych językach, a terminy sprawozdań się nie pokrywają.</p>
+        <h3>Nasze rozwiązanie:</h3><p>Ustalamy, gdzie naprawdę musisz się zarejestrować, załatwiamy rejestracje i co miesiąc raportujemy opakowania za Ciebie.</p>
+        <div class="seg-links"><a href="#contact"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M10 7.5 14.5 12 10 16.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Darmowa wycena</a><a href="#process"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M10 8l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>Jak działamy</a></div>
       </div>
-      <div class="calc-res" aria-live="polite">
-        <span class="eyebrow">Twój wynik</span>
-        <div class="big"><strong id="calc-n">0</strong><span>rejestracji EPR do sprawdzenia</span></div>
-        <ul class="rlist" id="calc-list"></ul>
-        <p class="note">Wynik orientacyjny: każdy kraj ma osobny system EPR dla każdego strumienia. Czy rejestracja jest wymagana, zależy od Twojej roli i ilości.</p>
-        <a class="btn" href="#contact" id="calc-cta">Wyślij do bezpłatnej wyceny <svg><use href="#arr"/></svg></a>
+      <div class="seg-visual"><div class="seg-photo"><img src="img/seg-shop.jpg" alt="" width="484" height="600" loading="lazy"></div><div class="seg-badges" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Jasność, które kraje Cię dotyczą</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Jedna osoba kontaktowa do wszystkiego</span></div></div>
+    </div>
+    <div class="seg-panel" role="tabpanel" id="segp-market" aria-labelledby="segt-market" hidden>
+      <div class="seg-copy">
+        <p class="seg-kicker">EPR dla sprzedawców na Amazon, eBay i Allegro</p>
+        <h3>Wyzwanie:</h3><p>Marketplace’y wymagają numerów EPR dla każdego kraju i kategorii. Brak ważnego numeru oznacza zablokowane oferty, często bez ostrzeżenia.</p>
+        <h3>Nasze rozwiązanie:</h3><p>Rejestrujemy Cię w krajowych systemach, dostarczamy numery gotowe do wpisania na platformie i pilnujemy, by nie wygasły.</p>
+        <div class="seg-links"><a href="epr-dla-ecommerce.html"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M10 7.5 14.5 12 10 16.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>EPR dla e-commerce</a><a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M10 8l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>Darmowa wycena</a></div>
       </div>
+      <div class="seg-visual"><div class="seg-photo"><img src="img/seg-market.jpg" alt="" width="484" height="600" loading="lazy"></div><div class="seg-badges" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Numery EPR dla Amazon i eBay</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Oferty bez ryzyka blokady</span></div></div>
+    </div>
+    <div class="seg-panel" role="tabpanel" id="segp-fashion" aria-labelledby="segt-fashion" hidden>
+      <div class="seg-copy">
+        <p class="seg-kicker">EPR dla rosnących marek modowych</p>
+        <h3>Wyzwanie:</h3><p>Poza opakowaniami marki modowe podlegają też EPR na tekstylia, które do 2028 r. obejmie wszystkie kraje UE. To dodatkowa warstwa obowiązków.</p>
+        <h3>Nasze rozwiązanie:</h3><p>Pomagamy zrozumieć, co dotyczy Twojej linii produktów, i wdrażamy rozwiązanie dla wszystkich rynków docelowych w Europie.</p>
+        <div class="seg-links"><a href="#contact"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M10 7.5 14.5 12 10 16.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Darmowa wycena</a><a href="wdrozenie-ppwr.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M10 8l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>Wdrożenie PPWR</a></div>
+      </div>
+      <div class="seg-visual"><div class="seg-photo"><img src="img/seg-fashion.jpg" alt="" width="484" height="600" loading="lazy"></div><div class="seg-badges" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Jasność co do opakowań i tekstyliów</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Gotowość na rozszerzenie EPR tekstyliów</span></div></div>
+    </div>
+    <div class="seg-panel" role="tabpanel" id="segp-electro" aria-labelledby="segt-electro" hidden>
+      <div class="seg-copy">
+        <p class="seg-kicker">EPR dla sprzedawców elektroniki</p>
+        <h3>Wyzwanie:</h3><p>Elektronika to zwykle trzy strumienie naraz: sprzęt (WEEE), baterie i opakowania. Każdy ma osobny rejestr, kategorie i terminy w każdym kraju.</p>
+        <h3>Nasze rozwiązanie:</h3><p>Przypisujemy produkty do właściwych kategorii, rejestrujemy wszystkie strumienie i składamy sprawozdania w jednym rytmie.</p>
+        <div class="seg-links"><a href="#contact"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M10 7.5 14.5 12 10 16.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Darmowa wycena</a><a href="#countries"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M10 8l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>Zobacz kraje</a></div>
+      </div>
+      <div class="seg-visual"><div class="seg-photo"><img src="img/seg-electro.jpg" alt="" width="484" height="600" loading="lazy"></div><div class="seg-badges" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>WEEE, baterie i opakowania razem</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Właściwe kategorie produktów</span></div></div>
+    </div>
+    <div class="seg-panel" role="tabpanel" id="segp-import" aria-labelledby="segt-import" hidden>
+      <div class="seg-copy">
+        <p class="seg-kicker">EPR dla importerów spoza UE</p>
+        <h3>Wyzwanie:</h3><p>Sprowadzając towar z Chin czy Turcji, to Ty jesteś producentem w rozumieniu EPR i odpowiadasz za opakowania, a od 2026 r. także za zgodność z PPWR.</p>
+        <h3>Nasze rozwiązanie:</h3><p>Ustalamy Twoją rolę w łańcuchu dostaw, rejestrujemy firmę i przygotowujemy dokumentację opakowań zgodną z PPWR.</p>
+        <div class="seg-links"><a href="wdrozenie-ppwr.html"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M10 7.5 14.5 12 10 16.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Wdrożenie PPWR</a><a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M10 8l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>Darmowa wycena</a></div>
+      </div>
+      <div class="seg-visual"><div class="seg-photo"><img src="img/seg-import.jpg" alt="" width="484" height="600" loading="lazy"></div><div class="seg-badges" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Jasna rola: producent czy dystrybutor</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Opakowania zgodne z PPWR</span></div></div>
+    </div>
+    <div class="seg-panel" role="tabpanel" id="segp-enterprise" aria-labelledby="segt-enterprise" hidden>
+      <div class="seg-copy">
+        <p class="seg-kicker">EPR dla producentów i dużych firm</p>
+        <h3>Wyzwanie:</h3><p>Setki SKU, wiele krajów i działów, a dane o masach opakowań rozproszone w różnych systemach. Ręczne raportowanie przestaje się skalować.</p>
+        <h3>Nasze rozwiązanie:</h3><p>Łączymy obsługę ekspercką z platformą EPRpilot: import danych o produktach, raporty dla wszystkich krajów i pełna kontrola terminów.</p>
+        <div class="seg-links"><a href="https://eprpilot.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M10 7.5 14.5 12 10 16.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Poznaj EPRpilot</a><a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M10 8l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>Darmowa wycena</a></div>
+      </div>
+      <div class="seg-visual"><div class="seg-photo"><img src="img/seg-enterprise.jpg" alt="" width="484" height="600" loading="lazy"></div><div class="seg-badges" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Dane z wielu systemów w jednym miejscu</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Raporty dla wszystkich krajów</span></div></div>
     </div>
   </div>
 </section>
@@ -1301,5 +1392,25 @@ document.querySelectorAll('#video .vid-play').forEach(function(b){
       });
     });
   }).catch(function () {});
+})();
+
+/* segment switcher: tabs swap the whole panel */
+(function () {
+  var tabs = [].slice.call(document.querySelectorAll('#segments [role=tab]')); if (!tabs.length) return;
+  function show(t, focus) {
+    tabs.forEach(function (b) {
+      var on = b === t, p = document.getElementById(b.getAttribute('aria-controls'));
+      b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1;
+      p.hidden = !on; p.classList.toggle('in', on);
+    });
+    if (focus) t.focus();
+  }
+  tabs.forEach(function (b, i) {
+    b.addEventListener('click', function () { show(b); });
+    b.addEventListener('keydown', function (e) {
+      var n = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : null;
+      if (n === null) return; e.preventDefault(); show(tabs[(n + tabs.length) % tabs.length], true);
+    });
+  });
 })();
 </script>
