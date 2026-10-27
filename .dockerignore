@@ -1,6 +1,5 @@
 .git
 Dockerfile
 .dockerignore
-nginx.conf.template
 render.yaml
 README.md
