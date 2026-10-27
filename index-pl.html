@@ -12,7 +12,7 @@
 /* Layout: floating pill nav → centred hero with demo player → product streams → stats → clients → countries → process → EPRpilot → audiences → FAQ → contact card → footer.
    Brand look from the otoneso presentation: paper-white ground, deep green-black ink, leaf green accent, short green bar as section motif. */
 :root{
-  --bg:#F7F8F4; --surface:#FFFFFF; --surface-2:#EEF2E8; --sage:#E6EBE0; --ink:#13201A; --muted:#55615A; --dim:#7A857E; --line:#DDE3D6;
+  --bg:#EFEFEF; --surface:#FFFFFF; --surface-2:#EEF2E8; --sage:#E6EBE0; --ink:#13201A; --muted:#55615A; --dim:#7A857E; --line:#DDE3D6;
   --green:#598F24; --leaf:#96C43C; --leaf-hover:#86B232; --olive:#546D31; --on-leaf:#13201A; --warn:#9A6B2A; --teal:#1F4A43;
   --ring:0 0 0 1px rgba(19,32,26,.07), 0 1px 2px rgba(19,32,26,.04);
   --lift:0 30px 60px -36px rgba(19,32,26,.28);
@@ -625,6 +625,25 @@ html.rv-on .rv.in{opacity:1; transform:none}
   .seg-badges{left:12px; bottom:16px; width:auto; right:12px}
   .seg-badges span{font-size:13.5px; padding:10px 12px}
 }
+
+/* ===== hero photo + globe ===== */
+.page-globe{position:absolute; top:330px; right:clamp(-330px,-18vw,-160px); width:clamp(460px,44vw,700px); aspect-ratio:1; pointer-events:none; z-index:0; opacity:.95}
+.page-globe svg{width:100%; height:100%; display:block}
+.hphoto{position:relative; width:100%; max-width:1040px; margin-top:8px; border-radius:0 30px 0 30px; overflow:hidden; aspect-ratio:16/9; background:#D9D9D6}
+.hphoto > img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; animation:hpzoom 18s ease-in-out infinite alternate}
+@keyframes hpzoom{from{transform:scale(1)} to{transform:scale(1.06)}}
+.hp-tl{position:absolute; z-index:2; top:0; left:0; width:clamp(78px,10%,112px); aspect-ratio:1; background:var(--bg); border-bottom-right-radius:30px; display:grid; place-items:center}
+.hp-tl::before,.hp-tl::after{content:""; position:absolute; width:30px; height:30px; background:radial-gradient(circle at 100% 100%, transparent 29.5px, var(--bg) 30px)}
+.hp-tl::before{top:0; left:100%} .hp-tl::after{top:100%; left:0}
+.hp-badge{width:58%; aspect-ratio:1; border-radius:50%; background:#13201A; display:grid; place-items:center; box-shadow:0 0 0 4px var(--surface)}
+.hp-badge svg{width:46%; height:46%}
+.hp-br{position:absolute; z-index:2; right:0; bottom:0; background:var(--bg); border-top-left-radius:30px; padding:clamp(16px,2.2vw,30px) clamp(18px,2.4vw,34px) 4px; text-align:left; min-width:min(42%,330px)}
+.hp-br::before,.hp-br::after{content:""; position:absolute; width:30px; height:30px; background:radial-gradient(circle at 0 0, transparent 29.5px, var(--bg) 30px)}
+.hp-br::before{right:0; bottom:100%} .hp-br::after{bottom:0; right:100%}
+.hp-br b{display:block; font:800 clamp(22px,2.3vw,32px)/1 var(--f-display); letter-spacing:-.03em; color:var(--ink)}
+.hp-br span{display:block; margin-top:8px; font-size:clamp(13px,1.1vw,15.5px); line-height:1.55; color:var(--muted)}
+@media (max-width:720px){.page-globe{top:90px; right:-180px; width:380px; opacity:.6} .hphoto{aspect-ratio:4/3} .hp-br{min-width:0; max-width:70%}}
+@media (prefers-reduced-motion: reduce){.hphoto > img{animation:none}}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -652,63 +671,18 @@ html.rv-on .rv.in{opacity:1; transform:none}
 </header>
 
 <main id="top">
-<div class="page-glow" aria-hidden="true"></div>
+<div class="page-globe" aria-hidden="true"><svg viewBox="0 0 600 600" fill="none" stroke="#C4C7C2" stroke-width="1.2"><circle cx="300" cy="300" r="290"/><line x1="10" y1="300" x2="590" y2="300"/><ellipse cx="300" cy="150" rx="251" ry="40"/><ellipse cx="300" cy="450" rx="251" ry="40"/><ellipse cx="300" cy="300" rx="40" ry="290"><animate attributeName="rx" dur="24s" begin="0s" repeatCount="indefinite" values="0;290;0" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/></ellipse><ellipse cx="300" cy="300" rx="40" ry="290"><animate attributeName="rx" dur="24s" begin="-6s" repeatCount="indefinite" values="0;290;0" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/></ellipse><ellipse cx="300" cy="300" rx="40" ry="290"><animate attributeName="rx" dur="24s" begin="-12s" repeatCount="indefinite" values="0;290;0" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/></ellipse><ellipse cx="300" cy="300" rx="40" ry="290"><animate attributeName="rx" dur="24s" begin="-18s" repeatCount="indefinite" values="0;290;0" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/></ellipse></svg></div>
 
 <section class="hero" aria-labelledby="h-hero">
   <span class="eyebrow"><span class="ldot"></span>Zgodność z EPR w całej Europie</span>
   <h1 id="h-hero">Jeden partner od <em>EPR</em> w 27 krajach UE</h1>
   <p class="lead">Otoneso rejestruje Twoją firmę w krajowych systemach EPR, składa sprawozdania i działa jako Twój Autoryzowany Przedstawiciel. Opakowania, elektronika, baterie i plastik jednorazowy, dla producentów i sprzedawców online.</p>
 
-  <div class="player" id="demo">
-    <div class="screen">
-      <span class="scr-logo"><img src="img/otoneso-logo.png" alt=""></span>
-      <span class="scr-chap" id="pl-chap">Analiza</span>
-
-      <div class="scene on" data-sub="Mówisz nam, co i gdzie sprzedajesz. Bezpłatnie ustalamy Twoje obowiązki." data-name="Analiza"><div class="mock">
-        <div class="row"><span>Rynki</span><small>PL · DE · FR · ES</small></div>
-        <div class="row"><span>Produkty</span><small>słuchawki, kable, w kartonach</small></div>
-        <div class="row"><span>Kanały</span><small>własny sklep, Amazon, Allegro</small></div>
-        <div class="row hl"><b>Wykryte obowiązki EPR</b><b class="ok">9</b></div>
-      </div><div class="say"><span>01 · ANALIZA</span><div>Powiedz, co sprzedajesz. Wskażemy, <b>co Cię dotyczy</b>.</div></div></div>
-
-      <div class="scene" data-sub="Rejestrujemy Cię w systemie każdego kraju i przekazujemy numery, których wymagają marketplace’y." data-name="Rejestracja"><div class="mock">
-        <div class="row"><span><b>Niemcy</b> <small>opakowania · LUCID</small></span><span class="ok">✓ zarejestrowano</span></div>
-        <div class="row"><span><b>Niemcy</b> <small>WEEE</small></span><span class="ok">✓ zarejestrowano</span></div>
-        <div class="row"><span><b>Francja</b> <small>opakowania · UIN</small></span><span class="wait">w toku</span></div>
-        <div class="row hl"><span><b>Polska</b> <small>BDO</small></span><span class="ok">✓ numer nadany</span></div>
-      </div><div class="say"><span>02 · REJESTRACJA</span><div>Każdy rejestr, <b>jeden opiekun</b>.</div></div></div>
-
-      <div class="scene" data-sub="Sprawozdania miesięczne, kwartalne i roczne wysyłamy na czas, w każdym kraju." data-name="Sprawozdania"><div class="mock">
-        <div class="pchips"><span class="pchip"><i></i>DE III kw.</span><span class="pchip"><i></i>AT III kw.</span><span class="pchip"><i class="w"></i>FR 2026</span><span class="pchip"><i class="w"></i>PL BDO</span></div>
-        <div class="row"><span>Zadeklarowane opakowania</span><small>18 240 kg</small></div>
-        <div class="meter"><i style="width:72%"></i></div>
-        <div class="row hl"><span>Roczne sprawozdanie BDO</span><span class="wait">do 15 marca</span></div>
-      </div><div class="say"><span>03 · SPRAWOZDANIA</span><div>Terminy w 29 krajach. <b>Pilnujemy ich.</b></div></div></div>
-
-      <div class="scene" data-sub="EPRpilot pokazuje status każdego rynku i obowiązku w jednym panelu." data-name="EPRpilot"><div class="mock">
-        <div class="row"><span>Aktywne rynki</span><b>7</b></div>
-        <div class="row"><span>Ważne rejestracje</span><span class="ok">14 / 14</span></div>
-        <div class="row"><span>Gotowość na PPWR</span><small>3 zadania otwarte</small></div>
-        <div class="row hl"><span>Najbliższe sprawozdanie</span><span class="wait">AT · za 6 dni</span></div>
-      </div><div class="say"><span>04 · EPRPILOT</span><div>Wszystkie rynki <b>na jednym ekranie</b>.</div></div></div>
-
-      <div class="scene" data-sub="Ty sprzedajesz w całej Europie. Otoneso pilnuje Twojego EPR." data-name="Ty" style="flex-direction:column; text-align:center; gap:18px"><div class="say" style="align-items:center; flex:none; max-width:80%"><span>05 · TY</span><div style="font-size:clamp(22px,3.4vw,44px)">Ty sprzedajesz w Europie. <b>EPR bierzemy na siebie.</b></div></div><a class="big-cta" href="#contact">Bezpłatna wycena →</a></div>
-
-      <div class="subt" id="pl-sub">Mówisz nam, co i gdzie sprzedajesz. Bezpłatnie ustalamy Twoje obowiązki.</div>
-      <div class="ctrl">
-        <button type="button" class="pp" id="pl-pp" aria-label="Pauza"></button>
-        <time id="pl-time">0:00 / 0:30</time>
-        <div class="chaps" id="pl-chaps">
-          <button type="button" aria-label="Rozdział 1: Analiza"><span><i></i></span></button>
-          <button type="button" aria-label="Rozdział 2: Rejestracja"><span><i></i></span></button>
-          <button type="button" aria-label="Rozdział 3: Sprawozdania"><span><i></i></span></button>
-          <button type="button" aria-label="Rozdział 4: EPRpilot"><span><i></i></span></button>
-          <button type="button" aria-label="Rozdział 5: Ty"><span><i></i></span></button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <p class="player-note">Jak działamy, w 30 sekund. Kliknij pasek, żeby przejść do rozdziału. Dane w demo są przykładowe.</p>
+  <figure class="hphoto" style="margin:8px 0 0">
+    <img src="img/hero-photo.jpg" alt="Specjalistka ds. zgodności z tabletem w magazynie e-commerce" fetchpriority="high">
+    <span class="hp-tl"><span class="hp-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#96C43C" d="M20.5 3.5C11 3.6 5.2 8.4 5 15.2c0 1.2.2 2.3.6 3.3L3.3 20.8l1.4 1.4 2.3-2.3c1 .5 2.2.7 3.4.7 6.8-.3 10.4-6.6 10.1-17.1zM9 17.4l-.9-.9c2.2-3.3 5-5.8 8.3-7.4-3 2-5.5 4.8-7.4 8.3z"/></svg></span></span>
+    <figcaption class="hp-br"><b>1000+</b><span>klientów w całej Europie<br>rejestracje i sprawozdania EPR</span></figcaption>
+  </figure>
 
   <div class="hero-cta">
     <div><p class="big">EPR to <b>nasza</b> działka.<br>Sprzedaż jest Twoja.</p><p class="sm">Rejestracja, sprawozdawczość i Autoryzowany Przedstawiciel, z bezpłatną analizą Twoich obowiązków na start.</p></div>
