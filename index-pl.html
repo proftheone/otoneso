@@ -672,6 +672,9 @@ html.rv-on .rv.in{opacity:1; transform:none}
 .langdd:hover .chev,.langdd:focus-within .chev{transform:rotate(180deg)}
 .btn.btn-leaf{background:var(--leaf); color:var(--on-leaf); box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 10px 24px -12px rgba(89,143,36,.7)}
 .btn.btn-leaf:hover{background:var(--leaf-hover)}
+.what-photo{box-shadow:none; border-radius:26px 26px 0 26px}
+.what-photo .hp-br{display:block; background:var(--bg); left:auto; bottom:0; right:0; gap:0; font-weight:400; backdrop-filter:none; -webkit-backdrop-filter:none; border-radius:0; border-top-left-radius:26px; padding:clamp(14px,1.8vw,24px) clamp(16px,2vw,28px) 4px; min-width:min(52%,300px)}
+.what-photo .hp-br::before,.what-photo .hp-br::after{width:26px; height:26px; background:radial-gradient(circle at 0 0, transparent 25.5px, var(--bg) 26px)}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -763,8 +766,8 @@ html.rv-on .rv.in{opacity:1; transform:none}
       <a class="btn" href="#contact">Sprawdź, co Cię dotyczy <svg><use href="#next"/></svg></a>
     </div>
     <figure class="what-photo">
-      <img src="img/epr-photo.jpg" alt="Specjalistka ds. zgodności z tabletem w magazynie e-commerce" width="1400" height="933" loading="lazy">
-      <figcaption><i></i>EPR w praktyce</figcaption>
+      <img src="img/fair-team.jpg" alt="Członek zespołu Otoneso rozmawia z odwiedzającymi przy stoisku targowym, trzyma ekologiczne tuby z papieru" width="1400" height="1050" loading="lazy">
+      <figcaption class="hp-br"><b>1000+</b><span>klientów w całej Europie<br>rejestracje i sprawozdania EPR</span></figcaption>
     </figure>
   </div>
 </section>
