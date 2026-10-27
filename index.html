@@ -489,32 +489,38 @@ html.rv-on .rv.in{opacity:1; transform:none}
 
 /* ---- EPRpilot screenshots slider ---- */
 .shots{margin-top:clamp(40px,5vw,64px); max-width:860px; margin-inline:auto}
-.shots-head{display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:16px; margin-bottom:18px}
+.shots-head{margin-bottom:18px}
 .shots-head h3{margin:0; font:800 clamp(22px,2.2vw,28px) var(--f-display); letter-spacing:-.02em}
-.shots-tabs{display:flex; flex-wrap:wrap; gap:8px}
-.shots-tabs button{font:600 14px var(--f-body); padding:10px 16px; border-radius:999px; border:0; cursor:pointer; background:var(--surface); color:var(--muted); box-shadow:var(--ring); transition:background .2s, color .2s}
-.shots-tabs button:hover{color:var(--ink)}
-.shots-tabs button[aria-selected="true"]{background:var(--ink); color:#fff; box-shadow:none}
-.shots-frame{position:relative; border-radius:24px; overflow:hidden; background:#E3E5E1; box-shadow:var(--ring), var(--lift)}
-.shots-bar{display:flex; align-items:center; gap:7px; padding:12px 16px; background:#F4F5F2; border-bottom:1px solid var(--line)}
-.shots-bar i{width:11px; height:11px; border-radius:50%; background:#D6DAD2}
-.shots-bar span{margin-left:12px; font:500 12.5px var(--f-body); color:var(--dim); background:#fff; border-radius:8px; padding:4px 12px; box-shadow:inset 0 0 0 1px var(--line)}
+.shots-box{background:#0F1A16; border-radius:26px; padding:10px; box-shadow:0 30px 60px -30px rgba(15,26,22,.6)}
+.shots-stage{position:relative; border-radius:18px; overflow:hidden; background:#E3E5E1}
 .shots-track{display:flex; transition:transform .6s cubic-bezier(.2,.7,.2,1); touch-action:pan-y}
 .shots-track figure{flex:0 0 100%; margin:0; aspect-ratio:1400/920; display:grid; place-items:center; background:#E3E5E1}
 .shots-track img{width:100%; height:100%; object-fit:contain; display:block; user-select:none; -webkit-user-drag:none}
-.shots-nav{position:absolute; top:50%; translate:0 -50%; width:46px; height:46px; border-radius:50%; border:0; cursor:pointer; display:grid; place-items:center; background:rgba(255,255,255,.92); color:var(--ink); box-shadow:0 8px 24px -10px rgba(19,32,26,.45); transition:transform .2s, background .2s}
-.shots-nav:hover{background:#fff; transform:scale(1.06)}
-.shots-nav svg{width:18px; height:18px}
-.shots-nav.prev{left:14px} .shots-nav.next{right:14px}
-.shots-cap{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:16px}
-.shots-cap p{margin:0; color:var(--muted); font-size:15.5px; max-width:70ch}
-.shots-dots{display:flex; gap:6px; flex:none}
-.shots-dots i{width:28px; height:5px; border-radius:99px; background:#D3DBC9; overflow:hidden; position:relative}
-.shots-dots i b{position:absolute; inset:0; width:0; background:var(--leaf)}
-.shots-dots i.on b{animation:shotfill var(--dur,5s) linear forwards}
-.shots.paused .shots-dots i.on b{animation-play-state:paused}
+.shots-full{position:absolute; right:14px; bottom:14px; display:inline-flex; align-items:center; gap:8px; font:700 14px var(--f-body); color:#fff; background:rgba(15,26,22,.82); backdrop-filter:blur(8px); border:0; border-radius:999px; padding:10px 16px; cursor:pointer}
+.shots-full:hover{background:#0F1A16}
+.shots-full svg{width:16px; height:16px}
+.shots-stage:fullscreen{background:#0F1A16; display:grid; place-items:center} .shots-stage:fullscreen .shots-track figure{background:#0F1A16}
+.shots-info{display:flex; justify-content:space-between; gap:20px; padding:18px 14px 12px}
+.shots-info small{display:block; font:700 13px var(--f-body); color:var(--orange); margin-bottom:6px}
+.shots-info b{display:block; font:800 clamp(20px,2vw,24px)/1.2 var(--f-display); color:#fff; letter-spacing:-.02em}
+.shots-info p{margin:8px 0 0; color:#A9B8AF; font-size:15px; max-width:62ch}
+.shots-info .cnt{flex:none; font:600 14px var(--f-body); color:#7E8F86; font-variant-numeric:tabular-nums}
+.shots-thumbs{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:14px}
+.shots-thumbs button{all:unset; box-sizing:border-box; cursor:pointer; background:#0F1A16; border-radius:16px; padding:8px 8px 14px; box-shadow:inset 0 0 0 1.5px transparent; transition:box-shadow .2s, transform .2s}
+.shots-thumbs button:hover{transform:translateY(-2px)}
+.shots-thumbs button[aria-selected="true"]{box-shadow:inset 0 0 0 2px var(--orange); background:#1D1610}
+.shots-thumbs button:focus-visible{outline:2px solid var(--orange); outline-offset:2px}
+.shots-thumbs img{display:block; width:100%; aspect-ratio:16/9; object-fit:cover; object-position:top; border-radius:10px}
+.shots-thumbs small{display:block; margin:10px 6px 4px; font:600 12.5px var(--f-body); color:#7E8F86}
+.shots-thumbs button[aria-selected="true"] small{color:var(--orange)}
+.shots-thumbs span{display:block; margin:0 6px; font-size:14.5px; line-height:1.35; color:#E3EEE7}
+.shots-prog{height:4px; border-radius:99px; background:#D3DBC9; margin-top:14px; overflow:hidden}
+.shots-prog i{display:block; height:100%; width:0; background:var(--ink); border-radius:99px}
+.shots-prog i.run{animation:shotfill var(--dur,6s) linear forwards}
+.shots.paused .shots-prog i{animation-play-state:paused}
 @keyframes shotfill{to{width:100%}}
-@media (max-width:640px){.shots-nav{width:38px; height:38px} .shots-cap{flex-direction:column; align-items:flex-start}}
+.shots-note{margin:10px 0 0; font-size:13px; color:var(--dim)}
+@media (max-width:640px){.shots-thumbs{grid-template-columns:repeat(3,minmax(150px,1fr)); overflow-x:auto; scroll-snap-type:x mandatory} .shots-thumbs button{scroll-snap-align:start} .shots-info{flex-direction:column; gap:6px} .shots-full span{display:none}}
 
 /* ---- about photo gallery ---- */
 .pc-stack{position:relative; aspect-ratio:800/798}
@@ -794,17 +800,18 @@ html.rv-on .rv.in{opacity:1; transform:none}
       </div>
     </div>
   </div>
-  <div class="wrap shots" id="shots" data-caps="Adding a product: brand, EAN, country of manufacture, weight, and transport and sales packaging in one form.|Report for Germany: electrical equipment weights by category, plus battery quantities and weights, ready to submit.|Sellasist integration: sync products and orders in one click, with no manual re-typing.">
-    <div class="shots-head"><h3>EPRpilot in action</h3><div class="shots-tabs" role="tablist"><button type="button" role="tab" id="st0" aria-controls="sp0" aria-selected="true">Add a product</button><button type="button" role="tab" id="st1" aria-controls="sp1" aria-selected="false">EPR report</button><button type="button" role="tab" id="st2" aria-controls="sp2" aria-selected="false">Integrations</button></div></div>
-    <div class="shots-frame">
-      <div class="shots-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.eprpilot.com</span></div>
-      <div style="position:relative; overflow:hidden">
-        <div class="shots-track"><figure role="tabpanel" id="sp0" aria-labelledby="st0"><img src="img/app-product.jpg" alt="Add product form in EPRpilot" width="1400" height="959" loading="lazy" draggable="false"></figure><figure role="tabpanel" id="sp1" aria-labelledby="st1"><img src="img/app-report.jpg" alt="Editing an EPR report for Germany in EPRpilot" width="1400" height="974" loading="lazy" draggable="false"></figure><figure role="tabpanel" id="sp2" aria-labelledby="st2"><img src="img/app-sync.jpg" alt="Sellasist integration details in EPRpilot" width="1400" height="850" loading="lazy" draggable="false"></figure></div>
-        <button type="button" class="shots-nav prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
-        <button type="button" class="shots-nav next" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+  <div class="wrap shots" id="shots" data-sl="Products~Describe a product once~Brand, EAN, country of manufacture, weight, and transport and sales packaging in one form.|Reports~EPR report ready to submit~Electrical equipment weights by category, plus battery quantities and weights, calculated for Germany.|Integrations~Data flows in from your shop~Sellasist integration: sync products and orders in one click.">
+    <div class="shots-head"><h3>EPRpilot in action</h3></div>
+    <div class="shots-box">
+      <div class="shots-stage">
+        <div class="shots-track"><figure id="sp0" role="tabpanel" aria-labelledby="st0"><img src="img/app-product.jpg" alt="Add product form in EPRpilot" width="1400" height="959" loading="lazy" draggable="false"></figure><figure id="sp1" role="tabpanel" aria-labelledby="st1"><img src="img/app-report.jpg" alt="Editing an EPR report for Germany in EPRpilot" width="1400" height="974" loading="lazy" draggable="false"></figure><figure id="sp2" role="tabpanel" aria-labelledby="st2"><img src="img/app-sync.jpg" alt="Sellasist integration details in EPRpilot" width="1400" height="850" loading="lazy" draggable="false"></figure></div>
+        <button type="button" class="shots-full"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span>Full screen</span></button>
       </div>
+      <div class="shots-info" aria-live="polite"><div><small id="sh-k">Products</small><b id="sh-t">Describe a product once</b><p id="sh-d">Brand, EAN, country of manufacture, weight, and transport and sales packaging in one form.</p></div><span class="cnt" id="sh-n">1 / 3</span></div>
     </div>
-    <div class="shots-cap"><p id="shots-cap" aria-live="polite">Adding a product: brand, EAN, country of manufacture, weight, and transport and sales packaging in one form.</p><div class="shots-dots" aria-hidden="true"><i class=on><b></b></i><i><b></b></i><i><b></b></i></div></div>
+    <div class="shots-thumbs" role="tablist"><button type="button" role="tab" id="st0" aria-controls="sp0" aria-selected="true"><img src="img/app-product.jpg" alt="" loading="lazy"><small>Products</small><span>Describe a product once</span></button><button type="button" role="tab" id="st1" aria-controls="sp1" aria-selected="false"><img src="img/app-report.jpg" alt="" loading="lazy"><small>Reports</small><span>EPR report ready to submit</span></button><button type="button" role="tab" id="st2" aria-controls="sp2" aria-selected="false"><img src="img/app-sync.jpg" alt="" loading="lazy"><small>Integrations</small><span>Data flows in from your shop</span></button></div>
+    <div class="shots-prog" aria-hidden="true"><i></i></div>
+    <p class="shots-note">Screenshots from the EPRpilot panel.</p>
   </div>
 </section>
 
@@ -1123,30 +1130,32 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
   }, 2400);
 })();
 
-// EPRpilot screenshots slider: tabs, arrows, swipe, autoplay
+// EPRpilot screenshots slider: thumbnails, swipe, autoplay, full screen
 (function () {
   var root = document.getElementById('shots'); if (!root) return;
-  var track = root.querySelector('.shots-track'), tabs = [].slice.call(root.querySelectorAll('[role=tab]')), dots = [].slice.call(root.querySelectorAll('.shots-dots i'));
-  var caps = root.dataset.caps.split('|'), cap = document.getElementById('shots-cap'), n = tabs.length, cur = 0, DUR = 5000, timer = null;
+  var track = root.querySelector('.shots-track'), tabs = [].slice.call(root.querySelectorAll('[role=tab]')), bar = root.querySelector('.shots-prog i');
+  var sl = root.dataset.sl.split('|').map(function (s) { return s.split('~'); }), n = tabs.length, cur = 0, DUR = 6000, timer = null;
   var auto = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   root.style.setProperty('--dur', DUR / 1000 + 's');
-  function go(i) {
+  function go(i, focus) {
     cur = (i + n) % n; track.style.transform = 'translateX(' + (-cur * 100) + '%)';
-    tabs.forEach(function (t, k) { t.setAttribute('aria-selected', k === cur ? 'true' : 'false'); });
-    dots.forEach(function (d, k) { d.classList.remove('on'); if (k === cur) { void d.offsetWidth; d.classList.add('on'); } });
-    cap.textContent = caps[cur]; restart();
+    tabs.forEach(function (t, k) { t.setAttribute('aria-selected', k === cur ? 'true' : 'false'); t.tabIndex = k === cur ? 0 : -1; });
+    if (focus) tabs[cur].focus();
+    document.getElementById('sh-k').textContent = sl[cur][0]; document.getElementById('sh-t').textContent = sl[cur][1]; document.getElementById('sh-d').textContent = sl[cur][2];
+    document.getElementById('sh-n').textContent = (cur + 1) + ' / ' + n;
+    bar.classList.remove('run'); void bar.offsetWidth; if (auto) bar.classList.add('run');
+    clearTimeout(timer); if (auto && !root.classList.contains('paused')) timer = setTimeout(function () { go(cur + 1); }, DUR);
   }
-  function restart() { clearTimeout(timer); if (auto && !root.classList.contains('paused')) timer = setTimeout(function () { go(cur + 1); }, DUR); }
   tabs.forEach(function (t, k) { t.addEventListener('click', function () { go(k); }); });
-  root.querySelector('.prev').addEventListener('click', function () { go(cur - 1); });
-  root.querySelector('.next').addEventListener('click', function () { go(cur + 1); });
+  root.querySelector('.shots-thumbs').addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') go(cur + 1, true); if (e.key === 'ArrowLeft') go(cur - 1, true); });
   root.addEventListener('pointerenter', function () { root.classList.add('paused'); clearTimeout(timer); });
-  root.addEventListener('pointerleave', function () { root.classList.remove('paused'); restart(); });
+  root.addEventListener('pointerleave', function () { root.classList.remove('paused'); go(cur); });
   var x0 = null;
   track.addEventListener('pointerdown', function (e) { x0 = e.clientX; });
   track.addEventListener('pointerup', function (e) { if (x0 === null) return; var dx = e.clientX - x0; x0 = null; if (Math.abs(dx) > 40) go(cur + (dx < 0 ? 1 : -1)); });
-  root.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') go(cur + 1); if (e.key === 'ArrowLeft') go(cur - 1); });
-  if (!auto) dots.forEach(function (d) { d.classList.remove('on'); });
+  var stage = root.querySelector('.shots-stage'), fb = root.querySelector('.shots-full');
+  if (!stage.requestFullscreen) fb.hidden = true;
+  fb.addEventListener('click', function () { if (document.fullscreenElement) document.exitFullscreen(); else stage.requestFullscreen().catch(function () {}); });
   go(0);
 })();
 
