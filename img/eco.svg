@@ -9,7 +9,7 @@
 @keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
 @keyframes draw{0%{stroke-dashoffset:900}35%,80%{stroke-dashoffset:0}100%{stroke-dashoffset:900}}
 @keyframes draw2{0%{stroke-dashoffset:160}35%,80%{stroke-dashoffset:0}100%{stroke-dashoffset:160}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;stroke-dashoffset:0!important}}
+*{animation:none!important;stroke-dashoffset:0!important}
 </style>
 <g class="ring"><path d="M300 12 A288 288 0 0 1 549.4 156"/><path d="M549.4 444 A288 288 0 0 1 300 588"/><path d="M50.6 444 A288 288 0 0 1 50.6 156"/><path d="M536 136 l13.4 20 l-23.6 3.2"/><path d="M322 592 l-22 -4 l14.6 -17.8"/><path d="M40 178 l10.6 -22 l14 19.4"/></g>
 <circle cx="300" cy="300" r="248" stroke-dasharray="2 9"/>
