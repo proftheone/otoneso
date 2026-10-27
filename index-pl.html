@@ -564,7 +564,7 @@ html.rv-on .rv.in{opacity:1; transform:none}
 
 .vid-grid{grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px}
 .vid-body h3{font-size:16px}
-.vid-more{grid-column:span 2; background:#0F1A16; color:#fff; border-radius:20px; padding:clamp(24px,3vw,40px); display:flex; flex-direction:column; justify-content:center; gap:12px; position:relative; overflow:hidden}
+.vid-more{grid-column:span 1; background:#0F1A16; color:#fff; border-radius:20px; padding:clamp(24px,3vw,40px); display:flex; flex-direction:column; justify-content:center; gap:12px; position:relative; overflow:hidden}
 .vid-more::after{content:""; position:absolute; right:-60px; bottom:-60px; width:240px; height:240px; border-radius:50%; background:radial-gradient(circle,rgba(242,140,40,.35),transparent 70%)}
 .vid-more svg{width:44px; height:32px}
 .vid-more h3{font:800 clamp(22px,2.2vw,30px)/1.2 var(--f-display); margin:4px 0 0; color:#fff}
@@ -891,6 +891,16 @@ html.rv-on .rv.in{opacity:1; transform:none}
       <a class="btn btn-ghost vid-yt" href="https://www.youtube.com/@Otoneso_pl" target="_blank" rel="noopener"><svg viewBox="0 0 22 16" aria-hidden="true"><rect width="22" height="16" rx="4" fill="#E52D27"/><path d="M9 4.5v7l6-3.5z" fill="#fff"/></svg>Zobacz kanał na YouTube</a>
     </div>
     <ul class="vid-grid">
+      <li class="vid">
+        <div class="vid-frame">
+          <img src="https://i.ytimg.com/vi/xPig1RaCpUQ/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          <button class="vid-play" type="button" data-id="xPig1RaCpUQ" aria-label="Odtwórz film: Czym jest greenwashing naprawdę?"><span></span></button>
+        </div>
+        <div class="vid-body">
+          <h3><a href="https://www.youtube.com/watch?v=xPig1RaCpUQ" target="_blank" rel="noopener">Czym jest greenwashing naprawdę?</a></h3>
+          <div class="vid-src">Kanał Otoneso · 19 października 2026</div>
+        </div>
+      </li>
       <li class="vid">
         <div class="vid-frame">
           <img src="https://i.ytimg.com/vi/dUHEArfhWUI/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
