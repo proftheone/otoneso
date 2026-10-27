@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>EPR for e-commerce – Otoneso</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Marketplaces now require proof of EPR compliance, and an invalid number can get your listings blocked. We register you in national schemes, file your reports and settle fees in 22 countries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px)} img{max-width:100%}
+.menu a[aria-current="page"]{color:var(--green)}
+
+.sub-hero{position:relative; z-index:1; padding-block:clamp(48px,6vw,88px) clamp(28px,4vw,48px)}
+.sub-hero h1{font-size:clamp(36px,5vw,64px); margin:16px 0 18px; max-width:18ch}
+.sub-hero .lead{color:var(--muted); font-size:clamp(17px,1.5vw,20px); max-width:60ch; margin:0}
+.crumbs{font-size:13.5px; color:var(--dim); display:flex; gap:8px; align-items:center; margin-bottom:22px}
+.crumbs a{color:var(--muted); text-decoration:none} .crumbs a:hover{color:var(--green)}
+/* legal */
+.legal{display:grid; grid-template-columns:minmax(0,240px) minmax(0,760px); gap:clamp(28px,5vw,72px); padding-bottom:clamp(48px,6vw,88px)}
+.toc{position:sticky; top:96px; align-self:start; display:grid; gap:4px; font-size:14px}
+.toc b{font:700 12px var(--f-body); letter-spacing:.14em; text-transform:uppercase; color:var(--olive); margin-bottom:8px}
+.toc a{color:var(--muted); text-decoration:none; padding:5px 0 5px 12px; border-left:2px solid var(--line)}
+.toc a:hover{color:var(--green); border-left-color:var(--leaf)}
+.doc{min-width:0}
+.doc .note{display:flex; gap:12px; align-items:flex-start; background:#F1F8E6; box-shadow:inset 0 0 0 1px #D3E8B3; border-radius:16px; padding:16px 18px; font-size:15px; color:var(--ink); margin-bottom:32px}
+.doc .note svg{width:20px; height:20px; flex:none; color:var(--green); margin-top:2px}
+.doc .note a{color:var(--green); font-weight:600}
+.doc section{padding-block:22px; border-top:1px solid var(--line); scroll-margin-top:96px}
+.doc h2{font-size:clamp(22px,2vw,28px); letter-spacing:-.025em; margin:0 0 12px}
+.doc h2 span{color:var(--green); margin-right:8px}
+.doc p{margin:0 0 12px; color:var(--muted)}
+.doc ul{margin:0 0 12px; padding-left:20px; color:var(--muted); display:grid; gap:6px}
+.doc li::marker{color:var(--leaf)}
+.meta-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px}
+.meta-row span{font:600 13px var(--f-body); padding:6px 12px; border-radius:999px; background:var(--surface); box-shadow:var(--ring)}
+@media (max-width:860px){.legal{grid-template-columns:1fr} .toc{position:static}}
+/* about */
+.big-photo{margin:0 0 clamp(48px,6vw,88px); border-radius:28px; overflow:hidden; box-shadow:var(--ring), var(--lift); aspect-ratio:21/9; max-width:100%}
+.big-photo img{width:100%; height:100%; object-fit:cover; object-position:50% 35%; display:block}
+.split{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:clamp(28px,5vw,80px); align-items:start}
+.split h2{font-size:clamp(30px,3.6vw,48px); margin-top:14px}
+.split p{color:var(--muted); margin:0 0 14px; font-size:17px}
+.quote-big{font-family:var(--f-display); font-weight:800; font-size:clamp(24px,2.4vw,32px); letter-spacing:-.03em; line-height:1.2; margin:22px 0 0; padding-left:20px; border-left:5px solid var(--leaf)}
+.vals{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
+.vals article{background:var(--surface); border-radius:20px; box-shadow:var(--ring); padding:24px; display:flex; flex-direction:column; gap:10px}
+.vals .pain-ico{margin:0}
+.vals b{font-family:var(--f-display); font-size:20px; font-weight:800; letter-spacing:-.025em}
+.vals p{margin:0; color:var(--muted); font-size:15px}
+.people{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
+.person{background:var(--surface); border-radius:20px; box-shadow:var(--ring); padding:22px; display:flex; align-items:center; gap:14px}
+.person i{width:52px; height:52px; flex:none; border-radius:50%; display:grid; place-items:center; font:700 17px var(--f-body); font-style:normal; color:#fff; background:var(--teal)}
+.person:nth-child(2) i{background:var(--olive)} .person:nth-child(3) i{background:var(--green)} .person:nth-child(4) i{background:var(--leaf); color:var(--on-leaf)}
+.person b{display:block; font-family:var(--f-display); font-weight:800; font-size:17px; letter-spacing:-.02em; line-height:1.25}
+.person span{font-size:14px; color:var(--muted)}
+.cta-box{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:24px; background:var(--teal); color:#F7F8F4; border-radius:28px; padding:clamp(28px,4vw,52px); box-shadow:var(--lift)}
+.cta-box h2{font-size:clamp(28px,3.4vw,44px); max-width:22ch}
+.cta-box h2 em{color:var(--leaf)}
+.cta-box p{color:#C5D1CA; margin:10px 0 0; max-width:52ch}
+@media (max-width:1000px){.vals,.people{grid-template-columns:repeat(2,minmax(0,1fr))} .split{grid-template-columns:1fr}}
+@media (max-width:560px){.vals,.people{grid-template-columns:1fr} .big-photo{aspect-ratio:4/3}}
+
+.p-hero{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:clamp(28px,5vw,72px); align-items:center}
+.p-hero .acts{margin-top:26px}
+.panel-mock{background:var(--surface); border-radius:24px; box-shadow:var(--ring), var(--lift); padding:20px; display:grid; gap:12px; font-size:14px}
+.panel-mock header{display:flex; justify-content:space-between; align-items:center; gap:10px}
+.panel-mock header b{font-family:var(--f-display); font-weight:800; font-size:17px; letter-spacing:-.02em}
+.panel-mock header span{font-size:12px; color:var(--dim)}
+.pm-kpis{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px}
+.pm-kpis div{background:var(--bg); border-radius:14px; padding:12px}
+.pm-kpis small{display:block; font-size:12px; color:var(--dim); font-weight:600}
+.pm-kpis strong{font-family:var(--f-display); font-size:24px; font-weight:800; font-variant-numeric:tabular-nums}
+.pm-link{display:flex; align-items:center; gap:10px; background:#F1F8E6; box-shadow:inset 0 0 0 1px #D3E8B3; border-radius:12px; padding:10px 12px; font-size:13px; min-width:0}
+.pm-link code{flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-family:ui-monospace,Menlo,monospace; color:var(--olive)}
+.pm-link span{font-weight:700; color:var(--green); white-space:nowrap}
+.pm-row{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:10px 0; border-top:1px solid var(--line)}
+.pm-row b{font-weight:600}
+.pm-row small{display:block; color:var(--dim); font-size:12px}
+.tagx{font:600 12px var(--f-body); padding:4px 10px; border-radius:999px; white-space:nowrap}
+.tagx.new{background:#EEF2E8; color:var(--muted)} .tagx.mid{background:#FBF1D6; color:#7A5A12} .tagx.won{background:var(--leaf); color:var(--on-leaf)}
+.p-note{margin:10px 0 0; font-size:12.5px; color:var(--dim); text-align:center}
+.p-form{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.p-form .full{grid-column:1/-1}
+.steps4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:900px){.p-hero{grid-template-columns:1fr} .steps4{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps4{grid-template-columns:1fr}}
+@media (max-width:560px){.p-form{grid-template-columns:1fr}}
+
+.tl{background:var(--surface); border-radius:24px; box-shadow:var(--ring), var(--lift); padding:22px; display:grid; gap:4px}
+.tl header{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px}
+.tl header b{font-family:var(--f-display); font-weight:800; font-size:17px; letter-spacing:-.02em}
+.tl header span{font-size:12px; color:var(--dim)}
+.tl-i{display:grid; grid-template-columns:104px minmax(0,1fr); gap:14px; padding:12px 0; border-top:1px solid var(--line)}
+.tl-i time{white-space:nowrap; font-family:var(--f-display); font-weight:800; font-size:15px; color:var(--green); font-variant-numeric:tabular-nums}
+.tl-i b{display:block; font-weight:600; font-size:14.5px}
+.tl-i small{display:block; color:var(--muted); font-size:13px; line-height:1.5; margin-top:2px}
+.tl-i.now time::after{content:""; display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--leaf); margin-left:7px; vertical-align:middle; box-shadow:0 0 0 4px #E3F1CC}
+.pmap{background:var(--surface); border-radius:24px; box-shadow:var(--ring), var(--lift); padding:20px; font-size:14px}
+.pmap header{display:flex; justify-content:space-between; align-items:center; margin-bottom:6px}
+.pmap header b{font-family:var(--f-display); font-weight:800; font-size:17px}
+.pmap header span{font-size:12px; color:var(--dim)}
+.cov{counter-reset:c}
+
+.dd-menu a.dd-live{display:flex; flex-wrap:wrap; align-items:center; gap:0 8px}
+.dd-menu a.dd-live small{flex-basis:100%}
+.dd-menu a.dd-live .ext{font-size:12px; color:var(--dim)}
+
+.pain-grid.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1000px){.pain-grid.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.pain-grid.g4{grid-template-columns:1fr}}
+.cgrid{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px}
+.cgrid span{padding:7px 12px; border-radius:999px; background:var(--surface); box-shadow:var(--ring); font-size:13.5px; font-weight:600}
+.cbox{background:var(--surface); border-radius:24px; box-shadow:var(--ring), var(--lift); padding:22px}
+.cbox header{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px}
+.cbox header b{font-family:var(--f-display); font-weight:800; font-size:17px}
+.cbox header span{font-size:12px; color:var(--dim)}
+.cbox .cgrid span{background:var(--bg)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arr" viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="next" viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="chk" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="currentColor" opacity=".16"/><path d="m6 10.2 2.6 2.6L14 7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+<header class="nav">
+  <div class="bar">
+    <a class="logo" href="./" aria-label="Otoneso – home"><img src="img/otoneso-logo.png" alt="otoneso" width="437" height="105"></a>
+    <nav class="menu" aria-label="Main">
+      <a href="./#streams">Products</a>
+      <a href="./#countries">Countries</a>
+      <a href="./#process">How it works</a>
+      <div class="dd"><a href="./#services" aria-haspopup="true">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a><div class="dd-menu"><div><a href="./#services">All services<small>EPR, BDO, KOBiZE, EUDR, GPSR</small></a><a href="epr-ecommerce.html">EPR for e-commerce<small>Amazon, eBay, Allegro and other marketplaces</small></a><a href="ppwr-implementation.html" aria-current="page">PPWR implementation<small>Packaging audit, plan and documentation</small></a><a class="dd-live" href="https://eprpilot.com/" target="_blank" rel="noopener"><span class="ldot"></span>EPRpilot <span class="ext" aria-hidden="true">↗</span><small>Your EPR reporting platform</small></a></div></div></div>
+      <a href="about.html">About</a>
+      <a href="partners.html">Partners</a>
+      <a href="./#faq">FAQ</a>
+      <a class="lang" href="epr-dla-ecommerce.html" aria-label="Polska wersja">PL</a>
+      <a class="btn" href="./#contact">Free quote <svg><use href="#arr"/></svg></a>
+    </nav>
+  </div>
+</header>
+<main>
+<div class="page-glow" aria-hidden="true"></div>
+<section class="sub-hero"><div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Otoneso</a><span>/</span><a href="./#services">Services</a><span>/</span><span>EPR for e-commerce</span></nav>
+  <div class="p-hero">
+    <div>
+      <span class="eyebrow">EPR for e-commerce sellers</span>
+      <h1>Selling on <em>Amazon</em>, eBay or Allegro? We’ll handle your EPR.</h1>
+      <p class="lead">Marketplaces now require proof of EPR compliance, and an invalid number can get your listings blocked. We register you in national schemes, file your reports and settle fees in 22 countries.</p>
+      <div class="acts"><a class="btn" href="#start">Free consultation <svg><use href="#next"/></svg></a><a class="btn btn-ghost" href="#kraje">See countries</a></div>
+    </div>
+    <div><div class="pmap" role="img" aria-label="Example overview of EPR numbers in the EPRpilot dashboard"><header><b>Your EPR numbers</b><span>EPRpilot</span></header><div class="pm-row"><div><b>Germany · Packaging</b><small>LUCID + dual system</small></div><span class="tagx won">Active</span></div><div class="pm-row"><div><b>France · Textiles</b><small>Refashion</small></div><span class="tagx won">Active</span></div><div class="pm-row"><div><b>Spain · Electronics</b><small>RII-AEE register</small></div><span class="tagx mid">Registering</span></div><div class="pm-row"><div><b>Austria · Batteries</b><small>No number</small></div><span class="tagx new">To do</span></div></div><p class="p-note">Illustrative data. You see all numbers and deadlines in the EPRpilot dashboard.</p></div>
+  </div>
+</div></section>
+<section class="sec" style="padding-top:clamp(24px,3vw,40px)"><div class="wrap">
+  <div class="head"><div><span class="eyebrow">What EPR covers</span><h2>The categories <em>Amazon asks about</em></h2></div><p>Most sellers don’t think of themselves as producers, yet under EPR rules they are. It usually comes down to four product categories.</p></div>
+  <div class="pain-grid g4"><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><h3>Electronics</h3><p>From kitchen appliances to laptops and phone accessories.</p></article><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M10 2h4M10 11h4M12 9v4"/></svg></span><h3>Batteries</h3><p>Both standalone batteries and those built into devices.</p></article><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg></span><h3>Packaging</h3><p>Boxes, film and void fill: everything you ship your goods in.</p></article><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 4 6l2 4 2-1v12h8V9l2 1 2-4-4-3c0 2-2 3-4 3S8 5 8 3z"/></svg></span><h3>Textiles</h3><p>Clothing, footwear and other textiles, e.g. in France, where EPR covers more and more products.</p></article></div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <span class="eyebrow">How registration works</span>
+  <h2 style="font-size:clamp(32px,3.6vw,50px); margin:14px 0 20px; max-width:22ch">Four steps to <em>EPR compliance</em></h2>
+  <p style="color:var(--muted); max-width:62ch; margin:0 0 40px">Every country approaches EPR differently, so managing compliance by hand can be complicated and time-consuming. The general process looks like this:</p>
+  <div class="steps steps4"><div><i>Step 1</i><b>Categories</b><p>We identify which EPR categories apply to your products: packaging, electronics, batteries.</p></div><div><i>Step 2</i><b>Registration</b><p>We register you with a producer responsibility organisation (PRO) in every country you sell to.</p></div><div><i>Step 3</i><b>EPR numbers</b><p>You receive registration numbers confirming compliance for each product category.</p></div><div><i>Step 4</i><b>Reporting</b><p>We report quantities placed on the market: monthly, quarterly or yearly, depending on the country.</p></div></div>
+</div></section>
+<section class="sec" style="padding-top:0" id="kraje"><div class="wrap what">
+  <div><span class="eyebrow">How we work</span><h2>We take care of <em>all</em> your EPR</h2><ul class="feat" style="margin-top:20px"><li><svg><use href="#chk"/></svg><span><b>Obligation analysis.</b> A free consultation to establish which environmental obligations apply to you and what to do about them.</span></li><li><svg><use href="#chk"/></svg><span><b>Registration.</b> We handle all the formalities of registering your company in national EPR schemes.</span></li><li><svg><use href="#chk"/></svg><span><b>Reporting.</b> We prepare and file the required reports on monthly, quarterly and yearly cycles.</span></li></ul></div>
+  <div class="cbox"><header><b>Countries where we register EPR</b><span>22</span></header><div class="cgrid"><span>Austria</span><span>Belgium</span><span>Bulgaria</span><span>Croatia</span><span>Cyprus</span><span>Czechia</span><span>Finland</span><span>France</span><span>Germany</span><span>Greece</span><span>Hungary</span><span>Lithuania</span><span>Luxembourg</span><span>Malta</span><span>Poland</span><span>Portugal</span><span>Slovakia</span><span>Slovenia</span><span>Spain</span><span>Sweden</span><span>Switzerland</span><span>Turkey</span></div><p class="p-note" style="margin-top:14px">Don’t see your country? Get in touch and we’ll check what we can do.</p></div>
+</div></section>
+<section class="contact" id="start"><div class="wrap"><div class="box">
+  <div><span class="eyebrow">Free consultation</span><h2>Talk to an <em>EPR expert</em></h2><p>Our expert will answer your questions and recommend the best EPR and BDO setup for your business. We reply within one business day.</p>
+    <div class="cdet"><span class="sel">info@otoneso.pl</span><span class="sel">+48 459 596 793</span></div></div>
+  <form id="epr-form" class="p-form" novalidate>
+    <label for="e-name">Name<input id="e-name" name="name" autocomplete="name" required></label>
+    <label for="e-company">Company<input id="e-company" name="company" autocomplete="organization"></label>
+    <label for="e-mail">E-mail<input id="e-mail" name="email" type="email" autocomplete="email" required></label>
+    <label for="e-phone">Phone<input id="e-phone" name="phone" type="tel" autocomplete="tel"></label>
+    <label for="e-msg" class="full">Which marketplaces and countries do you sell in?<textarea id="e-msg" name="message"></textarea></label>
+    <div class="full"><button class="btn" type="submit">Send</button></div>
+    <p class="form-note full" id="e-note" role="status"></p>
+  </form>
+</div></div></section>
+<section class="sec faq"><div class="wrap">
+  <div class="faq-head"><span class="eyebrow">FAQ</span><h2>EPR questions for e-commerce</h2></div>
+  <div class="faq-list"><details class="qa"><summary>I don’t manufacture anything, I just sell. Does EPR apply to me?<span class="pm" aria-hidden="true"></span></summary><p>Usually, yes. Under EPR rules the producer is the company that first places a product or packaging on a country’s market. If you ship goods to consumers abroad, that is usually you.</p></details><details class="qa"><summary>What happens if I don’t provide an EPR number on Amazon?<span class="pm" aria-hidden="true"></span></summary><p>Amazon warns that listings without a valid EPR number may be blocked in that country. Other marketplaces are introducing similar requirements.</p></details><details class="qa"><summary>How often do I have to report?<span class="pm" aria-hidden="true"></span></summary><p>It depends on the country and category: monthly, quarterly or yearly. We track the deadlines and file the reports for you.</p></details><details class="qa"><summary>How much does it cost?<span class="pm" aria-hidden="true"></span></summary><p>The price depends on the number of countries and product categories. We prepare a quote after a free consultation.</p></details></div>
+</div></section>
+<script>
+document.getElementById('epr-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var n = document.getElementById('e-note');
+  if (!this.name.value.trim() || !/\S+@\S+\.\S+/.test(this.email.value)) { n.textContent = 'Please enter your name and a valid e-mail address.'; return; }
+  n.textContent = 'Thank you. We will reply within one business day.'; this.reset();
+});
+</script>
+</main>
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="./"><img src="img/otoneso-logo.png" alt="otoneso" width="437" height="105"></a>
+      <p>European EPR compliance: registration, reporting and Authorized Representative services in 29 countries.</p>
+      <a class="btn" href="./#contact">Free quote <svg><use href="#arr"/></svg></a>
+    </div>
+    <nav class="foot-col" aria-label="Services">
+      <h4>Services</h4>
+      <a href="ppwr-implementation.html">Packaging &amp; PPWR</a>
+      <a href="./#streams">WEEE</a>
+      <a href="./#streams">Batteries</a>
+      <a href="./#services">Authorized Representative</a>
+      <a href="./#services">BDO · KOBiZE · EUDR</a>
+    </nav>
+    <nav class="foot-col" aria-label="Company">
+      <h4>Otoneso</h4>
+      <a href="./#countries">Countries</a>
+      <a href="about.html">About us</a>
+      <a href="partners.html">Partners</a>
+      <a href="./#faq">FAQ</a>
+      <a href="terms-of-service.html">Terms of service</a>
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="https://eprpilot.com/" target="_blank" rel="noopener">eprpilot.com</a>
+      <a href="https://otoneso.pl/" target="_blank" rel="noopener">otoneso.pl (Polski)</a>
+    </nav>
+    <address class="foot-col">
+      <h4>Contact</h4>
+      <b>VIAREGIA.ONLINE Sp. z o.o.</b>
+      <span>ul. Złota 7 lok. 28<br>00-019 Warsaw, Poland</span>
+      <span>info@otoneso.pl</span>
+      <span>+48 459 596 793</span>
+    </address>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Otoneso. A brand of VIAREGIA.ONLINE Sp. z o.o.</span>
+    <span class="legal-links"><a href="terms-of-service.html">Terms of service</a> · <a href="privacy-policy.html">Privacy policy</a></span>
+  </div>
+</footer>
+</body>
+</html>
