@@ -65,6 +65,12 @@
 .dd-menu a.dd-live{display:flex; flex-wrap:wrap; align-items:center; gap:0 8px}
 .dd-menu a.dd-live small{flex-basis:100%}
 .dd-menu a.dd-live .ext{font-size:12px; color:var(--dim)}
+
+/* team photos */
+.person.ph{flex-direction:column; align-items:stretch; padding:0; overflow:hidden; gap:0; transition:transform .25s, box-shadow .25s}
+.person.ph:hover{transform:translateY(-3px); box-shadow:var(--ring), var(--lift)}
+.person.ph img{display:block; width:100%; aspect-ratio:5/6; object-fit:cover; object-position:50% 20%; background:#DCE4EE}
+.person.ph div{padding:16px 18px 18px}
 </style>
 </head>
 <body>
@@ -109,7 +115,7 @@
 </div></section>
 <section class="sec" style="padding-top:0"><div class="wrap">
   <div class="head"><div><span class="eyebrow">Team</span><h2>Who you’ll <em>work with</em></h2></div><p>A dedicated contact person backed by specialists in EPR, BDO and PPWR.</p></div>
-  <div class="people"><div class="person"><i>MG</i><div><b>Mateusz Grzywnowicz</b><span>CEO</span></div></div><div class="person"><i>MD</i><div><b>Michał Dyrszka</b><span>COO</span></div></div><div class="person"><i>BS</i><div><b>Bartosz Siomra-Janicki</b><span>Project Manager</span></div></div><div class="person"><i>MN</i><div><b>Marcin Nowak</b><span>Sales</span></div></div></div>
+  <div class="people"><div class="person ph"><img src="img/team-mg.jpg" alt="Mateusz Grzywnowicz, CEO" width="460" height="552" loading="lazy"><div><b>Mateusz Grzywnowicz</b><span>CEO</span></div></div><div class="person ph"><img src="img/team-md.jpg" alt="Michał Dyrszka, COO" width="460" height="552" loading="lazy"><div><b>Michał Dyrszka</b><span>COO</span></div></div><div class="person ph"><img src="img/team-bs.jpg" alt="Bartosz Siomra-Janicki, Senior Marketplace Specialist" width="460" height="552" loading="lazy"><div><b>Bartosz Siomra-Janicki</b><span>Senior Marketplace Specialist</span></div></div><div class="person ph"><img src="img/team-mn.jpg" alt="Marcin Nowak, Sales Specialist" width="460" height="552" loading="lazy"><div><b>Marcin Nowak</b><span>Sales Specialist</span></div></div></div>
 </div></section>
 <section class="sec" style="padding-top:0"><div class="wrap what">
   <div><span class="eyebrow">Meet us</span><h2>See you at the <em>next fair</em></h2><p>We regularly meet clients at e-commerce and industry events. Stop by our stand to talk about EPR, PPWR and EPRpilot in person.</p><p>Can’t wait for the next event? Book a free consultation and we’ll go through your obligations online.</p></div>
