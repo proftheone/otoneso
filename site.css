@@ -413,3 +413,4 @@ footer a:hover{color:var(--green)}
 .client.alg i{background:var(--orange); color:var(--on-orange)}
 .cstep h3 b{background:var(--orange-soft); color:var(--orange-hover)}
 .chip[aria-pressed="true"]{background:var(--ink)}
+.page-glow{display:none}
