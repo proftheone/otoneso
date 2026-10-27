@@ -414,3 +414,5 @@ footer a:hover{color:var(--green)}
 .cstep h3 b{background:var(--orange-soft); color:var(--orange-hover)}
 .chip[aria-pressed="true"]{background:var(--ink)}
 .page-glow{display:none}
+.nav .btn:not(.btn-ghost){background:var(--leaf); color:var(--on-leaf); box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 10px 24px -12px rgba(89,143,36,.7)}
+.nav .btn:not(.btn-ghost):hover{background:var(--leaf-hover)}
