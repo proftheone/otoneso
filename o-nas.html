@@ -61,6 +61,10 @@
 .cta-box p{color:#C5D1CA; margin:10px 0 0; max-width:52ch}
 @media (max-width:1000px){.vals,.people{grid-template-columns:repeat(2,minmax(0,1fr))} .split{grid-template-columns:1fr}}
 @media (max-width:560px){.vals,.people{grid-template-columns:1fr} .big-photo{aspect-ratio:4/3}}
+
+.dd-menu a.dd-live{display:flex; flex-wrap:wrap; align-items:center; gap:0 8px}
+.dd-menu a.dd-live small{flex-basis:100%}
+.dd-menu a.dd-live .ext{font-size:12px; color:var(--dim)}
 </style>
 </head>
 <body>
@@ -73,11 +77,10 @@
   <div class="bar">
     <a class="logo" href="index-pl.html" aria-label="Otoneso – strona główna"><img src="img/otoneso-logo.png" alt="otoneso" width="437" height="105"></a>
     <nav class="menu" aria-label="Główna">
-      <a class="live" href="https://eprpilot.com/" target="_blank" rel="noopener"><span class="ldot"></span>EPRpilot</a>
       <a href="index-pl.html#streams">Produkty</a>
       <a href="index-pl.html#countries">Kraje</a>
       <a href="index-pl.html#process">Jak działamy</a>
-      <div class="dd"><a href="index-pl.html#services" aria-haspopup="true">Usługi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a><div class="dd-menu"><div><a href="index-pl.html#services">Wszystkie usługi<small>EPR, BDO, KOBiZE, EUDR, GPSR</small></a><a href="wdrozenie-ppwr.html">Wdrożenie PPWR<small>Audyt, plan i dokumentacja opakowań</small></a></div></div></div>
+      <div class="dd"><a href="index-pl.html#services" aria-haspopup="true">Usługi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a><div class="dd-menu"><div><a href="index-pl.html#services">Wszystkie usługi<small>EPR, BDO, KOBiZE, EUDR, GPSR</small></a><a href="wdrozenie-ppwr.html">Wdrożenie PPWR<small>Audyt, plan i dokumentacja opakowań</small></a><a class="dd-live" href="https://eprpilot.com/" target="_blank" rel="noopener"><span class="ldot"></span>EPRpilot <span class="ext" aria-hidden="true">↗</span><small>Platforma do raportów EPR</small></a></div></div></div>
       <a href="o-nas.html" aria-current="page">O nas</a>
       <a href="partnerzy.html">Partnerzy</a>
       <a href="index-pl.html#faq">FAQ</a>
