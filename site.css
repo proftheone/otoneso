@@ -3,7 +3,7 @@
    Brand look from the otoneso presentation: paper-white ground, deep green-black ink, leaf green accent, short green bar as section motif. */
 :root{
   --bg:#F7F8F4; --surface:#FFFFFF; --surface-2:#EEF2E8; --sage:#E6EBE0; --ink:#13201A; --muted:#55615A; --dim:#7A857E; --line:#DDE3D6;
-  --green:#598F24; --leaf:#7FBD28; --leaf-hover:#72AC22; --olive:#546D31; --on-leaf:#13201A; --warn:#9A6B2A; --teal:#1F4A43;
+  --green:#598F24; --leaf:#96C43C; --leaf-hover:#86B232; --olive:#546D31; --on-leaf:#13201A; --warn:#9A6B2A; --teal:#1F4A43;
   --ring:0 0 0 1px rgba(19,32,26,.07), 0 1px 2px rgba(19,32,26,.04);
   --lift:0 30px 60px -36px rgba(19,32,26,.28);
   --f-display:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,sans-serif;
@@ -26,7 +26,7 @@ h1 em,h2 em,h3 em{font-style:normal; color:var(--green)}
 .eyebrow{display:inline-flex; align-items:center; gap:8px; font:700 12.5px var(--f-body); letter-spacing:.14em; text-transform:uppercase; color:var(--olive)}
 .eyebrow::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--leaf); flex:none}
 .gbar{display:block; width:66px; height:7px; border-radius:99px; background:var(--leaf)}
-.page-glow{position:absolute; left:50%; top:-320px; transform:translateX(-50%); width:min(1100px,100%); height:900px; background:radial-gradient(closest-side, rgba(127,189,40,.18), rgba(127,189,40,.05) 55%, transparent 75%); pointer-events:none; z-index:0}
+.page-glow{position:absolute; left:50%; top:-320px; transform:translateX(-50%); width:min(1100px,100%); height:900px; background:radial-gradient(closest-side, rgba(150,196,60,.18), rgba(150,196,60,.05) 55%, transparent 75%); pointer-events:none; z-index:0}
 
 .btn{display:inline-flex; align-items:center; gap:10px; border-radius:999px; padding:13px 22px; font:700 15px var(--f-body); text-decoration:none; border:0; cursor:pointer; background:var(--leaf); color:var(--on-leaf); box-shadow:inset 0 1px 0 rgba(255,255,255,.35), inset 0 -2px 0 rgba(19,32,26,.12), 0 14px 28px -16px rgba(89,143,36,.8)}
 .btn:hover{background:var(--leaf-hover)}
