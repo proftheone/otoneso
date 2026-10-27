@@ -658,6 +658,13 @@ html.rv-on .rv.in{opacity:1; transform:none}
 @keyframes ecodraw{0%{stroke-dashoffset:var(--o,900)}35%,80%{stroke-dashoffset:0}100%{stroke-dashoffset:var(--o,900)}}
 .page-eco .eco-draw.d2{--o:160}
 @media (prefers-reduced-motion:reduce){.page-eco *{animation:none!important; stroke-dashoffset:0!important}}
+
+/* language flags */
+.langs{display:inline-flex; align-items:center; gap:6px}
+.flag{display:inline-flex; width:26px; height:18px; border-radius:4px; overflow:hidden; box-shadow:0 0 0 1px rgba(19,32,26,.14); opacity:.55; filter:saturate(.7); transition:opacity .2s, filter .2s, transform .2s}
+.flag svg{width:100%; height:100%; display:block}
+.flag.cur{opacity:1; filter:none; box-shadow:0 0 0 1px rgba(19,32,26,.14), 0 0 0 3px var(--leaf)}
+a.flag:hover,a.flag:focus-visible{opacity:1; filter:none; transform:translateY(-1px)}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -678,7 +685,7 @@ html.rv-on .rv.in{opacity:1; transform:none}
       <a href="o-nas.html">O nas</a>
       <a href="partnerzy.html">Partnerzy</a>
       <a href="#faq">FAQ</a>
-      <a class="lang" href="index.html" aria-label="English version">EN</a>
+      <span class="langs"><span class="flag cur" title="Polski" aria-label="Polski (aktualny)"><svg viewBox="0 0 16 12" aria-hidden="true"><rect width="16" height="6" fill="#fff"/><rect y="6" width="16" height="6" fill="#DC143C"/></svg></span><a class="flag" href="index.html" aria-label="English version" title="English"><svg viewBox="0 0 60 30" aria-hidden="true" preserveAspectRatio="none"><clipPath id="gbc"><path d="M0 0v30h60V0z"/></clipPath><clipPath id="gbt"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#gbc)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#gbt)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg></a></span>
       <a class="btn" href="#contact">Darmowa wycena <svg><use href="#arr"/></svg></a>
     </nav>
   </div>
