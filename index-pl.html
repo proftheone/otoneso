@@ -486,6 +486,43 @@ html.rv-on .rv.in{opacity:1; transform:none}
 .rot{display:inline-block; transition:opacity .35s ease, transform .35s cubic-bezier(.2,.7,.2,1), filter .35s; will-change:transform}
 .rot.out{opacity:0; transform:translateY(.4em); filter:blur(4px)}
 .rot.pre{opacity:0; transform:translateY(-.4em); filter:blur(4px); transition:none}
+
+/* ---- EPRpilot screenshots slider ---- */
+.shots{margin-top:clamp(40px,5vw,64px)}
+.shots-head{display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:16px; margin-bottom:18px}
+.shots-head h3{margin:0; font:800 clamp(22px,2.2vw,28px) var(--f-display); letter-spacing:-.02em}
+.shots-tabs{display:flex; flex-wrap:wrap; gap:8px}
+.shots-tabs button{font:600 14px var(--f-body); padding:10px 16px; border-radius:999px; border:0; cursor:pointer; background:var(--surface); color:var(--muted); box-shadow:var(--ring); transition:background .2s, color .2s}
+.shots-tabs button:hover{color:var(--ink)}
+.shots-tabs button[aria-selected="true"]{background:var(--ink); color:#fff; box-shadow:none}
+.shots-frame{position:relative; border-radius:24px; overflow:hidden; background:#E3E5E1; box-shadow:var(--ring), var(--lift)}
+.shots-bar{display:flex; align-items:center; gap:7px; padding:12px 16px; background:#F4F5F2; border-bottom:1px solid var(--line)}
+.shots-bar i{width:11px; height:11px; border-radius:50%; background:#D6DAD2}
+.shots-bar span{margin-left:12px; font:500 12.5px var(--f-body); color:var(--dim); background:#fff; border-radius:8px; padding:4px 12px; box-shadow:inset 0 0 0 1px var(--line)}
+.shots-track{display:flex; transition:transform .6s cubic-bezier(.2,.7,.2,1); touch-action:pan-y}
+.shots-track figure{flex:0 0 100%; margin:0; aspect-ratio:1400/920; display:grid; place-items:center; background:#E3E5E1}
+.shots-track img{width:100%; height:100%; object-fit:contain; display:block; user-select:none; -webkit-user-drag:none}
+.shots-nav{position:absolute; top:50%; translate:0 -50%; width:46px; height:46px; border-radius:50%; border:0; cursor:pointer; display:grid; place-items:center; background:rgba(255,255,255,.92); color:var(--ink); box-shadow:0 8px 24px -10px rgba(19,32,26,.45); transition:transform .2s, background .2s}
+.shots-nav:hover{background:#fff; transform:scale(1.06)}
+.shots-nav svg{width:18px; height:18px}
+.shots-nav.prev{left:14px} .shots-nav.next{right:14px}
+.shots-cap{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:16px}
+.shots-cap p{margin:0; color:var(--muted); font-size:15.5px; max-width:70ch}
+.shots-dots{display:flex; gap:6px; flex:none}
+.shots-dots i{width:28px; height:5px; border-radius:99px; background:#D3DBC9; overflow:hidden; position:relative}
+.shots-dots i b{position:absolute; inset:0; width:0; background:var(--leaf)}
+.shots-dots i.on b{animation:shotfill var(--dur,5s) linear forwards}
+.shots.paused .shots-dots i.on b{animation-play-state:paused}
+@keyframes shotfill{to{width:100%}}
+@media (max-width:640px){.shots-nav{width:38px; height:38px} .shots-cap{flex-direction:column; align-items:flex-start}}
+
+/* ---- about photo gallery ---- */
+.pc-stack{position:relative; aspect-ratio:800/798}
+.pc-stack img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .8s ease}
+.pc-stack img.on{opacity:1}
+.pc-dots{display:flex; gap:6px; margin-left:auto}
+.pc-dots button{width:22px; height:6px; padding:0; border:0; border-radius:99px; background:#D3DBC9; cursor:pointer}
+.pc-dots button[aria-pressed="true"]{background:var(--leaf)}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -751,6 +788,18 @@ html.rv-on .rv.in{opacity:1; transform:none}
       </div>
     </div>
   </div>
+  <div class="wrap shots" id="shots" data-caps="Dodawanie produktu: marka, EAN, kraj producenta, waga oraz opakowania transportowe i sprzedażowe w jednym formularzu.|Raport dla Niemiec: wagi elektrosprzętu w podziale na kategorie oraz ilości i wagi baterii, gotowe do zgłoszenia.|Integracja z Sellasist: produkty i zamówienia synchronizujesz jednym kliknięciem, bez ręcznego przepisywania.">
+    <div class="shots-head"><h3>EPRpilot w akcji</h3><div class="shots-tabs" role="tablist"><button type="button" role="tab" id="st0" aria-controls="sp0" aria-selected="true">Dodawanie produktu</button><button type="button" role="tab" id="st1" aria-controls="sp1" aria-selected="false">Raport EPR</button><button type="button" role="tab" id="st2" aria-controls="sp2" aria-selected="false">Integracje</button></div></div>
+    <div class="shots-frame">
+      <div class="shots-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.eprpilot.com</span></div>
+      <div style="position:relative; overflow:hidden">
+        <div class="shots-track"><figure role="tabpanel" id="sp0" aria-labelledby="st0"><img src="img/app-product.jpg" alt="Formularz dodawania produktu w EPRpilot" width="1400" height="959" loading="lazy" draggable="false"></figure><figure role="tabpanel" id="sp1" aria-labelledby="st1"><img src="img/app-report.jpg" alt="Edycja raportu EPR dla Niemiec w EPRpilot" width="1400" height="974" loading="lazy" draggable="false"></figure><figure role="tabpanel" id="sp2" aria-labelledby="st2"><img src="img/app-sync.jpg" alt="Szczegóły integracji Sellasist w EPRpilot" width="1400" height="850" loading="lazy" draggable="false"></figure></div>
+        <button type="button" class="shots-nav prev" aria-label="Poprzedni slajd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+        <button type="button" class="shots-nav next" aria-label="Następny slajd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="shots-cap"><p id="shots-cap" aria-live="polite">Dodawanie produktu: marka, EAN, kraj producenta, waga oraz opakowania transportowe i sprzedażowe w jednym formularzu.</p><div class="shots-dots" aria-hidden="true"><i class=on><b></b></i><i><b></b></i><i><b></b></i></div></div>
+  </div>
 </section>
 
 <section class="sec" id="about" aria-labelledby="h-about">
@@ -762,8 +811,8 @@ html.rv-on .rv.in{opacity:1; transform:none}
       <a class="btn btn-ghost" href="https://otoneso.pl/" target="_blank" rel="noopener">Więcej o nas <svg><use href="#next"/></svg></a>
     </div>
     <figure class="photo-card">
-      <img src="img/team.jpg" alt="Zespół Otoneso, kilkanaście osób w zielonych bluzach Otoneso, robi wspólne selfie na trawniku" width="800" height="798" loading="lazy">
-      <figcaption><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Zespół Otoneso</figcaption>
+      <div class="pc-stack"><img class="on" src="img/team-jump.jpg" alt="Zespół Otoneso w zielonych bluzach skacze radośnie na trawniku w parku" width="800" height="798" loading="lazy"><img class="" src="img/team.jpg" alt="Zespół Otoneso, kilkanaście osób w zielonych bluzach Otoneso, robi wspólne selfie na trawniku" width="800" height="798" loading="lazy"></div>
+      <figcaption><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Zespół Otoneso<span class="pc-dots"><button type="button" aria-label="Zdjęcie 1" aria-pressed="true"></button><button type="button" aria-label="Zdjęcie 2" aria-pressed="false"></button></span></figcaption>
     </figure>
   </div>
 </section>
@@ -1066,5 +1115,42 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
       el.classList.remove('out'); el.classList.add('pre'); void el.offsetWidth; el.classList.remove('pre');
     }, 350);
   }, 2400);
+})();
+
+// EPRpilot screenshots slider: tabs, arrows, swipe, autoplay
+(function () {
+  var root = document.getElementById('shots'); if (!root) return;
+  var track = root.querySelector('.shots-track'), tabs = [].slice.call(root.querySelectorAll('[role=tab]')), dots = [].slice.call(root.querySelectorAll('.shots-dots i'));
+  var caps = root.dataset.caps.split('|'), cap = document.getElementById('shots-cap'), n = tabs.length, cur = 0, DUR = 5000, timer = null;
+  var auto = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  root.style.setProperty('--dur', DUR / 1000 + 's');
+  function go(i) {
+    cur = (i + n) % n; track.style.transform = 'translateX(' + (-cur * 100) + '%)';
+    tabs.forEach(function (t, k) { t.setAttribute('aria-selected', k === cur ? 'true' : 'false'); });
+    dots.forEach(function (d, k) { d.classList.remove('on'); if (k === cur) { void d.offsetWidth; d.classList.add('on'); } });
+    cap.textContent = caps[cur]; restart();
+  }
+  function restart() { clearTimeout(timer); if (auto && !root.classList.contains('paused')) timer = setTimeout(function () { go(cur + 1); }, DUR); }
+  tabs.forEach(function (t, k) { t.addEventListener('click', function () { go(k); }); });
+  root.querySelector('.prev').addEventListener('click', function () { go(cur - 1); });
+  root.querySelector('.next').addEventListener('click', function () { go(cur + 1); });
+  root.addEventListener('pointerenter', function () { root.classList.add('paused'); clearTimeout(timer); });
+  root.addEventListener('pointerleave', function () { root.classList.remove('paused'); restart(); });
+  var x0 = null;
+  track.addEventListener('pointerdown', function (e) { x0 = e.clientX; });
+  track.addEventListener('pointerup', function (e) { if (x0 === null) return; var dx = e.clientX - x0; x0 = null; if (Math.abs(dx) > 40) go(cur + (dx < 0 ? 1 : -1)); });
+  root.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') go(cur + 1); if (e.key === 'ArrowLeft') go(cur - 1); });
+  if (!auto) dots.forEach(function (d) { d.classList.remove('on'); });
+  go(0);
+})();
+
+// About photo gallery: crossfade between team photos
+(function () {
+  var st = document.querySelector('.pc-stack'); if (!st) return;
+  var im = [].slice.call(st.querySelectorAll('img')), bt = [].slice.call(document.querySelectorAll('.pc-dots button')), cur = 0, t = null;
+  var auto = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function go(i) { cur = i % im.length; im.forEach(function (e, k) { e.classList.toggle('on', k === cur); }); bt.forEach(function (b, k) { b.setAttribute('aria-pressed', k === cur ? 'true' : 'false'); }); clearTimeout(t); if (auto) t = setTimeout(function () { go(cur + 1); }, 4500); }
+  bt.forEach(function (b, k) { b.addEventListener('click', function () { go(k); }); });
+  go(0);
 })();
 </script>
