@@ -404,7 +404,7 @@ footer a:hover{color:var(--green)}
 .btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--orange); color:var(--orange-hover)}
 .stars{color:var(--orange)}
 .steps .tag{background:var(--orange); color:var(--on-orange)}
-.pm{background:var(--orange)} .pm::before,.pm::after{background:var(--on-orange)}
+.pm{background:var(--leaf)} .pm::before,.pm::after{background:var(--on-leaf)}
 .badge{background:var(--orange); color:var(--on-orange)}
 .progress i{background:linear-gradient(90deg,var(--leaf),var(--orange))}
 .card:hover .arrow-i{background:var(--orange); color:var(--on-orange)}

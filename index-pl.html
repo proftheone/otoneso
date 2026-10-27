@@ -470,7 +470,7 @@ html.rv-on .rv.in{opacity:1; transform:none}
 .btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--orange); color:var(--orange-hover)}
 .stars{color:var(--orange)}
 .steps .tag{background:var(--orange); color:var(--on-orange)}
-.pm{background:var(--orange)} .pm::before,.pm::after{background:var(--on-orange)}
+.pm{background:var(--leaf)} .pm::before,.pm::after{background:var(--on-leaf)}
 .badge{background:var(--orange); color:var(--on-orange)}
 .progress i{background:linear-gradient(90deg,var(--leaf),var(--orange))}
 .card:hover .arrow-i{background:var(--orange); color:var(--on-orange)}
@@ -646,6 +646,18 @@ html.rv-on .rv.in{opacity:1; transform:none}
 @media (prefers-reduced-motion: reduce){.hphoto > img{animation:none}}
 .nav .btn:not(.btn-ghost){background:var(--leaf); color:var(--on-leaf); box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 10px 24px -12px rgba(89,143,36,.7)}
 .nav .btn:not(.btn-ghost):hover{background:var(--leaf-hover)}
+
+/* eco emblem (replaces globe) */
+.page-eco .eco-ring{transform-origin:300px 300px; animation:ecospin 60s linear infinite}
+.page-eco .eco-leaf{transform-origin:150px 470px; animation:ecosway 9s ease-in-out infinite}
+.page-eco .eco-leaf path{stroke:#B5C99A; stroke-width:1.4}
+.page-eco .eco-draw{stroke-dasharray:900; stroke-dashoffset:900; animation:ecodraw 14s ease-in-out infinite}
+.page-eco .eco-draw.d2{stroke-dasharray:160; stroke-dashoffset:160; animation-delay:1.2s}
+@keyframes ecospin{to{transform:rotate(360deg)}}
+@keyframes ecosway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+@keyframes ecodraw{0%{stroke-dashoffset:var(--o,900)}35%,80%{stroke-dashoffset:0}100%{stroke-dashoffset:var(--o,900)}}
+.page-eco .eco-draw.d2{--o:160}
+@media (prefers-reduced-motion:reduce){.page-eco *{animation:none!important; stroke-dashoffset:0!important}}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -673,7 +685,11 @@ html.rv-on .rv.in{opacity:1; transform:none}
 </header>
 
 <main id="top">
-<div class="page-globe" aria-hidden="true"><svg viewBox="0 0 600 600" fill="none" stroke="#C4C7C2" stroke-width="1.2"><circle cx="300" cy="300" r="290"/><line x1="10" y1="300" x2="590" y2="300"/><ellipse cx="300" cy="150" rx="251" ry="40"/><ellipse cx="300" cy="450" rx="251" ry="40"/><ellipse cx="300" cy="300" rx="40" ry="290"><animate attributeName="rx" dur="24s" begin="0s" repeatCount="indefinite" values="0;290;0" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/></ellipse><ellipse cx="300" cy="300" rx="40" ry="290"><animate attributeName="rx" dur="24s" begin="-6s" repeatCount="indefinite" values="0;290;0" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/></ellipse><ellipse cx="300" cy="300" rx="40" ry="290"><animate attributeName="rx" dur="24s" begin="-12s" repeatCount="indefinite" values="0;290;0" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/></ellipse><ellipse cx="300" cy="300" rx="40" ry="290"><animate attributeName="rx" dur="24s" begin="-18s" repeatCount="indefinite" values="0;290;0" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/></ellipse></svg></div>
+<div class="page-globe page-eco" aria-hidden="true"><svg viewBox="0 0 600 600" fill="none" stroke="#C4C7C2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+<g class="eco-ring"><path d="M300 12 A288 288 0 0 1 549.4 156"/><path d="M549.4 444 A288 288 0 0 1 300 588" /><path d="M50.6 444 A288 288 0 0 1 50.6 156"/><path d="M536 136 l13.4 20 l-23.6 3.2"/><path d="M322 592 l-22 -4 l14.6 -17.8"/><path d="M40 178 l10.6 -22 l14 19.4"/></g>
+<circle cx="300" cy="300" r="248" stroke-dasharray="2 9"/>
+<g class="eco-leaf"><path class="eco-draw" d="M168 446 C150 300 250 168 452 140 C460 330 340 452 168 446 Z"/><path class="eco-draw" d="M128 492 L168 446 C250 360 340 260 452 140"/><path class="eco-draw d2" d="M214 396 C206 360 212 330 222 304"/><path class="eco-draw d2" d="M214 396 C250 404 286 400 318 388"/><path class="eco-draw d2" d="M268 334 C262 296 270 262 284 236"/><path class="eco-draw d2" d="M268 334 C306 340 342 332 372 318"/><path class="eco-draw d2" d="M326 270 C324 238 334 210 348 190"/><path class="eco-draw d2" d="M326 270 C360 272 390 262 414 246"/></g>
+</svg></div>
 
 <section class="hero" aria-labelledby="h-hero">
   <h1 id="h-hero">Jeden partner od <em>EPR</em> w 27 krajach UE</h1>
@@ -959,7 +975,7 @@ html.rv-on .rv.in{opacity:1; transform:none}
     <ul class="vid-grid">
       <li class="vid">
         <div class="vid-frame">
-          <img src="https://i.ytimg.com/vi/KiV7IjWGRms/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          <img src="img/yt/KiV7IjWGRms.jpg" alt="" loading="lazy" width="600" height="338">
           <button class="vid-play" type="button" data-id="KiV7IjWGRms" aria-label="Odtwórz film: Jeden numer EPR w UE nie wystarczy!"><span></span></button>
         </div>
         <div class="vid-body">
@@ -969,7 +985,7 @@ html.rv-on .rv.in{opacity:1; transform:none}
       </li>
       <li class="vid">
         <div class="vid-frame">
-          <img src="https://i.ytimg.com/vi/A1bIIRzJrN0/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          <img src="img/yt/A1bIIRzJrN0.jpg" alt="" loading="lazy" width="600" height="338">
           <button class="vid-play" type="button" data-id="A1bIIRzJrN0" aria-label="Odtwórz film: Sprzedajesz elektronikę? Dowiedz się, dlaczego jedna rejestracja w PPWR to za mało!"><span></span></button>
         </div>
         <div class="vid-body">
@@ -979,7 +995,7 @@ html.rv-on .rv.in{opacity:1; transform:none}
       </li>
       <li class="vid">
         <div class="vid-frame">
-          <img src="https://i.ytimg.com/vi/oTxtIuVQSwk/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          <img src="img/yt/oTxtIuVQSwk.jpg" alt="" loading="lazy" width="600" height="338">
           <button class="vid-play" type="button" data-id="oTxtIuVQSwk" aria-label="Odtwórz film: Sprowadzanie produktów z Chin? 🇨🇳 Dowiedz się, jakie obowiązki związane z opakowaniami nakłada PPWR."><span></span></button>
         </div>
         <div class="vid-body">
@@ -989,7 +1005,7 @@ html.rv-on .rv.in{opacity:1; transform:none}
       </li>
       <li class="vid">
         <div class="vid-frame">
-          <img src="https://i.ytimg.com/vi/quDz0xIWRKI/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          <img src="img/yt/quDz0xIWRKI.jpg" alt="" loading="lazy" width="600" height="338">
           <button class="vid-play" type="button" data-id="quDz0xIWRKI" aria-label="Odtwórz film: Czy wiesz, kto bierze na siebie odpowiedzialność EPR w dropshippingu?"><span></span></button>
         </div>
         <div class="vid-body">
@@ -999,7 +1015,7 @@ html.rv-on .rv.in{opacity:1; transform:none}
       </li>
       <li class="vid">
         <div class="vid-frame">
-          <img src="https://i.ytimg.com/vi/gK1XqKuCfrQ/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          <img src="img/yt/gK1XqKuCfrQ.jpg" alt="" loading="lazy" width="600" height="338">
           <button class="vid-play" type="button" data-id="gK1XqKuCfrQ" aria-label="Odtwórz film: Zapraszam na eCommerce Warsaw Expo 23.10.2026, gdzie opowiem o PPWR, EPR, Euder i innych przepisach"><span></span></button>
         </div>
         <div class="vid-body">
@@ -1353,7 +1369,7 @@ document.querySelectorAll('#video .vid-play').forEach(function(b){
     var more = grid.querySelector('.vid-more');
     list.slice(0, 5).forEach(function (v) {
       var li = document.createElement('li'); li.className = 'vid';
-      li.innerHTML = '<div class="vid-frame"><img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">' +
+      li.innerHTML = '<div class="vid-frame"><img src="img/yt/' + v.id + '.jpg" onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg\'" alt="" loading="lazy" width="600" height="338">' +
         '<button class="vid-play" type="button" data-id="' + v.id + '" aria-label="' + play + ': ' + esc(v.title) + '"><span></span></button></div>' +
         '<div class="vid-body"><h3><a href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener">' + esc(v.title) + '</a></h3>' +
         '<div class="vid-src">' + src + ' · ' + fmt(v.published) + '</div></div>';
