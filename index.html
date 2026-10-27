@@ -475,6 +475,11 @@ html.rv-on .rv.in{opacity:1; transform:none}
 .client.alg i{background:var(--orange); color:var(--on-orange)}
 .cstep h3 b{background:var(--orange-soft); color:var(--orange-hover)}
 .chip[aria-pressed="true"]{background:var(--ink)}
+
+/* ---- hero word rotator ---- */
+.rot{display:inline-block; transition:opacity .35s ease, transform .35s cubic-bezier(.2,.7,.2,1), filter .35s; will-change:transform}
+.rot.out{opacity:0; transform:translateY(.4em); filter:blur(4px)}
+.rot.pre{opacity:0; transform:translateY(-.4em); filter:blur(4px); transition:none}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -1041,5 +1046,19 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     });
     calc();
   }
+})();
+
+// Hero word rotator: EPR -> PPWR -> EUDR -> BDO -> KOBiZE -> CBAM
+(function () {
+  var el = document.querySelector('#h-hero em'); if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var W = ['EPR', 'PPWR', 'EUDR', 'BDO', 'KOBiZE', 'CBAM'], i = 0;
+  el.classList.add('rot');
+  setInterval(function () {
+    el.classList.add('out');
+    setTimeout(function () {
+      i = (i + 1) % W.length; el.textContent = W[i];
+      el.classList.remove('out'); el.classList.add('pre'); void el.offsetWidth; el.classList.remove('pre');
+    }, 350);
+  }, 2400);
 })();
 </script>
