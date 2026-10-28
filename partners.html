@@ -108,10 +108,10 @@
 .pcard li{display:flex; gap:9px; font-size:14px; font-weight:600; line-height:1.4}
 .pcard li svg{width:18px; height:18px; flex:none; margin-top:1px; color:var(--leaf)}
 .pcard .btn{margin-top:auto; align-self:flex-start}
-@media (min-width:901px){.pcard:last-child:nth-child(odd){grid-column:1/-1; display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); column-gap:40px; align-items:start}
-.pcard:last-child:nth-child(odd) .plogo{grid-row:1/7; height:100%; min-height:220px; margin:0}
-.pcard:last-child:nth-child(odd) > :not(.plogo){grid-column:2}
-.pcard:last-child:nth-child(odd) .btn{justify-self:start}}
+@media (min-width:901px){.plist{grid-template-columns:1fr!important} .pcard{grid-column:1/-1; display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); column-gap:40px; align-items:start}
+.pcard .plogo{grid-row:1/7; height:100%; min-height:220px; margin:0}
+.pcard > :not(.plogo){grid-column:2}
+.pcard .btn{justify-self:start}}
 @media (max-width:900px){.plist{grid-template-columns:1fr}}
 @media (max-width:480px){.pcard ul{grid-template-columns:1fr}}
 </style>
