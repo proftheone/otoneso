@@ -525,3 +525,10 @@ footer a:hover{color:var(--green)}
 
 /* no horizontal scroll */
 html{overflow-x:hidden} .sub-hero{overflow-x:clip} @media (max-width:720px){.page-globe{right:0; width:300px; opacity:.4}}
+
+/* EPRpilot button */
+.menu .btn.pilot-btn{background:transparent; color:var(--ink,#13201A); border:1.5px solid rgba(19,32,26,.28); box-shadow:none; gap:8px}
+.menu .btn.pilot-btn:hover{background:transparent; border-color:#96C43C; color:var(--green,#598F24)}
+.pilot-btn .ldot{width:7px; height:7px; border-radius:50%; background:#96C43C; box-shadow:0 0 0 3px rgba(150,196,60,.25)}
+.menu .btn.pilot-btn svg{display:inline-block}
+@media (max-width:640px){.menu .btn.pilot-btn{display:none}}
