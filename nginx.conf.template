@@ -4,10 +4,23 @@ server {
     charset utf-8;
     charset_types text/css application/javascript application/json image/svg+xml;
     root /usr/share/nginx/html;
-    index index.html;
+    absolute_redirect off;
+
+    # clean URLs: home pages
+    location = / { try_files /index.html =404; }
+    location = /pl { try_files /index-pl.html =404; }
+    location = /de { try_files /index-de.html =404; }
+    location = /index.html { return 301 /$is_args$args; }
+    location = /index-pl.html { return 301 /pl$is_args$args; }
+    location = /index-de.html { return 301 /de$is_args$args; }
+    location = /index-pl { return 301 /pl$is_args$args; }
+    location = /index-de { return 301 /de$is_args$args; }
+
+    # old .html links redirect to the clean address
+    location ~ ^/([A-Za-z0-9_-]+)\.html$ { return 301 /$1$is_args$args; }
 
     location / {
-        try_files $uri $uri/ $uri.html =404;
+        try_files $uri $uri.html $uri/ =404;
     }
 
     location /img/ {
