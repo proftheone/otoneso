@@ -470,3 +470,11 @@ footer a:hover{color:var(--green)}
 .svc-card-sec{padding-top:clamp(40px,5vw,72px)}
 @media (max-width:720px){.hphoto{aspect-ratio:4/3} .hp-br{min-width:0; max-width:72%}}
 @media (prefers-reduced-motion: reduce){.hphoto > img{animation:none}}
+
+.consent{display:flex; align-items:flex-start; gap:12px; font:400 14px/1.55 var(--f-body); letter-spacing:0; text-transform:none; color:#B9C7C0; cursor:pointer}
+.consent input{flex:none; appearance:none; -webkit-appearance:none; width:20px; height:20px; margin:2px 0 0; padding:0; border:1.5px solid rgba(255,255,255,.45); border-radius:5px; background:transparent; cursor:pointer; display:grid; place-items:center}
+.consent input:checked{background:#96C43C; border-color:#96C43C}
+.consent input:checked::after{content:""; width:5px; height:10px; border:solid #1A1A1A; border-width:0 2px 2px 0; transform:translateY(-1px) rotate(45deg)}
+.consent input:focus-visible{outline:2px solid #96C43C; outline-offset:2px}
+.consent a{color:#96C43C; text-decoration:underline; text-underline-offset:2px}
+.consents{display:grid; gap:12px}

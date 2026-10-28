@@ -677,6 +677,14 @@ html.rv-on .rv.in{opacity:1; transform:none}
 .what-photo .hp-br::before,.what-photo .hp-br::after{width:26px; height:26px; background:radial-gradient(circle at 0 0, transparent 25.5px, var(--bg) 26px)}
 .services li b a{color:inherit; text-decoration:none; background:linear-gradient(var(--leaf),var(--leaf)) 0 100%/100% 2px no-repeat}
 .services li b a:hover{color:var(--green)}
+
+.consent{display:flex; align-items:flex-start; gap:12px; font:400 14px/1.55 var(--f-body); letter-spacing:0; text-transform:none; color:#B9C7C0; cursor:pointer}
+.consent input{flex:none; appearance:none; -webkit-appearance:none; width:20px; height:20px; margin:2px 0 0; padding:0; border:1.5px solid rgba(255,255,255,.45); border-radius:5px; background:transparent; cursor:pointer; display:grid; place-items:center}
+.consent input:checked{background:#96C43C; border-color:#96C43C}
+.consent input:checked::after{content:""; width:5px; height:10px; border:solid #1A1A1A; border-width:0 2px 2px 0; transform:translateY(-1px) rotate(45deg)}
+.consent input:focus-visible{outline:2px solid #96C43C; outline-offset:2px}
+.consent a{color:#96C43C; text-decoration:underline; text-underline-offset:2px}
+.consents{display:grid; gap:12px}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -1093,6 +1101,10 @@ html.rv-on .rv.in{opacity:1; transform:none}
         </label>
         <label for="f-ctry">Countries<input id="f-ctry" name="countries" placeholder="e.g. Germany, France, Spain"></label>
         <label for="f-msg">Message<textarea id="f-msg" name="message"></textarea></label>
+        <div class="consents">
+          <label class="consent"><input type="checkbox" name="marketing" value="yes"><span>I consent to receiving commercial information from VIAREGIA.ONLINE Sp. z o.o. via electronic communication (email, SMS) and telephone contact. Your consent can be withdrawn at any time.</span></label>
+          <label class="consent"><input type="checkbox" name="terms" value="yes" required><span>I have read and accept the <a href="terms-of-service.html" target="_blank">Terms of Service</a> and the <a href="privacy-policy.html" target="_blank">Privacy Policy</a></span></label>
+        </div>
         <div><button class="btn" type="submit">Send request</button></div>
         <p class="form-note" id="form-note" role="status"></p>
       </form>
@@ -1146,6 +1158,7 @@ html.rv-on .rv.in{opacity:1; transform:none}
 <script>
 document.getElementById('contact-form').addEventListener('submit', function (e) {
   e.preventDefault();
+  if (!this.terms.checked) { this.querySelector('.form-note').textContent = 'Please accept the Terms of Service and the Privacy Policy.'; return; }
   var note = document.getElementById('form-note');
   if (!this.name.value.trim() || !/\S+@\S+\.\S+/.test(this.email.value)) {
     note.textContent = 'Please enter your name and a valid e-mail address.';

@@ -187,6 +187,10 @@
     <label for="e-mail">E-mail<input id="e-mail" name="email" type="email" autocomplete="email" required></label>
     <label for="e-phone">Telefon<input id="e-phone" name="phone" type="tel" autocomplete="tel"></label>
     <label for="e-msg" class="full">Na jakich marketplace’ach i w jakich krajach sprzedajesz?<textarea id="e-msg" name="message"></textarea></label>
+    <div class="consents full">
+      <label class="consent"><input type="checkbox" name="marketing" value="yes"><span>Wyrażam zgodę na otrzymywanie informacji handlowych od VIAREGIA.ONLINE Sp. z o.o. drogą elektroniczną (e-mail, SMS) oraz na kontakt telefoniczny. Zgodę mogę wycofać w każdej chwili.</span></label>
+      <label class="consent"><input type="checkbox" name="terms" value="yes" required><span>Zapoznałem(-am) się i akceptuję <a href="regulamin.html" target="_blank">Regulamin</a> oraz <a href="polityka-prywatnosci.html" target="_blank">Politykę prywatności</a></span></label>
+    </div>
     <div class="full"><button class="btn" type="submit">Wyślij</button></div>
     <p class="form-note full" id="e-note" role="status"></p>
   </form>
@@ -198,6 +202,7 @@
 <script>
 document.getElementById('epr-form').addEventListener('submit', function (e) {
   e.preventDefault();
+  if (!this.terms.checked) { this.querySelector('.form-note').textContent = 'Zaakceptuj Regulamin i Politykę prywatności.'; return; }
   var n = document.getElementById('e-note');
   if (!this.name.value.trim() || !/\S+@\S+\.\S+/.test(this.email.value)) { n.textContent = 'Podaj imię i poprawny adres e-mail.'; return; }
   n.textContent = 'Dziękujemy. Odpowiemy w ciągu jednego dnia roboczego.'; this.reset();

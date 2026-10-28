@@ -183,6 +183,10 @@
     <label for="p-mail">E-mail<input id="p-mail" name="email" type="email" autocomplete="email" required></label>
     <label for="p-type">Company type<select id="p-type" name="type"><option>Accounting office</option><option>Marketplace consultant</option><option>Logistics / fulfilment</option><option>Law firm</option><option>E-commerce agency</option><option>Other</option></select></label>
     <label for="p-msg" class="full">Message<textarea id="p-msg" name="message"></textarea></label>
+    <div class="consents full">
+      <label class="consent"><input type="checkbox" name="marketing" value="yes"><span>I consent to receiving commercial information from VIAREGIA.ONLINE Sp. z o.o. via electronic communication (email, SMS) and telephone contact. Your consent can be withdrawn at any time.</span></label>
+      <label class="consent"><input type="checkbox" name="terms" value="yes" required><span>I have read and accept the <a href="terms-of-service.html" target="_blank">Terms of Service</a> and the <a href="privacy-policy.html" target="_blank">Privacy Policy</a></span></label>
+    </div>
     <div class="full"><button class="btn" type="submit">Send application</button></div>
     <p class="form-note full" id="p-note" role="status"></p>
   </form>
@@ -194,6 +198,7 @@
 <script>
 document.getElementById('partner-form').addEventListener('submit', function (e) {
   e.preventDefault();
+  if (!this.terms.checked) { this.querySelector('.form-note').textContent = 'Please accept the Terms of Service and the Privacy Policy.'; return; }
   var n = document.getElementById('p-note');
   if (!this.name.value.trim() || !/\S+@\S+\.\S+/.test(this.email.value)) { n.textContent = 'Please enter your name and a valid e-mail address.'; return; }
   n.textContent = 'Thank you. We will reply within one business day.'; this.reset();
