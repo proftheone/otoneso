@@ -113,7 +113,7 @@
 <style>.offer{display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .25s, box-shadow .25s}
 .offer:hover{transform:translateY(-3px)} .offer .more{margin-top:auto; padding-top:14px; font-weight:600; color:var(--green); display:inline-flex; gap:6px; align-items:center}
 .offer .more svg{width:13px; height:13px} .p-note{font-size:13px; color:var(--dim); margin:10px 4px 0}
-.pay-form{display:contents} .pay-form button{border:0; cursor:pointer} .pay-ok{margin:18px auto 0; max-width:560px; padding:14px 18px; border-radius:16px; background:#E6EBE0; font-weight:600}</style>
+.buy-card{display:grid; grid-template-columns:1.1fr 1fr; gap:40px; align-items:center; background:var(--surface); border-radius:28px; box-shadow:var(--ring); padding:clamp(24px,4vw,48px)} .buy-card h2{font-size:clamp(30px,3.4vw,46px); margin:14px 0} .buy-box{background:#E6EBE0; border-radius:22px; padding:28px} .buy-box b{display:block; font-size:22px} .buy-box small{display:block; color:var(--dim); margin:4px 0 14px} .buy-box .feat{margin:0 0 20px} @media (max-width:860px){.buy-card{grid-template-columns:1fr}} .pay-ok{margin:18px auto 0; max-width:560px; padding:14px 18px; border-radius:16px; background:#E6EBE0; font-weight:600}</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -142,7 +142,7 @@
   <div class="svc-hero">
       <h1><em>Environmental</em> consulting when you need an expert.</h1>
       <p class="lead">A question about waste, packaging or emissions, or an inspection coming up? Book an online session with our specialist or hand us ongoing environmental care for your company.</p>
-      <div class="acts"><a class="btn" href="#start">Book a consultation <svg><use href="#next"/></svg></a><form class="pay-form" method="post" action="/api/create-checkout-session"><input type="hidden" name="lang" value="en"><button class="btn btn-ghost" type="submit">Buy an online consultation</button></form></div><p class="pay-ok" hidden>Thank you for your payment. We will contact you within one business day to schedule your consultation.</p><script>if(/[?&]platnosc=ok/.test(location.search))document.querySelector(".pay-ok").hidden=false</script>
+      <div class="acts"><a class="btn" href="#start">Book a consultation <svg><use href="#next"/></svg></a><a class="btn btn-ghost" href="https://buy.stripe.com/7sY5kE84AfzZaKm1og5c405">Buy an online consultation</a></div><p class="pay-ok" hidden>Thank you for your payment. We will contact you within one business day to schedule your consultation.</p><script>if(/[?&]platnosc=ok/.test(location.search))document.querySelector(".pay-ok").hidden=false</script>
   </div>
   <figure class="hphoto svc-photo">
     <img src="img/svc-consult.jpg" alt="Environmental consultant running an online session with a client" width="1200" height="676" fetchpriority="high">
@@ -154,6 +154,12 @@
   <div class="p-hero">
     <div><span class="eyebrow">How it works</span><h2>From a question to <em>a clear answer</em></h2><p class="lead">A consultation is a call with an expert who knows your sector and the rules. Afterwards you know what to do and by when.</p></div>
     <div><div class="tl" role="region" aria-label="Environmental consultation"><header><b>Environmental consultation</b><span>Steps</span></header><div class="tl-i"><time>Step 1</time><div><b>Your topic</b><small>You describe the issue and send documents if you have them.</small></div></div><div class="tl-i now"><time>Step 2</time><div><b>Scheduling</b><small>We book an online meeting at a time that suits you.</small></div></div><div class="tl-i"><time>Step 3</time><div><b>Consultation</b><small>The expert reviews your situation and answers your questions.</small></div></div><div class="tl-i"><time>Afterwards</time><div><b>Summary</b><small>You get a list of recommendations and deadlines.</small></div></div></div><p class="p-note">We tailor the scope and number of hours to your company. We quote after the first call.</p></div>
+  </div>
+</div></section>
+<section class="sec buy-sec" id="kup" style="padding-top:0"><div class="wrap">
+  <div class="buy-card">
+    <div><span class="eyebrow">Buy online</span><h2>Online <em>environmental</em> consultation</h2><p class="lead">Buy a consultation right away, without waiting for a quote. After payment we contact you within one business day to schedule the call with an expert.</p></div>
+    <div class="buy-box"><b>Online consultation with an expert</b><small>Video call at an agreed time</small><ul class="feat"><li><svg><use href="#chk"/></svg><span>Call with an environmental compliance expert</span></li><li><svg><use href="#chk"/></svg><span>Review of your documents before the meeting</span></li><li><svg><use href="#chk"/></svg><span>Written summary with recommendations and deadlines</span></li><li><svg><use href="#chk"/></svg><span>VAT invoice for your company</span></li></ul><a class="btn" href="https://buy.stripe.com/7sY5kE84AfzZaKm1og5c405">Buy consultation <svg><use href="#next"/></svg></a><p class="p-note">Secure payment via Stripe. The price is shown on the payment page.</p></div>
   </div>
 </div></section>
 <section class="sec" style="padding-top:clamp(24px,3vw,40px)"><div class="wrap">

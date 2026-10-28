@@ -113,7 +113,7 @@
 <style>.offer{display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .25s, box-shadow .25s}
 .offer:hover{transform:translateY(-3px)} .offer .more{margin-top:auto; padding-top:14px; font-weight:600; color:var(--green); display:inline-flex; gap:6px; align-items:center}
 .offer .more svg{width:13px; height:13px} .p-note{font-size:13px; color:var(--dim); margin:10px 4px 0}
-.pay-form{display:contents} .pay-form button{border:0; cursor:pointer} .pay-ok{margin:18px auto 0; max-width:560px; padding:14px 18px; border-radius:16px; background:#E6EBE0; font-weight:600}</style>
+.buy-card{display:grid; grid-template-columns:1.1fr 1fr; gap:40px; align-items:center; background:var(--surface); border-radius:28px; box-shadow:var(--ring); padding:clamp(24px,4vw,48px)} .buy-card h2{font-size:clamp(30px,3.4vw,46px); margin:14px 0} .buy-box{background:#E6EBE0; border-radius:22px; padding:28px} .buy-box b{display:block; font-size:22px} .buy-box small{display:block; color:var(--dim); margin:4px 0 14px} .buy-box .feat{margin:0 0 20px} @media (max-width:860px){.buy-card{grid-template-columns:1fr}} .pay-ok{margin:18px auto 0; max-width:560px; padding:14px 18px; border-radius:16px; background:#E6EBE0; font-weight:600}</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -142,7 +142,7 @@
   <div class="svc-hero">
       <h1>Doradztwo <em>środowiskowe</em>, gdy potrzebujesz eksperta.</h1>
       <p class="lead">Masz pytanie o odpady, opakowania, emisje albo zbliża się kontrola? Umów konsultację online z naszym specjalistą albo powierz nam stałą opiekę środowiskową nad firmą.</p>
-      <div class="acts"><a class="btn" href="#start">Umów konsultację <svg><use href="#next"/></svg></a><form class="pay-form" method="post" action="/api/create-checkout-session"><input type="hidden" name="lang" value="pl"><button class="btn btn-ghost" type="submit">Kup konsultację online</button></form></div><p class="pay-ok" hidden>Dziękujemy za płatność. Skontaktujemy się w ciągu jednego dnia roboczego, aby ustalić termin konsultacji.</p><script>if(/[?&]platnosc=ok/.test(location.search))document.querySelector(".pay-ok").hidden=false</script>
+      <div class="acts"><a class="btn" href="#start">Umów konsultację <svg><use href="#next"/></svg></a><a class="btn btn-ghost" href="https://buy.stripe.com/7sY5kE84AfzZaKm1og5c405">Kup konsultację online</a></div><p class="pay-ok" hidden>Dziękujemy za płatność. Skontaktujemy się w ciągu jednego dnia roboczego, aby ustalić termin konsultacji.</p><script>if(/[?&]platnosc=ok/.test(location.search))document.querySelector(".pay-ok").hidden=false</script>
   </div>
   <figure class="hphoto svc-photo">
     <img src="img/svc-consult.jpg" alt="Doradczyni środowiskowa prowadzi konsultację online z klientem" width="1200" height="676" fetchpriority="high">
@@ -154,6 +154,12 @@
   <div class="p-hero">
     <div><span class="eyebrow">Jak to działa</span><h2>Od pytania do <em>konkretnej odpowiedzi</em></h2><p class="lead">Konsultacja to rozmowa z ekspertem, który zna Twoją branżę i przepisy. Po niej wiesz, co zrobić i w jakim terminie.</p></div>
     <div><div class="tl" role="region" aria-label="Konsultacja środowiskowa"><header><b>Konsultacja środowiskowa</b><span>Przebieg</span></header><div class="tl-i"><time>Krok 1</time><div><b>Zgłoszenie tematu</b><small>Opisujesz sprawę i przesyłasz dokumenty, jeśli je masz.</small></div></div><div class="tl-i now"><time>Krok 2</time><div><b>Termin rozmowy</b><small>Umawiamy spotkanie online w dogodnym dla Ciebie czasie.</small></div></div><div class="tl-i"><time>Krok 3</time><div><b>Konsultacja</b><small>Ekspert analizuje sytuację i odpowiada na pytania.</small></div></div><div class="tl-i"><time>Po rozmowie</time><div><b>Podsumowanie</b><small>Dostajesz listę zaleceń i terminów do wykonania.</small></div></div></div><p class="p-note">Zakres i liczbę godzin dopasowujemy do potrzeb firmy. Wycenę podajemy po pierwszej rozmowie.</p></div>
+  </div>
+</div></section>
+<section class="sec buy-sec" id="kup" style="padding-top:0"><div class="wrap">
+  <div class="buy-card">
+    <div><span class="eyebrow">Kup online</span><h2>Konsultacja środowiskowa <em>online</em></h2><p class="lead">Kup konsultację od razu, bez czekania na ofertę. Po płatności skontaktujemy się w ciągu jednego dnia roboczego i ustalimy termin rozmowy z ekspertem.</p></div>
+    <div class="buy-box"><b>Konsultacja online z ekspertem</b><small>Spotkanie wideo w umówionym terminie</small><ul class="feat"><li><svg><use href="#chk"/></svg><span>Rozmowa z ekspertem ds. ochrony środowiska</span></li><li><svg><use href="#chk"/></svg><span>Analiza Twoich dokumentów przed spotkaniem</span></li><li><svg><use href="#chk"/></svg><span>Pisemne podsumowanie z zaleceniami i terminami</span></li><li><svg><use href="#chk"/></svg><span>Faktura VAT dla firmy</span></li></ul><a class="btn" href="https://buy.stripe.com/7sY5kE84AfzZaKm1og5c405">Kup konsultację <svg><use href="#next"/></svg></a><p class="p-note">Bezpieczna płatność przez Stripe. Cena widoczna na stronie płatności.</p></div>
   </div>
 </div></section>
 <section class="sec" style="padding-top:clamp(24px,3vw,40px)"><div class="wrap">

@@ -1,5 +1,12 @@
 # Stripe Checkout – what is left to do
 
+> **Update 2026-10-28:** the consulting pages now link straight to the Stripe Payment Link
+> https://buy.stripe.com/7sY5kE84AfzZaKm1og5c405 (hero button and the "Kup online" product box).
+> Payments work without any server setup. The `/api/create-checkout-session` endpoint below stays
+> in the repo as an option but no button uses it now. In the Payment Link settings in Stripe,
+> set the confirmation page to redirect to `https://otoneso.com/doradztwo-srodowiskowe?platnosc=ok`
+> to show the thank-you note on the site.
+
 The "Kup konsultację online" / "Buy an online consultation" / "Online-Beratung kaufen" button on the environmental consulting pages posts to `/api/create-checkout-session`. That endpoint creates a Stripe Checkout Session and redirects the visitor to the Stripe-hosted payment page.
 
 Until `STRIPE_SECRET_KEY` and `STRIPE_CONSULT_PRICE_ID` are set, the button sends visitors to the contact form on the same page instead of failing.
