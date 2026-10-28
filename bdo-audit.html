@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>BDO audit – Otoneso</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="BDO audit: we check your entry, waste records, reports and fees. We point out risks and fix errors before an inspection does.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px)} img{max-width:100%}
+.menu a[aria-current="page"]{color:var(--green)}
+
+.sub-hero{position:relative; z-index:1; padding-block:clamp(48px,6vw,88px) clamp(28px,4vw,48px)}
+.sub-hero h1{font-size:clamp(36px,5vw,64px); margin:16px 0 18px; max-width:18ch}
+.sub-hero .lead{color:var(--muted); font-size:clamp(17px,1.5vw,20px); max-width:60ch; margin:0}
+.crumbs{font-size:13.5px; color:var(--dim); display:flex; gap:8px; align-items:center; margin-bottom:22px}
+.crumbs a{color:var(--muted); text-decoration:none} .crumbs a:hover{color:var(--green)}
+/* legal */
+.legal{display:grid; grid-template-columns:minmax(0,240px) minmax(0,760px); gap:clamp(28px,5vw,72px); padding-bottom:clamp(48px,6vw,88px)}
+.toc{position:sticky; top:96px; align-self:start; display:grid; gap:4px; font-size:14px}
+.toc b{font:700 12px var(--f-body); letter-spacing:.14em; text-transform:uppercase; color:var(--olive); margin-bottom:8px}
+.toc a{color:var(--muted); text-decoration:none; padding:5px 0 5px 12px; border-left:2px solid var(--line)}
+.toc a:hover{color:var(--green); border-left-color:var(--leaf)}
+.doc{min-width:0}
+.doc .note{display:flex; gap:12px; align-items:flex-start; background:#F1F8E6; box-shadow:inset 0 0 0 1px #D3E8B3; border-radius:16px; padding:16px 18px; font-size:15px; color:var(--ink); margin-bottom:32px}
+.doc .note svg{width:20px; height:20px; flex:none; color:var(--green); margin-top:2px}
+.doc .note a{color:var(--green); font-weight:600}
+.doc section{padding-block:22px; border-top:1px solid var(--line); scroll-margin-top:96px}
+.doc h2{font-size:clamp(22px,2vw,28px); letter-spacing:-.025em; margin:0 0 12px}
+.doc h2 span{color:var(--green); margin-right:8px}
+.doc p{margin:0 0 12px; color:var(--muted)}
+.doc ul{margin:0 0 12px; padding-left:20px; color:var(--muted); display:grid; gap:6px}
+.doc li::marker{color:var(--leaf)}
+.meta-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px}
+.meta-row span{font:600 13px var(--f-body); padding:6px 12px; border-radius:999px; background:var(--surface); box-shadow:var(--ring)}
+@media (max-width:860px){.legal{grid-template-columns:1fr} .toc{position:static}}
+/* about */
+.big-photo{margin:0 0 clamp(48px,6vw,88px); border-radius:28px; overflow:hidden; box-shadow:var(--ring), var(--lift); aspect-ratio:21/9; max-width:100%}
+.big-photo img{width:100%; height:100%; object-fit:cover; object-position:50% 35%; display:block}
+.split{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:clamp(28px,5vw,80px); align-items:start}
+.split h2{font-size:clamp(30px,3.6vw,48px); margin-top:14px}
+.split p{color:var(--muted); margin:0 0 14px; font-size:17px}
+.quote-big{font-family:var(--f-display); font-weight:800; font-size:clamp(24px,2.4vw,32px); letter-spacing:-.03em; line-height:1.2; margin:22px 0 0; padding-left:20px; border-left:5px solid var(--leaf)}
+.vals{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
+.vals article{background:var(--surface); border-radius:20px; box-shadow:var(--ring); padding:24px; display:flex; flex-direction:column; gap:10px}
+.vals .pain-ico{margin:0}
+.vals b{font-family:var(--f-display); font-size:20px; font-weight:800; letter-spacing:-.025em}
+.vals p{margin:0; color:var(--muted); font-size:15px}
+.people{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
+.person{background:var(--surface); border-radius:20px; box-shadow:var(--ring); padding:22px; display:flex; align-items:center; gap:14px}
+.person i{width:52px; height:52px; flex:none; border-radius:50%; display:grid; place-items:center; font:700 17px var(--f-body); font-style:normal; color:#fff; background:var(--teal)}
+.person:nth-child(2) i{background:var(--olive)} .person:nth-child(3) i{background:var(--green)} .person:nth-child(4) i{background:var(--leaf); color:var(--on-leaf)}
+.person b{display:block; font-family:var(--f-display); font-weight:800; font-size:17px; letter-spacing:-.02em; line-height:1.25}
+.person span{font-size:14px; color:var(--muted)}
+.cta-box{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:24px; background:var(--teal); color:#F7F8F4; border-radius:28px; padding:clamp(28px,4vw,52px); box-shadow:var(--lift)}
+.cta-box h2{font-size:clamp(28px,3.4vw,44px); max-width:22ch}
+.cta-box h2 em{color:var(--leaf)}
+.cta-box p{color:#C5D1CA; margin:10px 0 0; max-width:52ch}
+@media (max-width:1000px){.vals,.people{grid-template-columns:repeat(2,minmax(0,1fr))} .split{grid-template-columns:1fr}}
+@media (max-width:560px){.vals,.people{grid-template-columns:1fr} .big-photo{aspect-ratio:4/3}}
+
+.p-hero{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:clamp(28px,5vw,72px); align-items:center}
+.p-hero .acts{margin-top:26px}
+.panel-mock{background:var(--surface); border-radius:24px; box-shadow:var(--ring), var(--lift); padding:20px; display:grid; gap:12px; font-size:14px}
+.panel-mock header{display:flex; justify-content:space-between; align-items:center; gap:10px}
+.panel-mock header b{font-family:var(--f-display); font-weight:800; font-size:17px; letter-spacing:-.02em}
+.panel-mock header span{font-size:12px; color:var(--dim)}
+.pm-kpis{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px}
+.pm-kpis div{background:var(--bg); border-radius:14px; padding:12px}
+.pm-kpis small{display:block; font-size:12px; color:var(--dim); font-weight:600}
+.pm-kpis strong{font-family:var(--f-display); font-size:24px; font-weight:800; font-variant-numeric:tabular-nums}
+.pm-link{display:flex; align-items:center; gap:10px; background:#F1F8E6; box-shadow:inset 0 0 0 1px #D3E8B3; border-radius:12px; padding:10px 12px; font-size:13px; min-width:0}
+.pm-link code{flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-family:ui-monospace,Menlo,monospace; color:var(--olive)}
+.pm-link span{font-weight:700; color:var(--green); white-space:nowrap}
+.pm-row{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:10px 0; border-top:1px solid var(--line)}
+.pm-row b{font-weight:600}
+.pm-row small{display:block; color:var(--dim); font-size:12px}
+.tagx{font:600 12px var(--f-body); padding:4px 10px; border-radius:999px; white-space:nowrap}
+.tagx.new{background:#EEF2E8; color:var(--muted)} .tagx.mid{background:#FBF1D6; color:#7A5A12} .tagx.won{background:var(--leaf); color:var(--on-leaf)}
+.p-note{margin:10px 0 0; font-size:12.5px; color:var(--dim); text-align:center}
+.p-form{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.p-form .full{grid-column:1/-1}
+.steps4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:900px){.p-hero{grid-template-columns:1fr} .steps4{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps4{grid-template-columns:1fr}}
+@media (max-width:560px){.p-form{grid-template-columns:1fr}}
+
+.tl{background:var(--surface); border-radius:24px; box-shadow:var(--ring), var(--lift); padding:22px; display:grid; gap:4px}
+.tl header{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px}
+.tl header b{font-family:var(--f-display); font-weight:800; font-size:17px; letter-spacing:-.02em}
+.tl header span{font-size:12px; color:var(--dim)}
+.tl-i{display:grid; grid-template-columns:104px minmax(0,1fr); gap:14px; padding:12px 0; border-top:1px solid var(--line)}
+.tl-i time{white-space:nowrap; font-family:var(--f-display); font-weight:800; font-size:15px; color:var(--green); font-variant-numeric:tabular-nums}
+.tl-i b{display:block; font-weight:600; font-size:14.5px}
+.tl-i small{display:block; color:var(--muted); font-size:13px; line-height:1.5; margin-top:2px}
+.tl-i.now time::after{content:""; display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--leaf); margin-left:7px; vertical-align:middle; box-shadow:0 0 0 4px #E3F1CC}
+.pmap{background:var(--surface); border-radius:24px; box-shadow:var(--ring), var(--lift); padding:20px; font-size:14px}
+.pmap header{display:flex; justify-content:space-between; align-items:center; margin-bottom:6px}
+.pmap header b{font-family:var(--f-display); font-weight:800; font-size:17px}
+.pmap header span{font-size:12px; color:var(--dim)}
+.cov{counter-reset:c}
+
+.dd-menu a.dd-live{display:flex; flex-wrap:wrap; align-items:center; gap:0 8px}
+.dd-menu a.dd-live small{flex-basis:100%}
+.dd-menu a.dd-live .ext{font-size:12px; color:var(--dim)}
+</style>
+<style>.offer{display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .25s, box-shadow .25s}
+.offer:hover{transform:translateY(-3px)} .offer .more{margin-top:auto; padding-top:14px; font-weight:600; color:var(--green); display:inline-flex; gap:6px; align-items:center}
+.offer .more svg{width:13px; height:13px} .p-note{font-size:13px; color:var(--dim); margin:10px 4px 0}</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arr" viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="next" viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="chk" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="currentColor" opacity=".16"/><path d="m6 10.2 2.6 2.6L14 7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+<header class="nav">
+  <div class="bar">
+    <a class="logo" href="./" aria-label="Otoneso – home"><img src="img/otoneso-logo.png" alt="otoneso" width="437" height="105"></a>
+    <nav class="menu" aria-label="Main">
+      <a href="./#streams">Products</a>
+      <a href="./#countries">Countries</a>
+      <a href="./#process">How it works</a>
+      <div class="dd"><a href="./#services" aria-haspopup="true">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a><div class="dd-menu"><div><a href="./#services">All services<small>EPR, BDO, KOBiZE, EUDR, GPSR</small></a><a href="epr-ecommerce.html">EPR for e-commerce<small>Amazon, eBay, Allegro and other marketplaces</small></a><a href="ppwr-implementation.html">PPWR implementation<small>Packaging audit, plan and documentation</small></a><a href="eudr-compliance.html">EUDR compliance<small>Deforestation-free products</small></a><a href="greenwashing-claims.html">Greenwashing<small>Green claims audit</small></a><a href="bdo-poland.html" aria-current="page">BDO (Poland)<small>Registration, annual report, audit</small></a><a class="dd-live" href="https://eprpilot.com/" target="_blank" rel="noopener"><span class="ldot"></span>EPRpilot <span class="ext" aria-hidden="true">↗</span><small>Your EPR reporting platform</small></a></div></div></div>
+      <a href="about.html">About</a>
+      <a href="partners.html">Partners</a>
+      <div class="langdd"><button type="button" class="langdd-btn" aria-haspopup="true" aria-label="Language: English"><span class="flag"><svg viewBox="0 0 60 30" aria-hidden="true" preserveAspectRatio="none"><clipPath id="gbc"><path d="M0 0v30h60V0z"/></clipPath><clipPath id="gbt"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#gbc)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#gbt)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg></span>EN<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="langdd-menu"><a href="bdo-audyt.html" aria-label="Polska wersja"><span class="flag"><svg viewBox="0 0 16 12" aria-hidden="true"><rect width="16" height="6" fill="#fff"/><rect y="6" width="16" height="6" fill="#DC143C"/></svg></span>Polski</a><a href="bdo-audit-de.html" aria-label="Deutsche Version"><span class="flag"><svg viewBox="0 0 5 3" aria-hidden="true" preserveAspectRatio="none"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg></span>Deutsch</a></div></div>
+      <a class="btn" href="./#contact">Free quote <svg><use href="#arr"/></svg></a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="sub-hero sub-hero-c"><div class="wrap">
+  <div class="svc-hero">
+      <h1>A <em>BDO</em> audit before the inspection comes.</h1>
+      <p class="lead">We check your entry, waste records, reports from recent years and fees. You get a report with the risks and a plan to fix them.</p>
+      <div class="acts"><a class="btn" href="#start">Order an audit <svg><use href="#next"/></svg></a></div>
+  </div>
+  <figure class="hphoto svc-photo">
+    <img src="img/bdo-audit.jpg" alt="Auditor checking packaging and documents in a warehouse" width="1200" height="676" fetchpriority="high">
+    <span class="hp-tl" aria-hidden="true"><span class="hp-badge"><svg viewBox="0 0 24 24" fill="none" stroke="#96C43C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span></span>
+    <figcaption class="hp-br"><b>up to PLN 1m</b><span>fines for operating<br>without a required entry</span></figcaption>
+  </figure>
+</div></section>
+<section class="sec svc-card-sec"><div class="wrap">
+  <div class="p-hero">
+    <div><span class="eyebrow">Audit scope</span><h2>What we check <em>in BDO</em></h2><p class="lead">The audit covers the full cycle: from the entry, through day-to-day records, to annual settlements.</p></div>
+    <div><div class="tl" role="region" aria-label="BDO audit"><header><b>BDO audit</b><span>Areas reviewed</span></header><div class="tl-i"><time>entry</time><div><b>Scope of entry</b><small>Do the sections match your real activity?</small></div></div><div class="tl-i"><time>records</time><div><b>KPO and KEO</b><small>Are waste transfer and record cards complete?</small></div></div><div class="tl-i now"><time>reports</time><div><b>Recent years</b><small>Does the data match sales and records?</small></div></div><div class="tl-i"><time>fees</time><div><b>Annual and product fee</b><small>Were the fees paid on time?</small></div></div></div><p class="p-note">Deadlines follow the Polish Waste Act and the Packaging Management Act.</p></div>
+  </div>
+</div></section>
+<section class="sec" style="padding-top:clamp(24px,3vw,40px)"><div class="wrap">
+  <div class="head"><div><span class="eyebrow">What the audit covers</span><h2>Six areas we <em>check</em></h2></div><p>An inspection by the marshal office or the environmental inspectorate does not have to be a surprise.</p></div>
+  <div class="pain-grid"><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span><h3>Register entry</h3><p>Sections, company data and the BDO number on documents.</p></article><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg></span><h3>Waste records</h3><p>Waste transfer cards (KPO) and record cards (KEO).</p></article><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg></span><h3>Reports</h3><p>Completeness and accuracy of reports from recent years.</p></article><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></span><h3>Fees</h3><p>Annual fee, product fee and any arrears.</p></article><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg></span><h3>Contracts</h3><p>Contracts with recovery organisations and waste collectors.</p></article><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><h3>Report and plan</h3><p>A list of risks and concrete remedial steps with deadlines.</p></article></div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <span class="eyebrow">How we work</span>
+  <h2 style="font-size:clamp(32px,3.6vw,50px); margin:14px 0 44px; max-width:20ch">From documents to <em>a remedial plan</em></h2>
+  <div class="steps steps4"><div><i>Step 1</i><b>Access</b><p>We get access to your BDO account and documents.</p></div><div><i>Step 2</i><b>Review</b><p>We check the entry, records, reports and fees.</p></div><div><i>Step 3</i><b>Report</b><p>We describe the risks and their possible consequences.</p></div><div><i>Step 4</i><b>Fixes</b><p>We file corrections and updates where needed.</p></div></div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap what">
+  <div><span class="eyebrow">Who it is for</span><h2>When an <em>audit</em> makes sense</h2><ul class="feat" style="margin-top:20px"><li><svg><use href="#chk"/></svg><span><b>Before an inspection.</b> When you have received a notice of inspection or a request from the office.</span></li><li><svg><use href="#chk"/></svg><span><b>After a change of the person in charge.</b> When BDO was handled by someone who has left the company.</span></li><li><svg><use href="#chk"/></svg><span><b>Before a sale or merger.</b> Environmental due diligence for a buyer or investor.</span></li><li><svg><use href="#chk"/></svg><span><b>When you are not sure.</b> The entry was made long ago and the company has changed since.</span></li></ul></div>
+  <div><div class="pmap" role="img" aria-label="Audit report"><header><b>Audit report</b><span>Example</span></header><div class="pm-row"><div><b>Scope of entry</b><small>No section for batteries</small></div><span class="tagx mid">Risk</span></div><div class="pm-row"><div><b>KPO records</b><small>Complete</small></div><span class="tagx won">OK</span></div><div class="pm-row"><div><b>2024 report</b><small>Error in packaging weight</small></div><span class="tagx mid">Correction</span></div><div class="pm-row"><div><b>BDO number on website</b><small>Missing</small></div><span class="tagx new">To fix</span></div></div><p class="p-note">Sample data. This is how an audit summary looks.</p></div>
+</div></section>
+<section class="contact" id="start"><div class="wrap"><div class="box">
+  <div><span class="eyebrow">Start with an audit</span><h2>Check your <em>BDO</em></h2><p>Tell us what your company does and how long you have had an entry. We will reply within one business day with the audit scope and a quote.</p>
+    <div class="cdet"><span class="sel">info@otoneso.com</span><span class="sel">+48 459 596 793</span></div></div>
+  <form id="bdo-audit-form" class="p-form" novalidate action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="98133616-049b-416c-953e-c6f76598254c">
+        <input type="hidden" name="subject" value="New enquiry: BDO audit">
+        <input type="hidden" name="from_name" value="otoneso.com">
+        <input type="checkbox" name="botcheck" class="hp-bot" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <label for="p-name">Name<input id="p-name" name="name" autocomplete="name" required></label>
+    <label for="p-company">Company<input id="p-company" name="company" autocomplete="organization"></label>
+    <label for="p-mail">E-mail<input id="p-mail" name="email" type="email" autocomplete="email" required></label>
+    <label for="p-phone">Phone<input id="p-phone" name="phone" type="tel" autocomplete="tel"></label>
+    <label for="p-msg" class="full">Briefly describe your company and your case<textarea id="p-msg" name="message"></textarea></label>
+    <div class="consents full">
+      <label class="consent"><input type="checkbox" name="marketing" value="yes"><span>I consent to receiving commercial information from VIAREGIA.ONLINE Sp. z o.o. via electronic communication (email, SMS) and telephone contact. Your consent can be withdrawn at any time.</span></label>
+      <label class="consent"><input type="checkbox" name="terms" value="yes" required><span>I have read and accept the <a href="terms-of-service.html" target="_blank">Terms of Service</a> and the <a href="privacy-policy.html" target="_blank">Privacy Policy</a></span></label>
+    </div>
+    <div class="full"><button class="btn" type="submit">Send enquiry</button></div>
+    <p class="form-note full" id="p-note" role="status"></p>
+  </form>
+</div></div></section>
+<section class="sec faq"><div class="wrap">
+  <div class="faq-head"><span class="eyebrow">FAQ</span><h2>Questions about the BDO audit</h2></div>
+  <div class="faq-list"><details class="qa"><summary>How long does an audit take?<span class="pm" aria-hidden="true"></span></summary><p>Usually from a few days to two weeks, depending on the number of years and the scale of the business.</p></details><details class="qa"><summary>What if the audit finds errors?<span class="pm" aria-hidden="true"></span></summary><p>We prepare report corrections and an entry update. Correcting early reduces the risk of fines.</p></details><details class="qa"><summary>Who can inspect BDO compliance?<span class="pm" aria-hidden="true"></span></summary><p>Most often the regional marshal office and the regional environmental protection inspectorate.</p></details></div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="head"><div><span class="eyebrow">BDO services</span><h2>Other <em>BDO</em> services</h2></div><p><a href="bdo-poland.html">All BDO services →</a></p></div>
+  <div class="pain-grid"><a class="offer" href="bdo-registration.html" style="background:var(--surface); border-radius:24px; box-shadow:var(--ring); padding:24px"><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M12 11v6M9 14h6"/></svg></span><h3>BDO registration</h3><p>Register entry and BDO number</p><span class="more">See the offer <svg><use href="#next"/></svg></span></a><a class="offer" href="bdo-annual-report.html" style="background:var(--surface); border-radius:24px; box-shadow:var(--ring); padding:24px"><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><h3>Annual BDO report – 15.03</h3><p>Report and product fee by 15 March</p><span class="more">See the offer <svg><use href="#next"/></svg></span></a><a class="offer" href="bdo-data-update.html" style="background:var(--surface); border-radius:24px; box-shadow:var(--ring); padding:24px"><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></span><h3>BDO data update</h3><p>Amend your entry within 30 days</p><span class="more">See the offer <svg><use href="#next"/></svg></span></a><a class="offer" href="bdo-deregistration.html" style="background:var(--surface); border-radius:24px; box-shadow:var(--ring); padding:24px"><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M9 14h6"/></svg></span><h3>BDO deregistration</h3><p>Removal from the register and final settlement</p><span class="more">See the offer <svg><use href="#next"/></svg></span></a></div>
+</div></section>
+<script>
+document.getElementById('bdo-audit-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  if (!this.terms.checked) { this.querySelector('.form-note').textContent = 'Please accept the Terms of Service and the Privacy Policy.'; return; }
+  var n = document.getElementById('p-note');
+  if (!this.name.value.trim() || !/\S+@\S+\.\S+/.test(this.email.value)) { n.textContent = 'Please enter your name and a valid e-mail address.'; return; }
+  var f = this, nt = f.querySelector('.form-note'), ok = 'Thank you. We will reply within one business day.', d = Object.fromEntries(new FormData(f));
+  if (d.botcheck) return; d.replyto = d.email; d.marketing = f.marketing && f.marketing.checked ? 'TAK / YES' : 'NIE / NO'; d.page = location.href;
+  nt.textContent = 'Sending…';
+  fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(d) })
+    .then(function (r) { return r.json(); })
+    .then(function (j) { if (j.success) { nt.textContent = ok; f.reset(); } else { nt.textContent = 'Sending failed. Please try again or email info@otoneso.com.' + (j.message ? ' [' + j.message + ']' : ''); } })
+    .catch(function (er) { nt.textContent = 'Sending failed. Please try again or email info@otoneso.com.' + ' [' + er.message + ']'; });
+});
+</script>
+</main>
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="./"><img src="img/otoneso-logo.png" alt="otoneso" width="437" height="105"></a>
+      <p>European EPR compliance: registration, reporting and Authorized Representative services in 29 countries.</p>
+      <a class="btn" href="./#contact">Free quote <svg><use href="#arr"/></svg></a>
+    </div>
+    <nav class="foot-col" aria-label="Services">
+      <h4>Services</h4>
+      <a href="ppwr-implementation.html">Packaging &amp; PPWR</a>
+      <a href="./#streams">WEEE</a>
+      <a href="./#streams">Batteries</a>
+      <a href="./#services">Authorized Representative</a>
+      <a href="eudr-compliance.html">EUDR</a>
+      <a href="greenwashing-claims.html">Greenwashing</a>
+      <a href="bdo-poland.html">BDO · KOBiZE</a>
+    </nav>
+    <nav class="foot-col" aria-label="Company">
+      <h4>Otoneso</h4>
+      <a href="./#countries">Countries</a>
+      <a href="about.html">About us</a>
+      <a href="partners.html">Partners</a>
+      <a href="./#faq">FAQ</a>
+      <a href="terms-of-service.html">Terms of service</a>
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="https://eprpilot.com/" target="_blank" rel="noopener">eprpilot.com</a>
+      <a href="https://otoneso.pl/" target="_blank" rel="noopener">otoneso.pl (Polski)</a>
+      <a href="bdo-audit-de.html">Deutsche Version</a>
+    </nav>
+    <address class="foot-col">
+      <h4>Contact</h4>
+      <b>VIAREGIA.ONLINE Sp. z o.o.</b>
+      <span>ul. Złota 7 lok. 28<br>00-019 Warsaw, Poland</span>
+      <span>info@otoneso.com</span>
+      <span>+48 459 596 793</span>
+    </address>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Otoneso. A brand of VIAREGIA.ONLINE Sp. z o.o.</span>
+    <span class="legal-links"><a href="terms-of-service.html">Terms of service</a> · <a href="privacy-policy.html">Privacy policy</a> · <a href="privacy-policy.html#cookies">Cookie policy</a></span>
+  </div>
+</footer>
+<style>#to-top{position:fixed; left:clamp(14px,2vw,24px); bottom:clamp(14px,2vw,24px); z-index:60; width:48px; height:48px; border:0; border-radius:50%; background:#96C43C; color:#1A1A1A; display:grid; place-items:center; cursor:pointer; box-shadow:0 10px 24px -10px rgba(26,26,26,.45); opacity:0; visibility:hidden; transform:translateY(12px); transition:opacity .25s, transform .25s, visibility .25s, background .2s}#to-top.show{opacity:1; visibility:visible; transform:none} #to-top:hover{background:#86B232} #to-top:focus-visible{outline:2px solid #1A1A1A; outline-offset:3px} #to-top svg{width:22px; height:22px}</style>
+<button id="to-top" type="button" aria-label="Back to top" title="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<script>(function(){var b=document.getElementById('to-top');function u(){b.classList.toggle('show',window.scrollY>500)}window.addEventListener('scroll',u,{passive:true});u();b.addEventListener('click',function(){window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})})})();</script>
+<style>#cookie-bar{position:fixed; z-index:70; left:50%; bottom:clamp(12px,2vw,20px); transform:translateX(-50%); width:min(760px,calc(100% - 24px)); display:none; align-items:center; gap:16px 20px; flex-wrap:wrap; background:#1A1A1A; color:#E8ECE4; border-radius:20px; padding:16px 20px; box-shadow:0 18px 40px -16px rgba(0,0,0,.5); font:400 14px/1.55 var(--f-body)}#cookie-bar.show{display:flex} #cookie-bar p{margin:0; flex:1 1 320px} #cookie-bar a{color:#96C43C; text-decoration:underline; text-underline-offset:2px}#cookie-bar .cb-acts{display:flex; gap:8px; flex-wrap:wrap} #cookie-bar button{font:600 14px var(--f-body); border-radius:999px; padding:10px 16px; cursor:pointer; border:1.5px solid rgba(255,255,255,.3); background:transparent; color:#E8ECE4}#cookie-bar button.cb-ok{background:#96C43C; border-color:#96C43C; color:#1A1A1A}</style>
+<div id="cookie-bar" role="region" aria-label="Cookies"><p>We use cookies that are necessary for the website to work and, with your consent, optional cookies. Details in our <a href="privacy-policy.html#cookies">Privacy and cookie policy</a>.</p><div class="cb-acts"><button type="button" class="cb-ess">Necessary only</button><button type="button" class="cb-ok">Accept</button></div></div>
+<script>(function(){var b=document.getElementById('cookie-bar'),k='otoneso_cookies';function get(){try{return localStorage.getItem(k)}catch(e){return null}}function set(v){try{localStorage.setItem(k,v)}catch(e){}b.classList.remove('show')}if(!get())b.classList.add('show');b.querySelector('.cb-ok').onclick=function(){set('all')};b.querySelector('.cb-ess').onclick=function(){set('necessary')}})();</script>
+<script src="https://callback.viaregia.online/widget.js" data-site="yKW_UGMhH1cE" async></script>
+</body>
+</html>
