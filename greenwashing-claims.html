@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Greenwashing and green claims – Otoneso</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Since 27 September 2026, generic environmental claims without proof are banned in the EU. We review your claims, labels and product descriptions and help you fix them before a regulator does.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px)} img{max-width:100%}
+.menu a[aria-current="page"]{color:var(--green)}
+
+.sub-hero{position:relative; z-index:1; padding-block:clamp(48px,6vw,88px) clamp(28px,4vw,48px)}
+.sub-hero h1{font-size:clamp(36px,5vw,64px); margin:16px 0 18px; max-width:18ch}
+.sub-hero .lead{color:var(--muted); font-size:clamp(17px,1.5vw,20px); max-width:60ch; margin:0}
+.crumbs{font-size:13.5px; color:var(--dim); display:flex; gap:8px; align-items:center; margin-bottom:22px}
+.crumbs a{color:var(--muted); text-decoration:none} .crumbs a:hover{color:var(--green)}
+/* legal */
+.legal{display:grid; grid-template-columns:minmax(0,240px) minmax(0,760px); gap:clamp(28px,5vw,72px); padding-bottom:clamp(48px,6vw,88px)}
+.toc{position:sticky; top:96px; align-self:start; display:grid; gap:4px; font-size:14px}
+.toc b{font:700 12px var(--f-body); letter-spacing:.14em; text-transform:uppercase; color:var(--olive); margin-bottom:8px}
+.toc a{color:var(--muted); text-decoration:none; padding:5px 0 5px 12px; border-left:2px solid var(--line)}
+.toc a:hover{color:var(--green); border-left-color:var(--leaf)}
+.doc{min-width:0}
+.doc .note{display:flex; gap:12px; align-items:flex-start; background:#F1F8E6; box-shadow:inset 0 0 0 1px #D3E8B3; border-radius:16px; padding:16px 18px; font-size:15px; color:var(--ink); margin-bottom:32px}
+.doc .note svg{width:20px; height:20px; flex:none; color:var(--green); margin-top:2px}
+.doc .note a{color:var(--green); font-weight:600}
+.doc section{padding-block:22px; border-top:1px solid var(--line); scroll-margin-top:96px}
+.doc h2{font-size:clamp(22px,2vw,28px); letter-spacing:-.025em; margin:0 0 12px}
+.doc h2 span{color:var(--green); margin-right:8px}
+.doc p{margin:0 0 12px; color:var(--muted)}
+.doc ul{margin:0 0 12px; padding-left:20px; color:var(--muted); display:grid; gap:6px}
+.doc li::marker{color:var(--leaf)}
+.meta-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px}
+.meta-row span{font:600 13px var(--f-body); padding:6px 12px; border-radius:999px; background:var(--surface); box-shadow:var(--ring)}
+@media (max-width:860px){.legal{grid-template-columns:1fr} .toc{position:static}}
+/* about */
+.big-photo{margin:0 0 clamp(48px,6vw,88px); border-radius:28px; overflow:hidden; box-shadow:var(--ring), var(--lift); aspect-ratio:21/9; max-width:100%}
+.big-photo img{width:100%; height:100%; object-fit:cover; object-position:50% 35%; display:block}
+.split{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:clamp(28px,5vw,80px); align-items:start}
+.split h2{font-size:clamp(30px,3.6vw,48px); margin-top:14px}
+.split p{color:var(--muted); margin:0 0 14px; font-size:17px}
+.quote-big{font-family:var(--f-display); font-weight:800; font-size:clamp(24px,2.4vw,32px); letter-spacing:-.03em; line-height:1.2; margin:22px 0 0; padding-left:20px; border-left:5px solid var(--leaf)}
+.vals{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
+.vals article{background:var(--surface); border-radius:20px; box-shadow:var(--ring); padding:24px; display:flex; flex-direction:column; gap:10px}
+.vals .pain-ico{margin:0}
+.vals b{font-family:var(--f-display); font-size:20px; font-weight:800; letter-spacing:-.025em}
+.vals p{margin:0; color:var(--muted); font-size:15px}
+.people{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
+.person{background:var(--surface); border-radius:20px; box-shadow:var(--ring); padding:22px; display:flex; align-items:center; gap:14px}
+.person i{width:52px; height:52px; flex:none; border-radius:50%; display:grid; place-items:center; font:700 17px var(--f-body); font-style:normal; color:#fff; background:var(--teal)}
+.person:nth-child(2) i{background:var(--olive)} .person:nth-child(3) i{background:var(--green)} .person:nth-child(4) i{background:var(--leaf); color:var(--on-leaf)}
+.person b{display:block; font-family:var(--f-display); font-weight:800; font-size:17px; letter-spacing:-.02em; line-height:1.25}
+.person span{font-size:14px; color:var(--muted)}
+.cta-box{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:24px; background:var(--teal); color:#F7F8F4; border-radius:28px; padding:clamp(28px,4vw,52px); box-shadow:var(--lift)}
+.cta-box h2{font-size:clamp(28px,3.4vw,44px); max-width:22ch}
+.cta-box h2 em{color:var(--leaf)}
+.cta-box p{color:#C5D1CA; margin:10px 0 0; max-width:52ch}
+@media (max-width:1000px){.vals,.people{grid-template-columns:repeat(2,minmax(0,1fr))} .split{grid-template-columns:1fr}}
+@media (max-width:560px){.vals,.people{grid-template-columns:1fr} .big-photo{aspect-ratio:4/3}}
+
+.p-hero{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:clamp(28px,5vw,72px); align-items:center}
+.p-hero .acts{margin-top:26px}
+.panel-mock{background:var(--surface); border-radius:24px; box-shadow:var(--ring), var(--lift); padding:20px; display:grid; gap:12px; font-size:14px}
+.panel-mock header{display:flex; justify-content:space-between; align-items:center; gap:10px}
+.panel-mock header b{font-family:var(--f-display); font-weight:800; font-size:17px; letter-spacing:-.02em}
+.panel-mock header span{font-size:12px; color:var(--dim)}
+.pm-kpis{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px}
+.pm-kpis div{background:var(--bg); border-radius:14px; padding:12px}
+.pm-kpis small{display:block; font-size:12px; color:var(--dim); font-weight:600}
+.pm-kpis strong{font-family:var(--f-display); font-size:24px; font-weight:800; font-variant-numeric:tabular-nums}
+.pm-link{display:flex; align-items:center; gap:10px; background:#F1F8E6; box-shadow:inset 0 0 0 1px #D3E8B3; border-radius:12px; padding:10px 12px; font-size:13px; min-width:0}
+.pm-link code{flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-family:ui-monospace,Menlo,monospace; color:var(--olive)}
+.pm-link span{font-weight:700; color:var(--green); white-space:nowrap}
+.pm-row{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:10px 0; border-top:1px solid var(--line)}
+.pm-row b{font-weight:600}
+.pm-row small{display:block; color:var(--dim); font-size:12px}
+.tagx{font:600 12px var(--f-body); padding:4px 10px; border-radius:999px; white-space:nowrap}
+.tagx.new{background:#EEF2E8; color:var(--muted)} .tagx.mid{background:#FBF1D6; color:#7A5A12} .tagx.won{background:var(--leaf); color:var(--on-leaf)}
+.p-note{margin:10px 0 0; font-size:12.5px; color:var(--dim); text-align:center}
+.p-form{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.p-form .full{grid-column:1/-1}
+.steps4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:900px){.p-hero{grid-template-columns:1fr} .steps4{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps4{grid-template-columns:1fr}}
+@media (max-width:560px){.p-form{grid-template-columns:1fr}}
+
+.tl{background:var(--surface); border-radius:24px; box-shadow:var(--ring), var(--lift); padding:22px; display:grid; gap:4px}
+.tl header{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px}
+.tl header b{font-family:var(--f-display); font-weight:800; font-size:17px; letter-spacing:-.02em}
+.tl header span{font-size:12px; color:var(--dim)}
+.tl-i{display:grid; grid-template-columns:104px minmax(0,1fr); gap:14px; padding:12px 0; border-top:1px solid var(--line)}
+.tl-i time{white-space:nowrap; font-family:var(--f-display); font-weight:800; font-size:15px; color:var(--green); font-variant-numeric:tabular-nums}
+.tl-i b{display:block; font-weight:600; font-size:14.5px}
+.tl-i small{display:block; color:var(--muted); font-size:13px; line-height:1.5; margin-top:2px}
+.tl-i.now time::after{content:""; display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--leaf); margin-left:7px; vertical-align:middle; box-shadow:0 0 0 4px #E3F1CC}
+.pmap{background:var(--surface); border-radius:24px; box-shadow:var(--ring), var(--lift); padding:20px; font-size:14px}
+.pmap header{display:flex; justify-content:space-between; align-items:center; margin-bottom:6px}
+.pmap header b{font-family:var(--f-display); font-weight:800; font-size:17px}
+.pmap header span{font-size:12px; color:var(--dim)}
+.cov{counter-reset:c}
+
+.dd-menu a.dd-live{display:flex; flex-wrap:wrap; align-items:center; gap:0 8px}
+.dd-menu a.dd-live small{flex-basis:100%}
+.dd-menu a.dd-live .ext{font-size:12px; color:var(--dim)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arr" viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="next" viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="chk" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="currentColor" opacity=".16"/><path d="m6 10.2 2.6 2.6L14 7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+<header class="nav">
+  <div class="bar">
+    <a class="logo" href="./" aria-label="Otoneso – home"><img src="img/otoneso-logo.png" alt="otoneso" width="437" height="105"></a>
+    <nav class="menu" aria-label="Main">
+      <a href="./#streams">Products</a>
+      <a href="./#countries">Countries</a>
+      <a href="./#process">How it works</a>
+      <div class="dd"><a href="./#services" aria-haspopup="true">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a><div class="dd-menu"><div><a href="./#services">All services<small>EPR, BDO, KOBiZE, EUDR, GPSR</small></a><a href="epr-ecommerce.html">EPR for e-commerce<small>Amazon, eBay, Allegro and other marketplaces</small></a><a href="ppwr-implementation.html">PPWR implementation<small>Packaging audit, plan and documentation</small></a><a href="eudr-compliance.html">EUDR compliance<small>Deforestation-free products</small></a><a href="greenwashing-claims.html" aria-current="page">Greenwashing<small>Green claims audit</small></a><a class="dd-live" href="https://eprpilot.com/" target="_blank" rel="noopener"><span class="ldot"></span>EPRpilot <span class="ext" aria-hidden="true">↗</span><small>Your EPR reporting platform</small></a></div></div></div>
+      <a href="about.html">About</a>
+      <a href="partners.html">Partners</a>
+      <a href="./#faq">FAQ</a>
+      <div class="langdd"><button type="button" class="langdd-btn" aria-haspopup="true" aria-label="Language: English"><span class="flag"><svg viewBox="0 0 60 30" aria-hidden="true" preserveAspectRatio="none"><clipPath id="gbc"><path d="M0 0v30h60V0z"/></clipPath><clipPath id="gbt"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#gbc)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#gbt)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg></span>EN<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="langdd-menu"><a href="greenwashing.html" aria-label="Polska wersja"><span class="flag"><svg viewBox="0 0 16 12" aria-hidden="true"><rect width="16" height="6" fill="#fff"/><rect y="6" width="16" height="6" fill="#DC143C"/></svg></span>Polski</a></div></div>
+      <a class="btn" href="./#contact">Free quote <svg><use href="#arr"/></svg></a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="sub-hero"><div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Otoneso</a><span>/</span><a href="./#services">Services</a><span>/</span><span>Greenwashing</span></nav>
+  <div class="p-hero">
+    <div>
+      <span class="eyebrow">Green claims audit</span>
+      <h1><em>Green</em> messaging that holds up to regulators.</h1>
+      <p class="lead">Since 27 September 2026, generic environmental claims without proof are banned in the EU. We review your claims, labels and product descriptions and help you fix them before a regulator does.</p>
+      <div class="acts"><a class="btn" href="#start">Free consultation <svg><use href="#next"/></svg></a></div>
+    </div>
+    <div class="tl" role="region" aria-label="Key dates"><header><b>Key dates</b><span>Directive (EU) 2024/825</span></header><div class="tl-i"><time>26.03.2024</time><div><b>Directive in force</b><small>The EU adopts rules empowering consumers for the green transition.</small></div></div><div class="tl-i"><time>27.03.2026</time><div><b>National laws</b><small>Deadline for member states to transpose the directive.</small></div></div><div class="tl-i now"><time>27.09.2026</time><div><b>New bans apply</b><small>Generic claims without proof, offset-based climate neutrality and uncertified eco-labels count as unfair practices.</small></div></div></div>
+  </div>
+</div></section>
+<section class="sec" style="padding-top:clamp(24px,3vw,40px)"><div class="wrap">
+  <div class="head"><div><span class="eyebrow">What the audit covers</span><h2>Six areas we <em>check</em></h2></div><p>We review everything you tell customers about the environment: on packaging, in your online store, on marketplaces and in ads.</p></div>
+  <div class="pain-grid"><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><h3>Generic claims</h3><p>“Eco”, “green”, “environmentally friendly” and similar. Without proven, recognised excellent environmental performance they are banned.</p></article><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19 13 11"/></svg></span><h3>Climate neutrality</h3><p>“Climate neutral” claims based on offsetting emissions are no longer allowed.</p></article><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg></span><h3>Labels and logos</h3><p>Own sustainability labels must be based on a certification scheme or set up by a public authority.</p></article><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 21h14M6 7h12M6 7l-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"/></svg></span><h3>Whole product or part</h3><p>A claim about the whole product cannot rely on one element only, such as the packaging.</p></article><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></svg></span><h3>Future targets</h3><p>Promises such as “net zero by 2030” need an implementation plan and independent verification.</p></article><article><span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg></span><h3>Evidence</h3><p>Documentation backing every claim, ready for a customer, a marketplace or a regulator.</p></article></div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <span class="eyebrow">How we work</span>
+  <h2 style="font-size:clamp(32px,3.6vw,50px); margin:14px 0 44px; max-width:20ch">From review to <em>safe messaging</em></h2>
+  <div class="steps steps4"><div><i>Step 1</i><b>Inventory</b><p>We collect claims from packaging, product pages, your website and ads.</p></div><div><i>Step 2</i><b>Assessment</b><p>We check each claim against the new bans and the evidence available.</p></div><div><i>Step 3</i><b>Fixes</b><p>We propose safe wording and flag what to remove or document.</p></div><div><i>Step 4</i><b>Maintenance</b><p>We review new campaigns and products and monitor regulatory changes.</p></div></div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap what">
+  <div><span class="eyebrow">Who it’s for</span><h2>It applies to anyone who <em>talks green</em> in sales</h2><ul class="feat" style="margin-top:20px"><li><svg><use href="#chk"/></svg><span><b>Brands and manufacturers.</b> Companies describing products or packaging as eco-friendly.</span></li><li><svg><use href="#chk"/></svg><span><b>Online stores.</b> Product descriptions, “eco” filters and banners are environmental claims too.</span></li><li><svg><use href="#chk"/></svg><span><b>Marketplace sellers.</b> Amazon, Allegro and other platforms increasingly check green claims.</span></li><li><svg><use href="#chk"/></svg><span><b>Marketing teams and agencies.</b> Campaigns, social media and ads follow the same rules.</span></li></ul></div>
+  <div><div class="pmap" role="img" aria-label="Claims review"><header><b>Claims review</b><span>Greenwashing · example</span></header><div class="pm-row"><div><b>“Environmentally friendly”</b><small>Product description</small></div><span class="tagx mid">Generic claim</span></div><div class="pm-row"><div><b>“Climate neutral”</b><small>Offsetting</small></div><span class="tagx mid">Remove</span></div><div class="pm-row"><div><b>“50% recycled packaging”</b><small>Product page</small></div><span class="tagx won">Documented</span></div><div class="pm-row"><div><b>Own eco-label</b><small>Label</small></div><span class="tagx new">Not certified</span></div></div><p class="p-note">Sample data. It shows how we assess individual claims.</p></div>
+</div></section>
+<section class="contact" id="start"><div class="wrap"><div class="box">
+  <div><span class="eyebrow">Start with a review</span><h2>Check your <em>green claims</em></h2><p>Send us a link to your store or describe the claims you use. We’ll reply within one business day with an audit proposal and a quote.</p>
+    <div class="cdet"><span class="sel">info@otoneso.com</span><span class="sel">+48 459 596 793</span></div></div>
+  <form id="gw-form" class="p-form" novalidate>
+    <label for="p-name">Name<input id="p-name" name="name" autocomplete="name" required></label>
+    <label for="p-company">Company<input id="p-company" name="company" autocomplete="organization"></label>
+    <label for="p-mail">E-mail<input id="p-mail" name="email" type="email" autocomplete="email" required></label>
+    <label for="p-phone">Phone<input id="p-phone" name="phone" type="tel" autocomplete="tel"></label>
+    <label for="p-msg" class="full">What do you sell and where?<textarea id="p-msg" name="message"></textarea></label>
+    <div class="full"><button class="btn" type="submit">Book a consultation</button></div>
+    <p class="form-note full" id="p-note" role="status"></p>
+  </form>
+</div></div></section>
+<section class="sec faq"><div class="wrap">
+  <div class="faq-head"><span class="eyebrow">FAQ</span><h2>Greenwashing questions</h2></div>
+  <div class="faq-list"><details class="qa"><summary>What is greenwashing?<span class="pm" aria-hidden="true"></span></summary><p>Misleading consumers about the environmental impact of a product or company, for example with vague claims without proof or confusing labels.</p></details><details class="qa"><summary>What changed on 27 September 2026?<span class="pm" aria-hidden="true"></span></summary><p>National rules transposing Directive (EU) 2024/825 started to apply. Generic environmental claims without proof, offset-based climate neutrality claims and uncertified sustainability labels are now unfair commercial practices.</p></details><details class="qa"><summary>Can I still say my product is eco-friendly?<span class="pm" aria-hidden="true"></span></summary><p>Yes, if you state the specific benefit and can prove it, for example “packaging made from 100% recycled paper”. A bare “eco” without justification is risky.</p></details><details class="qa"><summary>What are the penalties?<span class="pm" aria-hidden="true"></span></summary><p>Penalties are set nationally. In Poland, the consumer authority (UOKiK) can fine up to 10% of turnover for practices harming collective consumer interests. There is also the risk of consumer claims and blocked marketplace listings.</p></details><details class="qa"><summary>How long does an audit take?<span class="pm" aria-hidden="true"></span></summary><p>It depends on the number of products and sales channels. We give you a timeline and a quote after a free consultation.</p></details></div>
+</div></section>
+<script>
+document.getElementById('gw-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var n = document.getElementById('p-note');
+  if (!this.name.value.trim() || !/\S+@\S+\.\S+/.test(this.email.value)) { n.textContent = 'Please enter your name and a valid e-mail address.'; return; }
+  n.textContent = 'Thank you. We will reply within one business day.'; this.reset();
+});
+</script>
+</main>
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="./"><img src="img/otoneso-logo.png" alt="otoneso" width="437" height="105"></a>
+      <p>European EPR compliance: registration, reporting and Authorized Representative services in 29 countries.</p>
+      <a class="btn" href="./#contact">Free quote <svg><use href="#arr"/></svg></a>
+    </div>
+    <nav class="foot-col" aria-label="Services">
+      <h4>Services</h4>
+      <a href="ppwr-implementation.html">Packaging &amp; PPWR</a>
+      <a href="./#streams">WEEE</a>
+      <a href="./#streams">Batteries</a>
+      <a href="./#services">Authorized Representative</a>
+      <a href="eudr-compliance.html">EUDR</a>
+      <a href="greenwashing-claims.html">Greenwashing</a>
+      <a href="./#services">BDO · KOBiZE</a>
+    </nav>
+    <nav class="foot-col" aria-label="Company">
+      <h4>Otoneso</h4>
+      <a href="./#countries">Countries</a>
+      <a href="about.html">About us</a>
+      <a href="partners.html">Partners</a>
+      <a href="./#faq">FAQ</a>
+      <a href="terms-of-service.html">Terms of service</a>
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="https://eprpilot.com/" target="_blank" rel="noopener">eprpilot.com</a>
+      <a href="https://otoneso.pl/" target="_blank" rel="noopener">otoneso.pl (Polski)</a>
+    </nav>
+    <address class="foot-col">
+      <h4>Contact</h4>
+      <b>VIAREGIA.ONLINE Sp. z o.o.</b>
+      <span>ul. Złota 7 lok. 28<br>00-019 Warsaw, Poland</span>
+      <span>info@otoneso.com</span>
+      <span>+48 459 596 793</span>
+    </address>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Otoneso. A brand of VIAREGIA.ONLINE Sp. z o.o.</span>
+    <span class="legal-links"><a href="terms-of-service.html">Terms of service</a> · <a href="privacy-policy.html">Privacy policy</a></span>
+  </div>
+</footer>
+</body>
+</html>
