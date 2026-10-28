@@ -112,7 +112,8 @@
 </style>
 <style>.offer{display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .25s, box-shadow .25s}
 .offer:hover{transform:translateY(-3px)} .offer .more{margin-top:auto; padding-top:14px; font-weight:600; color:var(--green); display:inline-flex; gap:6px; align-items:center}
-.offer .more svg{width:13px; height:13px} .p-note{font-size:13px; color:var(--dim); margin:10px 4px 0}</style>
+.offer .more svg{width:13px; height:13px} .p-note{font-size:13px; color:var(--dim); margin:10px 4px 0}
+.pay-form{display:contents} .pay-form button{border:0; cursor:pointer} .pay-ok{margin:18px auto 0; max-width:560px; padding:14px 18px; border-radius:16px; background:#E6EBE0; font-weight:600}</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -141,7 +142,7 @@
   <div class="svc-hero">
       <h1><em>Environmental</em> consulting when you need an expert.</h1>
       <p class="lead">A question about waste, packaging or emissions, or an inspection coming up? Book an online session with our specialist or hand us ongoing environmental care for your company.</p>
-      <div class="acts"><a class="btn" href="#start">Book a consultation <svg><use href="#next"/></svg></a></div>
+      <div class="acts"><a class="btn" href="#start">Book a consultation <svg><use href="#next"/></svg></a><form class="pay-form" method="post" action="/api/create-checkout-session"><input type="hidden" name="lang" value="en"><button class="btn btn-ghost" type="submit">Buy an online consultation</button></form></div><p class="pay-ok" hidden>Thank you for your payment. We will contact you within one business day to schedule your consultation.</p><script>if(/[?&]platnosc=ok/.test(location.search))document.querySelector(".pay-ok").hidden=false</script>
   </div>
   <figure class="hphoto svc-photo">
     <img src="img/svc-consult.jpg" alt="Environmental consultant running an online session with a client" width="1200" height="676" fetchpriority="high">

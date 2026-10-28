@@ -1,0 +1,11 @@
+{
+  "name": "otoneso-checkout",
+  "private": true,
+  "description": "Stripe Checkout endpoint for otoneso.com (runs next to nginx)",
+  "main": "checkout.js",
+  "scripts": { "start": "node checkout.js" },
+  "dependencies": {
+    "express": "5.1.0",
+    "stripe": "23.0.1"
+  }
+}
