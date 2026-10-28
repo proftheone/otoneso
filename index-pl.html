@@ -685,6 +685,7 @@ html.rv-on .rv.in{opacity:1; transform:none}
 .consent input:focus-visible{outline:2px solid #96C43C; outline-offset:2px}
 .consent a{color:#96C43C; text-decoration:underline; text-underline-offset:2px}
 .consents{display:grid; gap:12px}
+.hp-bot{position:absolute!important; left:-9999px; width:1px; height:1px; opacity:0}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -1087,7 +1088,11 @@ html.rv-on .rv.in{opacity:1; transform:none}
           <span>VIAREGIA.ONLINE Sp. z o.o. · ul. Złota 7 lok. 28, 00-019 Warszawa</span>
         </div>
       </div>
-      <form id="contact-form" novalidate>
+      <form id="contact-form" novalidate action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="98133616-049b-416c-953e-c6f76598254c">
+        <input type="hidden" name="subject" value="Nowe zapytanie: strona główna">
+        <input type="hidden" name="from_name" value="otoneso.com">
+        <input type="checkbox" name="botcheck" class="hp-bot" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label for="f-name">Imię i nazwisko<input id="f-name" name="name" autocomplete="name" required></label>
         <label for="f-mail">E-mail<input id="f-mail" name="email" type="email" autocomplete="email" required></label>
         <label for="f-stream">Strumień produktów
@@ -1164,8 +1169,13 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     note.textContent = 'Podaj imię i poprawny adres e-mail.';
     return;
   }
-  note.textContent = 'Dziękujemy. Odpowiemy w ciągu jednego dnia roboczego.';
-  this.reset();
+  var f = this, nt = f.querySelector('.form-note'), ok = 'Dziękujemy. Odpowiemy w ciągu jednego dnia roboczego.', d = Object.fromEntries(new FormData(f));
+  if (d.botcheck) return; d.replyto = d.email; d.marketing = f.marketing && f.marketing.checked ? 'TAK / YES' : 'NIE / NO'; d.page = location.href;
+  nt.textContent = 'Wysyłanie…';
+  fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(d) })
+    .then(function (r) { return r.json(); })
+    .then(function (j) { if (j.success) { nt.textContent = ok; f.reset(); } else { nt.textContent = 'Nie udało się wysłać. Spróbuj ponownie lub napisz na info@otoneso.com.'; } })
+    .catch(function () { nt.textContent = 'Nie udało się wysłać. Spróbuj ponownie lub napisz na info@otoneso.com.'; });
 });
 
 // Countries: 27 EU markets + UK and Turkey (core), plus worldwide and US state EPR

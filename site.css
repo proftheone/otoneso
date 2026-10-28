@@ -478,3 +478,4 @@ footer a:hover{color:var(--green)}
 .consent input:focus-visible{outline:2px solid #96C43C; outline-offset:2px}
 .consent a{color:#96C43C; text-decoration:underline; text-underline-offset:2px}
 .consents{display:grid; gap:12px}
+.hp-bot{position:absolute!important; left:-9999px; width:1px; height:1px; opacity:0}

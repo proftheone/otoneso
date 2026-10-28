@@ -168,7 +168,11 @@
 <section class="contact" id="start"><div class="wrap"><div class="box">
   <div><span class="eyebrow">Zacznij od audytu</span><h2>Sprawdź gotowość na <em>PPWR</em></h2><p>Opisz krótko, co sprzedajesz i gdzie. Wrócimy w ciągu jednego dnia roboczego z propozycją audytu i wyceną.</p>
     <div class="cdet"><span class="sel">info@otoneso.com</span><span class="sel">+48 459 596 793</span></div></div>
-  <form id="ppwr-form" class="p-form" novalidate>
+  <form id="ppwr-form" class="p-form" novalidate action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="98133616-049b-416c-953e-c6f76598254c">
+        <input type="hidden" name="subject" value="Nowe zapytanie: Wdrożenie PPWR">
+        <input type="hidden" name="from_name" value="otoneso.com">
+        <input type="checkbox" name="botcheck" class="hp-bot" tabindex="-1" autocomplete="off" aria-hidden="true">
     <label for="p-name">Imię i nazwisko<input id="p-name" name="name" autocomplete="name" required></label>
     <label for="p-company">Firma<input id="p-company" name="company" autocomplete="organization"></label>
     <label for="p-mail">E-mail<input id="p-mail" name="email" type="email" autocomplete="email" required></label>
@@ -192,7 +196,13 @@ document.getElementById('ppwr-form').addEventListener('submit', function (e) {
   if (!this.terms.checked) { this.querySelector('.form-note').textContent = 'Zaakceptuj Regulamin i Politykę prywatności.'; return; }
   var n = document.getElementById('p-note');
   if (!this.name.value.trim() || !/\S+@\S+\.\S+/.test(this.email.value)) { n.textContent = 'Podaj imię i poprawny adres e-mail.'; return; }
-  n.textContent = 'Dziękujemy. Odpowiemy w ciągu jednego dnia roboczego.'; this.reset();
+  var f = this, nt = f.querySelector('.form-note'), ok = 'Dziękujemy. Odpowiemy w ciągu jednego dnia roboczego.', d = Object.fromEntries(new FormData(f));
+  if (d.botcheck) return; d.replyto = d.email; d.marketing = f.marketing && f.marketing.checked ? 'TAK / YES' : 'NIE / NO'; d.page = location.href;
+  nt.textContent = 'Wysyłanie…';
+  fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(d) })
+    .then(function (r) { return r.json(); })
+    .then(function (j) { if (j.success) { nt.textContent = ok; f.reset(); } else { nt.textContent = 'Nie udało się wysłać. Spróbuj ponownie lub napisz na info@otoneso.com.'; } })
+    .catch(function () { nt.textContent = 'Nie udało się wysłać. Spróbuj ponownie lub napisz na info@otoneso.com.'; });
 });
 </script>
 </main>

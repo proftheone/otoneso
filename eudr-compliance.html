@@ -169,7 +169,11 @@
 <section class="contact" id="start"><div class="wrap"><div class="box">
   <div><span class="eyebrow">Start with an audit</span><h2>Check your <em>EUDR</em> readiness</h2><p>Tell us briefly what you sell and where your raw materials come from. We’ll reply within one business day with an audit proposal and a quote.</p>
     <div class="cdet"><span class="sel">info@otoneso.com</span><span class="sel">+48 459 596 793</span></div></div>
-  <form id="eudr-form" class="p-form" novalidate>
+  <form id="eudr-form" class="p-form" novalidate action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="98133616-049b-416c-953e-c6f76598254c">
+        <input type="hidden" name="subject" value="New enquiry: EUDR compliance">
+        <input type="hidden" name="from_name" value="otoneso.com">
+        <input type="checkbox" name="botcheck" class="hp-bot" tabindex="-1" autocomplete="off" aria-hidden="true">
     <label for="p-name">Name<input id="p-name" name="name" autocomplete="name" required></label>
     <label for="p-company">Company<input id="p-company" name="company" autocomplete="organization"></label>
     <label for="p-mail">E-mail<input id="p-mail" name="email" type="email" autocomplete="email" required></label>
@@ -193,7 +197,13 @@ document.getElementById('eudr-form').addEventListener('submit', function (e) {
   if (!this.terms.checked) { this.querySelector('.form-note').textContent = 'Please accept the Terms of Service and the Privacy Policy.'; return; }
   var n = document.getElementById('p-note');
   if (!this.name.value.trim() || !/\S+@\S+\.\S+/.test(this.email.value)) { n.textContent = 'Please enter your name and a valid e-mail address.'; return; }
-  n.textContent = 'Thank you. We will reply within one business day.'; this.reset();
+  var f = this, nt = f.querySelector('.form-note'), ok = 'Thank you. We will reply within one business day.', d = Object.fromEntries(new FormData(f));
+  if (d.botcheck) return; d.replyto = d.email; d.marketing = f.marketing && f.marketing.checked ? 'TAK / YES' : 'NIE / NO'; d.page = location.href;
+  nt.textContent = 'Sending…';
+  fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(d) })
+    .then(function (r) { return r.json(); })
+    .then(function (j) { if (j.success) { nt.textContent = ok; f.reset(); } else { nt.textContent = 'Sending failed. Please try again or email info@otoneso.com.'; } })
+    .catch(function () { nt.textContent = 'Sending failed. Please try again or email info@otoneso.com.'; });
 });
 </script>
 </main>
