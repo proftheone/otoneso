@@ -479,3 +479,10 @@ footer a:hover{color:var(--green)}
 .consent a{color:#96C43C; text-decoration:underline; text-underline-offset:2px}
 .consents{display:grid; gap:12px}
 .hp-bot{position:absolute!important; left:-9999px; width:1px; height:1px; opacity:0}
+/* full legal texts */
+.doc ol,.doc ul{margin:0 0 12px; padding-left:22px; color:var(--muted); display:grid; gap:8px}
+.doc ol ol,.doc ol ul{margin-top:8px}
+.doc li > p{margin:0}
+.doc li::marker{color:var(--green); font-weight:600}
+.doc strong{color:var(--ink)}
+.toc{max-height:calc(100vh - 120px); overflow:auto; scrollbar-width:thin}
