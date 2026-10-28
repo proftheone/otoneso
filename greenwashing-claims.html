@@ -202,8 +202,8 @@ document.getElementById('gw-form').addEventListener('submit', function (e) {
   nt.textContent = 'Sending…';
   fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(d) })
     .then(function (r) { return r.json(); })
-    .then(function (j) { if (j.success) { nt.textContent = ok; f.reset(); } else { nt.textContent = 'Sending failed. Please try again or email info@otoneso.com.'; } })
-    .catch(function () { nt.textContent = 'Sending failed. Please try again or email info@otoneso.com.'; });
+    .then(function (j) { if (j.success) { nt.textContent = ok; f.reset(); } else { nt.textContent = 'Sending failed. Please try again or email info@otoneso.com.' + (j.message ? ' [' + j.message + ']' : ''); } })
+    .catch(function (er) { nt.textContent = 'Sending failed. Please try again or email info@otoneso.com.' + ' [' + er.message + ']'; });
 });
 </script>
 </main>
