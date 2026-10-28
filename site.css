@@ -441,3 +441,32 @@ footer a:hover{color:var(--green)}
 .notched .ph-notch b{display:block; font:800 clamp(22px,2.3vw,32px)/1 var(--f-display); letter-spacing:-.03em; color:var(--ink)}
 .notched .ph-notch span{display:block; margin-top:8px; font-size:clamp(13px,1.1vw,15.5px); line-height:1.55; color:var(--muted)}
 @media (max-width:560px){.notched .ph-notch{min-width:0; max-width:75%}}
+
+/* Service subpage hero: centered, photo with notched corners (as home hero) */
+.sub-hero-c .wrap{display:flex; flex-direction:column; align-items:center; text-align:center}
+.sub-hero-c .crumbs{align-self:center}
+.svc-hero{display:flex; flex-direction:column; align-items:center; gap:22px; max-width:900px}
+.svc-hero .eyebrow::before{display:none}
+.svc-hero .eyebrow{font-size:10.1px; padding:6px 12px; border-radius:999px; background:var(--surface); box-shadow:var(--ring)}
+.svc-hero h1{margin:0}
+.svc-hero .lead{margin:0; max-width:660px; color:var(--muted)}
+.svc-hero .acts{justify-content:center}
+.hphoto{position:relative; width:100%; max-width:1040px; margin:clamp(28px,3.4vw,44px) auto 0; border-radius:0 30px 0 30px; overflow:hidden; aspect-ratio:16/9; background:#D9D9D6; text-align:left}
+.hphoto > img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; animation:hpzoom 18s ease-in-out infinite alternate}
+@keyframes hpzoom{from{transform:scale(1)} to{transform:scale(1.06)}}
+.hp-tl{position:absolute; z-index:2; top:0; left:0; width:clamp(78px,10%,112px); aspect-ratio:1; background:var(--bg); border-bottom-right-radius:30px; display:grid; place-items:center}
+.hp-tl::before,.hp-tl::after{content:""; position:absolute; width:30px; height:30px; background:radial-gradient(circle at 100% 100%, transparent 29.5px, var(--bg) 30px)}
+.hp-tl::before{top:0; left:100%} .hp-tl::after{top:100%; left:0}
+.hp-badge{width:58%; aspect-ratio:1; border-radius:50%; background:#1A1A1A; display:grid; place-items:center; box-shadow:0 0 0 4px var(--surface)}
+.hp-badge svg{width:46%; height:46%}
+.hp-br{position:absolute; z-index:2; right:0; bottom:0; margin:0; background:var(--bg); border-top-left-radius:30px; padding:clamp(16px,2.2vw,30px) clamp(18px,2.4vw,34px) 4px; text-align:left; min-width:min(42%,330px)}
+.hp-br::before,.hp-br::after{content:""; position:absolute; width:30px; height:30px; background:radial-gradient(circle at 0 0, transparent 29.5px, var(--bg) 30px)}
+.hp-br::before{right:0; bottom:100%} .hp-br::after{bottom:0; right:100%}
+.hp-br b{display:block; font:800 clamp(22px,2.3vw,32px)/1 var(--f-display); letter-spacing:-.03em; color:var(--ink)}
+.hp-br span{display:block; margin-top:8px; font-size:clamp(13px,1.1vw,15.5px); line-height:1.55; color:var(--muted)}
+.svc-card-sec{padding-bottom:0}
+.svc-card-sec .p-hero{align-items:center}
+.svc-card-sec h2{margin:12px 0 14px; font-size:clamp(28px,3.4vw,46px)}
+.svc-card-sec{padding-top:clamp(40px,5vw,72px)}
+@media (max-width:720px){.hphoto{aspect-ratio:4/3} .hp-br{min-width:0; max-width:72%}}
+@media (prefers-reduced-motion: reduce){.hphoto > img{animation:none}}
