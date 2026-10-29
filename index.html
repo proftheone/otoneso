@@ -62,7 +62,7 @@ h1 em,h2 em,h3 em{font-style:normal; color:var(--green)}
 .menu .live{display:inline-flex; align-items:center; gap:7px; color:var(--ink)}
 .menu .btn{color:var(--on-leaf); padding:10px 18px; font-size:13.72px; box-shadow:none}
 .lang{font:600 11.76px var(--f-body); color:var(--dim)!important; border-radius:999px; padding:4px 9px; box-shadow:inset 0 0 0 1px var(--line)}
-@media (max-width:1140px){.menu a:not(.btn):not(.live):not(.lang){display:none}}
+@media (max-width:1240px){.menu a:not(.btn):not(.live):not(.lang){display:none}}
 @media (max-width:540px){.menu .live{display:none} .nav .bar{padding-left:16px} .logo img{height:26px}}
 
 /* ---------- Hero + player ---------- */
@@ -406,7 +406,7 @@ footer a:hover{color:var(--green)}
 .menu .dd-menu a{display:block; padding:10px 12px; border-radius:10px; color:var(--ink); font-weight:600}
 .menu .dd-menu a small{display:block; font-weight:400; font-size:12.25px; color:var(--dim); margin-top:2px}
 .menu .dd-menu a:hover{background:var(--surface-2)}
-@media (max-width:1140px){.menu .dd{display:none}}
+@media (max-width:1240px){.menu .dd{display:none}}
 
 /* ---- modern layer ---- */
 .progress{position:fixed; inset:0 0 auto 0; height:3px; z-index:60; pointer-events:none}
@@ -706,6 +706,7 @@ html.rv-on .rv.in{opacity:1; transform:none}
       <div class="dd"><a href="/bdo-poland" aria-haspopup="true">BDO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a><div class="dd-menu"><div><a href="/bdo-poland">All BDO services<small>Register, deadlines and full service</small></a><a href="/bdo-registration">BDO registration<small>Register entry and BDO number</small></a><a href="/bdo-annual-report">Annual BDO report – 15.03<small>Report and product fee by 15 March</small></a><a href="/bdo-data-update">BDO data update<small>Amend your entry within 30 days</small></a><a href="/bdo-deregistration">BDO deregistration<small>Removal from the register and final settlement</small></a><a href="/bdo-audit">BDO audit<small>Review of entry, records and reports</small></a></div></div></div><div class="dd"><a href="/kobize-poland" aria-haspopup="true">KOBiZE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a><div class="dd-menu"><div><a href="/kobize-poland">All KOBiZE services<small>Emissions reports and deadlines</small></a><a href="/kobize-registration">KOBiZE registration<small>Company account in the National Database</small></a><a href="/kobize-annual-report">KOBiZE annual report – 28.02<small>Emissions report for the previous year</small></a><a href="/gus-emissions-report">GUS emissions report – 28.02<small>Statistical report on air emissions</small></a></div></div></div>
       <a href="/about">About</a>
       <a href="/partners">Partners</a>
+      <a href="/contact">Contact</a>
       <div class="langdd"><button type="button" class="langdd-btn" aria-haspopup="true" aria-label="Language: English"><span class="flag"><svg viewBox="0 0 60 30" aria-hidden="true" preserveAspectRatio="none"><clipPath id="gbc"><path d="M0 0v30h60V0z"/></clipPath><clipPath id="gbt"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#gbc)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#gbt)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg></span>EN<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="langdd-menu"><a href="/pl" aria-label="Polska wersja"><span class="flag"><svg viewBox="0 0 16 12" aria-hidden="true"><rect width="16" height="6" fill="#fff"/><rect y="6" width="16" height="6" fill="#DC143C"/></svg></span>Polski</a><a href="/de" aria-label="Deutsche Version"><span class="flag"><svg viewBox="0 0 5 3" aria-hidden="true" preserveAspectRatio="none"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg></span>Deutsch</a></div></div>
       <a class="btn pilot-btn" href="https://eprpilot.com/" target="_blank" rel="noopener"><span class="ldot" aria-hidden="true"></span>EPRpilot <svg><use href="#arr"/></svg></a>
       <a class="btn" href="#contact">Free quote <svg><use href="#arr"/></svg></a>
@@ -1143,6 +1144,7 @@ html.rv-on .rv.in{opacity:1; transform:none}
       <a href="#countries">Countries</a>
       <a href="/about">About us</a>
       <a href="/partners">Partners</a>
+      <a href="/contact">Contact</a>
       <a href="#faq">FAQ</a>
       <a href="/terms-of-service">Terms of service</a>
       <a href="/privacy-policy">Privacy policy</a>
@@ -1496,7 +1498,7 @@ html{overflow-x:hidden} .sub-hero{overflow-x:clip} @media (max-width:720px){.pag
 .langdd.open .langdd-menu{opacity:1; visibility:visible; transform:none}
 .langdd.open .chev{transform:rotate(180deg)}
 .langdd-menu{display:grid; gap:6px}
-@media (max-width:1140px){
+@media (max-width:1240px){
   .burger{display:inline-flex}
   .nav.open .mnav{display:block}
   .mnav{max-width:1180px; margin:8px auto 0; background:var(--surface,#fff); border-radius:24px; box-shadow:var(--ring), 0 24px 50px -24px rgba(19,32,26,.35); padding:10px; max-height:calc(100vh - 110px); overflow:auto}
